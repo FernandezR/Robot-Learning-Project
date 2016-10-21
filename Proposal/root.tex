@@ -1,0 +1,64 @@
+\documentclass[letterpaper, 12 pt, conference]{ieeeconf}
+
+\IEEEoverridecommandlockouts
+% This command is only needed if 
+% you want to use the \thanks command
+
+\overrideIEEEmargins
+% Needed to meet printer requirements.
+
+% See the \addtolength command later in the file to balance the column lengths
+% on the last page of the document
+
+% The following packages can be found on http:\\www.ctan.org
+\usepackage{graphics} % for pdf, bitmapped graphics files
+\usepackage{epsfig} % for postscript graphics files
+\usepackage{mathptmx} % assumes new font selection scheme installed
+\usepackage{times} % assumes new font selection scheme installed
+\usepackage{amsmath} % assumes amsmath package installed
+\usepackage{amssymb}  % assumes amsmath package installed
+
+\title{\LARGE \bf
+Generating Natural Language Descriptions of Trajectories Using the Long Short Term Memory Neural Network Architecture}
+
+
+\author{Rodolfo Corona and Rolando Fernandez}
+
+
+\begin{document}
+
+
+
+\maketitle
+\thispagestyle{empty}
+\pagestyle{empty}
+
+
+\section{Problem Description}
+
+Given a point-cloud $p$ $\in$ $P$ and a manipulation trajectory $t$ $\in$ $T$, our goal is to output a free-form  Natural Language (NL) description $l$ $\in$ $L$ that describes the trajectory $t$.
+
+\begin{equation}
+f: T\times P \mapsto L
+\end{equation}
+
+\section{Motivation}
+
+Currently there is not much research in the area of Explainable Artificial Intelligence (XAI), an area of AI that aims at creating systems that allow for an agent's actions to be understood by a human user. Lomas et al., discusses how giving an agent the ability to explain it's actions would help human users gain trust the actions taken by an agent \cite{lomas2012explaining}.
+
+Our goal is to create a system that allows an agent to explain the actions it will take or that need to be performed to complete a given task. Thus, allowing for better cooperation between the agents and human users, while at the same time allowing the human users to better understand the intentions of the agent.
+
+\section{Hypothesis}
+
+Given $T\times P$, a Long Short Term Memory (LSTM) Neural Network Architecture may be trained to generate NL descriptions that accurately describe the actions the agent performs under a trajectory $t$ $\in$ $T$.
+
+\section{Methods}
+
+\section{Evaluation}
+
+
+
+\bibliographystyle{IEEEtran}
+\bibliography{citations}
+
+\end{document}
