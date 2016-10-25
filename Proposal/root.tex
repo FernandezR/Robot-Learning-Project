@@ -4,8 +4,9 @@
 % This command is only needed if 
 % you want to use the \thanks command
 
-\overrideIEEEmargins
+%\overrideIEEEmargins
 % Needed to meet printer requirements.
+\usepackage[margin=0.65in]{geometry}
 
 % See the \addtolength command later in the file to balance the column lengths
 % on the last page of the document
@@ -44,36 +45,34 @@ f: T\times P \mapsto L
 
 \section{Motivation}
 
-Currently there is not much research in the area of Explainable Artificial Intelligence (XAI), an area of AI that aims at creating systems that allow for an agent's actions to be understood by a human user. Lomas et al., discusses how giving an agent the ability to explain it's actions would help human users gain trust for the actions taken by an agent \cite{lomas2012explaining}.
+Currently there is not much research in the area of Explainable Artificial Intelligence (XAI), an area of AI that aims at creating systems that allow for an agent's actions to be understood by a human user. Lomas et al. discuss how giving an agent the ability to explain it's actions would help human users gain trust for the actions taken by an agent \cite{lomas2012explaining}.
 
 Our goal is to create a system that allows an agent to explain the actions it will take or that need to be performed to complete a given task, something that would allow for better cooperation between the agents and human users, while at the same time allowing the human users to better understand the intentions of the agent.
 
 \section{Hypothesis}
 
-Given $(t,p)\in T\times P$, a Long Short Term Memory (LSTM) Neural Network Architecture may be trained to generate NL descriptions that accurately describe the actions the agent performs under a trajectory $t$ $\in$ $T$.
+Given $(t,p)\in T\times P$, a Long Short Term Memory (LSTM) neural network architecture may be trained to sequentially generate NL descriptions that accurately describe the actions the agent performs under a trajectory $t$ $\in$ $T$.
 
 \section{Methods}
 \subsection{Dataset}
-We propose to use the Robobarista data set, which contains 116 point clouds of objects, and 250 natural language descriptions of 1225 trajectories. The set will also contain embeddings which were trained to map all three modalities ($T,P,$ and $L$) into a common space. Specifically, these embeddings were generated for singular trajectories as well as for point cloud and description pairs \cite{sung2016robobarista}.
+We propose to use the Robobarista data set, which contains 116 point clouds of objects, and 250 natural language descriptions of 1225 trajectories. Additionally, we will be using the author's trained models which map all three modalities into a common embedding space \cite{sung2016robobarista}.
 
 \subsection{Baseline}
 
-For a baseline generative model, we propose to take the inputted pair $(t,p)\in T\times P$ and find the $k$ nearest neighbor pairs $(p',l')\in P\times L$ of $t$ in the training set within the shared embedding space. These $k$-nearest neighbors will then be re-ranked based on how similar their corresponding point cloud $p'$ is to $p$. This similarity will be measured by comparing bag-of-keypoint vectors generated for $p$ and  $p'$ using NARF \cite{steder2010narf} descriptors with a method analogous to \cite{csurka2004visual}.    
+For a baseline generative model, we propose to take an inputted pair $(t,p)\in T\times P$ and find the $k$ nearest neighbor pairs $(p',l')\in P\times L$ of $t$ in the training set within the shared embedding space. These $k$-nearest neighbors will then be re-ranked based on how similar their corresponding point cloud $p'$ is to $p$. This similarity will be measured by comparing bag-of-keypoint vectors generated for $p$ and  $p'$ using NARF \cite{steder2010narf} descriptors with a method analogous to \cite{csurka2004visual}. The description of the highest scoring pair will be used as output.    
 
 \subsection{Contribution}
 
-Long Short Term Memory networks (LSTMs) have been shown to be able serve as generative models for text \cite{graves2013generating}. Therefore, we would like to train an LSTM to generate a description $l\in L$ given a pair $(t,p)\in T\times P$ through methods inspired by \cite{Venugopalan_2015_ICCV}.
+Long Short Term Memory networks (LSTMs) have been shown to be able serve as generative models for text \cite{graves2013generating}. They have also proved effective in mapping sequences to each other in domains such as video to text \cite{Venugopalan_2015_ICCV}. Inspired by this, we would like to train an LSTM to generate sequence to sequence mappings from trajectories to text, being additionally conditioned on a trajectory's associated point cloud. 
 
-\section{Evaluation}
-
-We propose quantitative and qualitative criteria under which to evaluate the correctness of a generated phrase against a ground truth description. 
+\section{Evaluation} 
 
 \subsection{Quantitative}
-For automatic evaluation, we will explore metrics such as Levenshtein distance and the cosine similarity of the description's skip-thought vectors \cite{skip-thought}.  
+For automatic evaluation, we propose to use the METEOR \cite{Denkowski14meteoruniversal} evaluation metric, which evaluates the similarity between sentences both morphologically and semantically through WordNet synonyms. This metric was employed by \cite{Venugopalan_2015_ICCV} in their video to text work. 
 
 \subsection{Qualitative}
 
-To qualitatively test our proposed system we plan on using a human rating system, where human participants will compare the NL description generated by the system against that of the NL description in the ground truth. The participants will then rate the NL description on a scale by judging how semantically similar the generated description is to the ground truth.
+To qualitatively test our proposed system we plan on using a human rating metric, where human participants will judge how semantically similar generated descriptions are to the ground truth text on a scale. We will collect multiple scores for each pair and average them. 
 
 \bibliographystyle{IEEEtran}
 \bibliography{citations}
