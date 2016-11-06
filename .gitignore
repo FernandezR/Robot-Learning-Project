@@ -1,6 +1,9 @@
 # Must be manually configured using
 # git config --global core.excludesfile ~/.gitignore
 
+#Project Specific
+robobarista_dataset/*
+
 #Vim temp files
 *.swp
 *.swo
