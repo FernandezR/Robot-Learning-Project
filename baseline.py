@@ -87,7 +87,7 @@ def createKNNModel( kmeans_model, point_clouds, pickle_directory, fold_number ):
 if __name__ == '__main__':
 
     dataset_directory = "/home/ghostman/Git/Robot-Learning-Project/robobarista_dataset/dataset/"
-    pickle_directory = "/home/ghostman/Git/Robot-Learning-Project/Models"
+    pickle_directory = "/home/ghostman/Git/Robot-Learning-Project/Models/"
     folds_file = dataset_directory + "folds.json"
 
     n_clusters = 50
@@ -100,4 +100,4 @@ if __name__ == '__main__':
 
         point_clouds, kmeans_model = createKMeansModel( point_cloud_files, pickle_directory, n_clusters, key )
 
-        createKNNModel( kmeans_model, point_clouds, pickle_directory, fold_number )
+        createKNNModel( kmeans_model, point_clouds, pickle_directory, folds_dictionary[key] )
