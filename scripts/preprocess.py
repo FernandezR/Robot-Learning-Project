@@ -11,13 +11,16 @@ def get_folds_dictionary( folds_file ):
     with open( folds_file ) as json_data:
         dictionary = json.load( json_data )
 
-    folds_dictionary = {1:[], 2:[], 3:[], 4:[], 5:[]}
+    folds_dictionary = {1:{'test':[], 'train':[]}, 2:{'test':[], 'train':[]}, 3:{'test':[], 'train':[]}, 4:{'test':[], 'train':[]}, 5:{'test':[], 'train':[]}}
 
     for key in dictionary:
-        folds_dictionary[dictionary[key]].append( key )
+        folds_dictionary[dictionary[key]]['test'].append( key )
 
-    for key in folds_dictionary:
-        folds_dictionary[key].sort()
+    for fold_number in range( 1, 6 ):
+        for key in ( key for key in folds_dictionary if key != fold_number ):
+            folds_dictionary[fold_number]['test'].sort()
+            folds_dictionary[fold_number]['train'].extend( folds_dictionary[key]['test'] )
+        folds_dictionary[fold_number]['train'].sort()
 
     return folds_dictionary
 
@@ -65,7 +68,7 @@ Loads training set specified by a list
 of object directories into arrays
 that may be used by our models.
 """
-def load_dataset( root_dir, obj_dir_list ):
+def load_data_set( root_dir, obj_dir_list ):
     trajectories = []
     point_clouds = []
     nl_descriptions = []
@@ -76,11 +79,12 @@ def load_dataset( root_dir, obj_dir_list ):
 
         # Gets parts and their names from info file.
         parts = get_part_names( path )
+        parts.sort()
 
         # Get all natural language descriptions.
         descriptions = {}
 
-        for manual_file in glob.glob( path + '/manual*' ):
+        for manual_file in sorted( glob.glob( path + '/manual*' ) ):
             for part, desc in yaml.load( open( manual_file, 'r' ) )['steps']:
 
                 # Gets description for part.
@@ -109,7 +113,7 @@ def load_dataset( root_dir, obj_dir_list ):
             # Gets all trajectories for a part.
             traj_path = path + '/user_input/'
 
-            for traj_file in glob.glob( traj_path + '*_' + str( part_num ) ):
+            for traj_file in sorted( glob.glob( traj_path + '*_' + str( part_num ) ) ):
                 traj = get_trajectory_from_file( traj_file )
 
                 # Add triplet to lists at same index.
