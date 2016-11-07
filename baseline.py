@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3.4
 '''
 Baseline
 
@@ -7,11 +7,13 @@ Baseline
 import csv
 import os
 import pickle
+# from scipy.sparse import lil_matrix
+from sklearn.cluster import KMeans
+from sklearn.neighbors import KNeighborsClassifier
+import sys
 
 import numpy as np
 import scripts.preprocess as preprocess
-from sklearn.cluster import KMeans
-from sklearn.neighbors import KNeighborsClassifier
 
 
 def extractPointCloudKeyPointsFromCSV( filename ):
@@ -32,6 +34,19 @@ def extractPointCloudKeyPointsFromCSV( filename ):
     return point_cloud
 
 def createKMeansModel( dataset, pickle_directory, n_clusters, fold_number ):
+    '''
+    Creates a KMeans Model using the provided Dataset and saves it as a pickle file
+
+    args:
+        dataset:          A list of segmented point clouds filenames [stored as a CSV [x,y,z,r,g,b]]
+        pickle_directory: Path to save pickled KMeans Model
+        n_cluster:        Number of clusters to use for KMeans Model
+        fold_number:      Fold number to use when saving pickled Kmeans Model
+
+    returns:
+        point_clouds: A list of Segmented Point Clouds
+        kmeans:       A KMeans Model
+    '''
 
     #######################################################################
     #                  Extract Key Points from Dataset                    #
@@ -39,22 +54,41 @@ def createKMeansModel( dataset, pickle_directory, n_clusters, fold_number ):
 
     point_clouds = []
     point_clouds_key_points = []
+    point_cloud_names = []
     for data in dataset:
         key_points = extractPointCloudKeyPointsFromCSV( data )
         point_clouds.append( key_points )
-        point_clouds_key_points.extend( key_points )
+        if data not in point_cloud_names:
+            point_clouds_key_points.extend( key_points )
+            point_cloud_names.append( data )
 
     #######################################################################
     #              Create KMeans Model for Dataset KeyPoints              #
     #######################################################################
 
-    kmeans = KMeans( n_clusters = n_clusters, copy_x = True ).fit( np.array( point_clouds_key_points ) )
+    pca = np.array( point_clouds_key_points )
+
+    print( pca.shape )
+
+    kmeans = KMeans( n_clusters = n_clusters, precompute_distances = False ).fit( pca )
 
     pickle.dump( kmeans, open( pickle_directory + "kmeans_fold_{}.p".format( fold_number ), "wb" ) )
 
     return point_clouds, kmeans
 
 def createKNNModel( kmeans_model, point_clouds, pickle_directory, fold_number ):
+    '''
+    Creates a K-Nearest Neighbor Model using the provided KMeans Model and saves it as a pickle file
+
+    args:
+        kmeans_model:     A KMeans Model
+        point_clouds:     A list of Segmented Point Clouds
+        pickle_directory: Path to save pickled KNN Model
+        fold_number:      Fold number to use when saving pickled KNN Model
+
+    returns:
+        Nothing
+    '''
 
     #######################################################################
     #                Predict Feature Vectors for Dataset                  #
@@ -79,12 +113,14 @@ def createKNNModel( kmeans_model, point_clouds, pickle_directory, fold_number ):
 
     targets = list( range( n_samples ) )
 
-    knneigh = KNeighborsClassifier( n_neighbors = 1 )
+    knneigh = KNeighborsClassifier( n_neighbors = 1, weights = 'distance' )
     knneigh.fit( point_clouds_feature_vectors, targets )
 
     pickle.dump( knneigh, open( pickle_directory + "knn_fold_{}.p".format( fold_number ), "wb" ) )
 
 if __name__ == '__main__':
+
+    fold_number = int( sys.argv[1] )
 
     dataset_directory = "/home/ghostman/Git/Robot-Learning-Project/robobarista_dataset/dataset/"
     pickle_directory = "/home/ghostman/Git/Robot-Learning-Project/Models/"
@@ -92,12 +128,20 @@ if __name__ == '__main__':
 
     n_clusters = 50
 
+    print( "Creating Folds Dictionary" )
+
     folds_dictionary = preprocess.get_folds_dictionary( folds_file )
 
-    for key in folds_dictionary:
+    pickle.dump( folds_dictionary, open( pickle_directory + "folds_dictionary.p", "wb" ) )
 
-        point_cloud_files = preprocess.load_dataset( dataset_directory, folds_dictionary[key] )[1]
+    print( "Loading Point Cloud Filenames for Fold {}".format( fold_number ) )
 
-        point_clouds, kmeans_model = createKMeansModel( point_cloud_files, pickle_directory, n_clusters, key )
+    point_cloud_files = preprocess.load_data_set( dataset_directory, folds_dictionary[fold_number]['train'] )[1]
 
-        createKNNModel( kmeans_model, point_clouds, pickle_directory, key )
+    print( "Creating KMeans Model for Fold {}".format( fold_number ) )
+
+    point_clouds, kmeans_model = createKMeansModel( point_cloud_files, pickle_directory, n_clusters, fold_number )
+
+    print( "Creating KNN Model for Fold {}".format( fold_number ) )
+
+    createKNNModel( kmeans_model, point_clouds, pickle_directory, fold_number )
