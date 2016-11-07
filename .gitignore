@@ -3,6 +3,8 @@
 
 #Project Specific
 robobarista_dataset/*
+meteor-1.5.tar.gz
+meteor-1.5/*
 
 #Vim temp files
 *.swp
