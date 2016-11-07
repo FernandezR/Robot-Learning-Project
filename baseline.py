@@ -62,11 +62,11 @@ def createKNNModel( kmeans_model, point_clouds, pickle_directory, fold_number ):
 
     point_clouds_feature_vectors = []
     for point_cloud in point_clouds:
-        cluster_index_prediction = kmeans.predict( point_cloud )
+        cluster_index_prediction = kmeans_model.predict( point_cloud )
         cluster_index_prediction = cluster_index_prediction.tolist()
 
         feature_vector = []
-        for cluster in n_clusters:
+        for cluster in range( n_clusters ):
             feature_vector.append( cluster_index_prediction.count( cluster ) )
 
         point_clouds_feature_vectors.append( feature_vector )
@@ -79,10 +79,10 @@ def createKNNModel( kmeans_model, point_clouds, pickle_directory, fold_number ):
 
     targets = list( range( n_samples ) )
 
-    neigh = KNeighborsClassifier( n_neighbors = 1 )
-    neigh.fit( point_clouds_feature_vectors, targets )
+    knneigh = KNeighborsClassifier( n_neighbors = 1 )
+    knneigh.fit( point_clouds_feature_vectors, targets )
 
-    pickle.dump( kmeans, open( pickle_directory + "knn_fold_{}.p".format( fold_number ), "wb" ) )
+    pickle.dump( knneigh, open( pickle_directory + "knn_fold_{}.p".format( fold_number ), "wb" ) )
 
 if __name__ == '__main__':
 
@@ -100,4 +100,4 @@ if __name__ == '__main__':
 
         point_clouds, kmeans_model = createKMeansModel( point_cloud_files, pickle_directory, n_clusters, key )
 
-        createKNNModel( kmeans_model, point_clouds, pickle_directory, folds_dictionary[key] )
+        createKNNModel( kmeans_model, point_clouds, pickle_directory, key )
