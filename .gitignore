@@ -1,12 +1,6 @@
 # Must be manually configured using
 # git config --global core.excludesfile ~/.gitignore
 
-#Project Specific
-robobarista_dataset/*
-meteor-1.5.tar.gz
-meteor-1.5/*
-!Test-Data/*
-
 #Vim temp files
 *.swp
 *.swo
@@ -228,3 +222,9 @@ TSWLatexianTemp*
 
 # KBibTeX
 *~[0-9]*
+
+#Project Specific
+robobarista_dataset/*
+meteor-1.5.tar.gz
+meteor-1.5/*
+!Test-Data/*
