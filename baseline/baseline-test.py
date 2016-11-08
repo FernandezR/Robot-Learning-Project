@@ -78,3 +78,5 @@ if __name__ == '__main__':
                 os.remove( test_data_directory + 'test_fold_{}'.format( fold_number ) )
 
             file.write( training_data[2][nearest_neighbor_index[0]] + '\n' )
+
+    print( "Done running test for Fold {}".format( fold_number ) )

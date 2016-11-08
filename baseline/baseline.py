@@ -151,3 +151,5 @@ if __name__ == '__main__':
 
     print( "Creating KNN Model for Fold {}".format( fold_number ) )
     createKNNModel( kmeans_model, point_clouds, pickle_directory, fold_number )
+
+    print( "Done training models for Fold {}".format( fold_number ) )
