@@ -18,7 +18,7 @@ import scripts.preprocess as preprocess
 
 if __name__ == '__main__':
 
-    fold_number = int( 5 )
+    fold_number = int( sys.argv[1] )
 
     n_clusters = 50
 
