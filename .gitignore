@@ -5,6 +5,7 @@
 robobarista_dataset/*
 meteor-1.5.tar.gz
 meteor-1.5/*
+!Test-Data/*
 
 #Vim temp files
 *.swp
