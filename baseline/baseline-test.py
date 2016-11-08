@@ -1,6 +1,6 @@
 #!/usr/bin/env python3.4
 '''
-Baseline
+Baseline Test Evaluation Script
 
 @author: Rolando Fernandez <rfernandez@utexas.edu>
 '''
@@ -23,8 +23,8 @@ if __name__ == '__main__':
     n_clusters = 50
 
     dataset_directory = "/home/ghostman/Git/Robot-Learning-Project/robobarista_dataset/dataset/"
-    pickle_directory = "/home/ghostman/Git/Robot-Learning-Project/Models/"
-    test_data_directory = "/home/ghostman/Git/Robot-Learning-Project/Test-Data/"
+    pickle_directory = "/home/ghostman/Git/Robot-Learning-Project/Models/Baseline"
+    test_data_directory = "/home/ghostman/Git/Robot-Learning-Project/Test-Data/baseline-fold_{}/".format( fold_number )
     folds_file = dataset_directory + "folds.json"
 
     folds_dictionary = pickle.load( open( pickle_directory + "folds_dictionary.p", "rb" ) )

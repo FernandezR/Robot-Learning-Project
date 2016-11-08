@@ -8,6 +8,11 @@ import yaml
 import nltk
 import numpy as np
 
+"""
+Gets dictionary of folds containing
+the test and train data files for
+each fold
+"""
 def get_folds_dictionary( folds_file ):
     with open( folds_file ) as json_data:
         dictionary = json.load( json_data )
@@ -64,7 +69,7 @@ def get_trajectory_from_file( traj_file_name ):
             trajectory.append( waypoint )
 
     return trajectory
-       
+
 
 """
 Loads training set specified by a list
@@ -131,26 +136,26 @@ def load_data_set( root_dir, obj_dir_list ):
 
 """
 Takes a list of phrases and creates a
-vocabulary dictionary which it returns. 
-The dictionary may be used to 
-generate one-hot vectors. 
+vocabulary dictionary which it returns.
+The dictionary may be used to
+generate one-hot vectors.
 """
-def create_vocabulary(phrase_list):
-    #Start at one 
+def create_vocabulary( phrase_list ):
+    # Start at one
     index = 1
     vocab = {}
 
     for phrase in phrase_list:
-        #Tokenize phrase. 
-        words = nltk.tokenize.word_tokenize(phrase)
+        # Tokenize phrase.
+        words = nltk.tokenize.word_tokenize( phrase )
 
-        #Looks for new words in phrase. 
+        # Looks for new words in phrase.
         for word in words:
             if not word in vocab:
                 vocab[word] = index
                 index += 1
 
-    #Adds index for unknown token. 
+    # Adds index for unknown token.
     vocab['UNK'] = index
 
     return vocab
@@ -159,30 +164,30 @@ def create_vocabulary(phrase_list):
 Given a vocabulary dictionary and
 a list of phrases, this will return
 a list of one hot vector matrices
-representing each phrase. 
+representing each phrase.
 """
-def to_one_hot(vocab, phrase_list, max_len): 
-    #New list to contain one-hot vectors. 
-    new_list = np.zeros((len(phrase_list), max_len, len(vocab.keys())))
+def to_one_hot( vocab, phrase_list, max_len ):
+    # New list to contain one-hot vectors.
+    new_list = np.zeros( ( len( phrase_list ), max_len, len( vocab.keys() ) ) )
 
-    for i in range(len(phrase_list)):
-        words = nltk.tokenize.word_tokenize(phrase_list[i])
+    for i in range( len( phrase_list ) ):
+        words = nltk.tokenize.word_tokenize( phrase_list[i] )
 
-        #Sets word index to 1.
-        for j in range(len(words)):
+        # Sets word index to 1.
+        for j in range( len( words ) ):
             new_list[i][j][vocab[words[j]]] = 1
-            
+
     return new_list
 
 """
 Converts vectors of classes to
-phrases using the given vocabulary. 
+phrases using the given vocabulary.
 """
-def class_vectors_to_phrases(predictions, vocab):
+def class_vectors_to_phrases( predictions, vocab ):
     phrases = []
-    
-    #Vocab maps words to indeces, we need the inverse. 
-    inverse_vocab = {value: key for key, value in vocab.iteritems()} 
+
+    # Vocab maps words to indeces, we need the inverse.
+    inverse_vocab = {value: key for key, value in vocab.iteritems()}
 
     for pred_vector in predictions:
         words = []
@@ -192,14 +197,14 @@ def class_vectors_to_phrases(predictions, vocab):
                 word = 'UNK'
             else:
                 word = inverse_vocab[label]
-            
-            words.append(word)
 
-            #If period, then sentence ended, so exit loop. 
+            words.append( word )
+
+            # If period, then sentence ended, so exit loop.
             if word == '.':
-                break 
+                break
 
-        phrases.append(' '.join(words))
+        phrases.append( ' '.join( words ) )
 
     return phrases
 
@@ -207,30 +212,30 @@ def class_vectors_to_phrases(predictions, vocab):
 Takes all trajectories and pads
 them with zero vector waypoints
 in order to have trajectory sequences
-of the same length. 
+of the same length.
 """
-def pad_trajectory_sequences(traj_list, seq_len):
+def pad_trajectory_sequences( traj_list, seq_len ):
     padded_trajectories = []
 
-    #Padds each trajectory. 
-    for i in range(len(traj_list)):
-        traj_dim = len(traj_list[i][0])
-        zero_vec = np.zeros(traj_dim)
+    # Padds each trajectory.
+    for i in range( len( traj_list ) ):
+        traj_dim = len( traj_list[i][0] )
+        zero_vec = np.zeros( traj_dim )
 
-        #New trajectory that will be padded. 
+        # New trajectory that will be padded.
         new_traj = []
 
-        for j in range(seq_len):
-            if j >= len(traj_list[i]):
-                new_traj.append(zero_vec)
+        for j in range( seq_len ):
+            if j >= len( traj_list[i] ):
+                new_traj.append( zero_vec )
             else:
-                new_traj.append(np.array(traj_list[i][j]))
+                new_traj.append( np.array( traj_list[i][j] ) )
 
-        #Appends padded trajectory to list. 
-        padded_trajectories.append(np.array(new_traj))
+        # Appends padded trajectory to list.
+        padded_trajectories.append( np.array( new_traj ) )
 
-    return np.array(padded_trajectories)
- 
+    return np.array( padded_trajectories )
+
 
 if __name__ == '__main__':
     dirs = set( [directory for directory in os.listdir( '../dataset/robobarista_dataset/dataset/' )] )

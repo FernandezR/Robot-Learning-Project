@@ -122,11 +122,11 @@ if __name__ == '__main__':
 
     fold_number = int( sys.argv[1] )
 
-    dataset_directory = "/home/ghostman/Git/Robot-Learning-Project/robobarista_dataset/dataset/"
-    pickle_directory = "/home/ghostman/Git/Robot-Learning-Project/Models/"
-    folds_file = dataset_directory + "folds.json"
-
     n_clusters = 50
+
+    dataset_directory = "/home/ghostman/Git/Robot-Learning-Project/robobarista_dataset/dataset/"
+    pickle_directory = "/home/ghostman/Git/Robot-Learning-Project/Models/Baseline"
+    folds_file = dataset_directory + "folds.json"
 
     print( "Creating Folds Dictionary" )
     folds_dictionary = preprocess.get_folds_dictionary( folds_file )
