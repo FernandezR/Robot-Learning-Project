@@ -23,8 +23,12 @@ if __name__ == '__main__':
     n_clusters = 50
 
     dataset_directory = "/home/ghostman/Git/Robot-Learning-Project/robobarista_dataset/dataset/"
-    pickle_directory = "/home/ghostman/Git/Robot-Learning-Project/Models/Baseline"
+    pickle_directory = "/home/ghostman/Git/Robot-Learning-Project/Models/Baseline/"
     test_data_directory = "/home/ghostman/Git/Robot-Learning-Project/Test-Data/baseline-fold_{}/".format( fold_number )
+
+    if not  os.path.exists( test_data_directory ):
+        os.mkdir( test_data_directory )
+
     folds_file = dataset_directory + "folds.json"
 
     folds_dictionary = pickle.load( open( pickle_directory + "folds_dictionary.p", "rb" ) )
@@ -41,6 +45,8 @@ if __name__ == '__main__':
     #               Create Gold Standard Reference File                   #
     #######################################################################
 
+    print( "Creating Gold Reference for Fold {}".format( fold_number ) )
+
     for sentence in test_data[2]:
         if os.path.exists( test_data_directory + 'gold_reference_fold_{}'.format( fold_number ) ):
             os.remove( test_data_directory + 'gold_reference_fold_{}'.format( fold_number ) )
@@ -48,7 +54,9 @@ if __name__ == '__main__':
         with open( test_data_directory + 'gold_reference_fold_{}'.format( fold_number ), 'a' ) as file:
             file.write( sentence + '\n' )
 
-    for point_cloud in test_data[1]:
+    print( "Creating Test Reference for Fold {}".format( fold_number ) )
+
+    for point_cloud in point_cloud_files:
 
         #######################################################################
         #                  Extract Key Points from File                       #
@@ -73,10 +81,10 @@ if __name__ == '__main__':
 
         nearest_neighbor_index = knneigh.predict( [point_cloud_features_vector] )
 
-        with open( test_data_directory + 'test_fold_{}'.format( fold_number ), 'a' ) as file:
-            if os.path.exists( test_data_directory + 'test_fold_{}'.format( fold_number ) ):
-                os.remove( test_data_directory + 'test_fold_{}'.format( fold_number ) )
+        if os.path.exists( test_data_directory + 'test_fold_{}'.format( fold_number ) ):
+            os.remove( test_data_directory + 'test_fold_{}'.format( fold_number ) )
 
+        with open( test_data_directory + 'test_fold_{}'.format( fold_number ), 'a' ) as file:
             file.write( training_data[2][nearest_neighbor_index[0]] + '\n' )
 
     print( "Done running test for Fold {}".format( fold_number ) )
