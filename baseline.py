@@ -129,19 +129,16 @@ if __name__ == '__main__':
     n_clusters = 50
 
     print( "Creating Folds Dictionary" )
-
     folds_dictionary = preprocess.get_folds_dictionary( folds_file )
-
     pickle.dump( folds_dictionary, open( pickle_directory + "folds_dictionary.p", "wb" ) )
 
-    print( "Loading Point Cloud Filenames for Fold {}".format( fold_number ) )
-
-    point_cloud_files = preprocess.load_data_set( dataset_directory, folds_dictionary[fold_number]['train'] )[1]
+    print( "Loading Training Point Cloud Filenames for Fold {}".format( fold_number ) )
+    training_data = preprocess.load_data_set( dataset_directory, folds_dictionary[fold_number]['train'] )
+    pickle.dump( training_data, open( pickle_directory + "training_data_fold_{}.p".format( fold_number ), "wb" ) )
+    point_cloud_files = training_data[1]
 
     print( "Creating KMeans Model for Fold {}".format( fold_number ) )
-
     point_clouds, kmeans_model = createKMeansModel( point_cloud_files, pickle_directory, n_clusters, fold_number )
 
     print( "Creating KNN Model for Fold {}".format( fold_number ) )
-
     createKNNModel( kmeans_model, point_clouds, pickle_directory, fold_number )
