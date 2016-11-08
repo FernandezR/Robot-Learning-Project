@@ -1,7 +1,0 @@
-Alignment	1	0.15384615384615385	0.1	0.6	0.04221635883905014
-hold the bottle by the nozzle .
-press down on the pump to get some soap .
-Line2Start:Length	Line1Start:Length	Module		Score
-3:1			1:1			0		1.0
-9:1			6:1			0		1.0
-
