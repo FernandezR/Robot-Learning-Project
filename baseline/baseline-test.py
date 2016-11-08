@@ -18,7 +18,7 @@ import scripts.preprocess as preprocess
 
 if __name__ == '__main__':
 
-    fold_number = int( sys.argv[1] )
+    fold_number = int( 3 )
 
     n_clusters = 50
 
@@ -47,14 +47,18 @@ if __name__ == '__main__':
 
     print( "Creating Gold Reference for Fold {}".format( fold_number ) )
 
+    if os.path.exists( test_data_directory + 'gold_reference_fold_{}'.format( fold_number ) ):
+        os.remove( test_data_directory + 'gold_reference_fold_{}'.format( fold_number ) )
+
     for sentence in test_data[2]:
-        if os.path.exists( test_data_directory + 'gold_reference_fold_{}'.format( fold_number ) ):
-            os.remove( test_data_directory + 'gold_reference_fold_{}'.format( fold_number ) )
 
         with open( test_data_directory + 'gold_reference_fold_{}'.format( fold_number ), 'a' ) as file:
             file.write( sentence + '\n' )
 
     print( "Creating Test Reference for Fold {}".format( fold_number ) )
+
+    if os.path.exists( test_data_directory + 'test_fold_{}'.format( fold_number ) ):
+        os.remove( test_data_directory + 'test_fold_{}'.format( fold_number ) )
 
     for point_cloud in point_cloud_files:
 
@@ -80,9 +84,6 @@ if __name__ == '__main__':
         #######################################################################
 
         nearest_neighbor_index = knneigh.predict( [point_cloud_features_vector] )
-
-        if os.path.exists( test_data_directory + 'test_fold_{}'.format( fold_number ) ):
-            os.remove( test_data_directory + 'test_fold_{}'.format( fold_number ) )
 
         with open( test_data_directory + 'test_fold_{}'.format( fold_number ), 'a' ) as file:
             file.write( training_data[2][nearest_neighbor_index[0]] + '\n' )
