@@ -42,6 +42,9 @@ if __name__ == '__main__':
     #######################################################################
 
     for sentence in test_data[2]:
+        if os.path.exists( test_data_directory + 'gold_reference_fold_{}'.format( fold_number ) ):
+            os.remove( test_data_directory + 'gold_reference_fold_{}'.format( fold_number ) )
+
         with open( test_data_directory + 'gold_reference_fold_{}'.format( fold_number ), 'a' ) as file:
             file.write( sentence + '\n' )
 
@@ -71,4 +74,7 @@ if __name__ == '__main__':
         nearest_neighbor_index = knneigh.predict( [point_cloud_features_vector] )
 
         with open( test_data_directory + 'test_fold_{}'.format( fold_number ), 'a' ) as file:
+            if os.path.exists( test_data_directory + 'test_fold_{}'.format( fold_number ) ):
+                os.remove( test_data_directory + 'test_fold_{}'.format( fold_number ) )
+
             file.write( training_data[2][nearest_neighbor_index[0]] + '\n' )
