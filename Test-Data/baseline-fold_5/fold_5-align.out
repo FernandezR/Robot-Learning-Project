@@ -1,0 +1,2738 @@
+Alignment	1	0.15789473684210525	0.09375	0.6	0.039933444259567394
+turn the knob clockwise to the desired heat .
+press the emergency stop button to directly remove power to actuators of robot .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+5:1			4:1			0		1.0
+13:1			8:1			0		1.0
+
+Alignment	2	0.15789473684210525	0.09375	0.6	0.039933444259567394
+turn the knob clockwise to the desired heat .
+press the emergency stop button to directly remove power to actuators of robot .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+5:1			4:1			0		1.0
+13:1			8:1			0		1.0
+
+Alignment	3	0.15789473684210525	0.09375	0.6	0.039933444259567394
+turn the knob clockwise to the desired heat .
+press the emergency stop button to directly remove power to actuators of robot .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+5:1			4:1			0		1.0
+13:1			8:1			0		1.0
+
+Alignment	4	0.15789473684210525	0.09375	0.6	0.039933444259567394
+turn the knob clockwise to the desired heat .
+press the emergency stop button to directly remove power to actuators of robot .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+5:1			4:1			0		1.0
+13:1			8:1			0		1.0
+
+Alignment	5	0.15789473684210525	0.09375	0.6	0.039933444259567394
+turn the knob clockwise to the desired heat .
+press the emergency stop button to directly remove power to actuators of robot .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+5:1			4:1			0		1.0
+13:1			8:1			0		1.0
+
+Alignment	6	0.15789473684210525	0.09375	0.6	0.039933444259567394
+turn the knob clockwise to the desired heat .
+press the emergency stop button to directly remove power to actuators of robot .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+5:1			4:1			0		1.0
+13:1			8:1			0		1.0
+
+Alignment	7	0.28421052631578947	0.23478260869565215	0.5417282708684605	0.11047622041563895
+press the button to make the water flow .
+turn the switch clockwise to turn the space heater on .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+4:1			3:1			0		1.0
+5:2			4:2			3		1.0
+10:1			8:1			0		1.0
+
+Alignment	8	0.28421052631578947	0.23478260869565215	0.5417282708684605	0.11047622041563895
+press the button to make the water flow .
+turn the switch clockwise to turn the space heater on .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+4:1			3:1			0		1.0
+5:2			4:2			3		1.0
+10:1			8:1			0		1.0
+
+Alignment	9	0.28421052631578947	0.23478260869565215	0.5417282708684605	0.11047622041563895
+press the button to make the water flow .
+turn the switch clockwise to turn the space heater on .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+4:1			3:1			0		1.0
+5:2			4:2			3		1.0
+10:1			8:1			0		1.0
+
+Alignment	10	0.28421052631578947	0.23478260869565215	0.5417282708684605	0.11047622041563895
+press the button to make the water flow .
+turn the switch clockwise to turn the space heater on .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+4:1			3:1			0		1.0
+5:2			4:2			3		1.0
+10:1			8:1			0		1.0
+
+Alignment	11	0.28421052631578947	0.23478260869565215	0.5417282708684605	0.11047622041563895
+press the button to make the water flow .
+turn the switch clockwise to turn the space heater on .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+4:1			3:1			0		1.0
+5:2			4:2			3		1.0
+10:1			8:1			0		1.0
+
+Alignment	12	0.28421052631578947	0.23478260869565215	0.5417282708684605	0.11047622041563895
+press the button to make the water flow .
+turn the switch clockwise to turn the space heater on .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+4:1			3:1			0		1.0
+5:2			4:2			3		1.0
+10:1			8:1			0		1.0
+
+Alignment	13	0.28421052631578947	0.23478260869565215	0.5417282708684605	0.11047622041563895
+press the button to make the water flow .
+turn the switch clockwise to turn the space heater on .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+4:1			3:1			0		1.0
+5:2			4:2			3		1.0
+10:1			8:1			0		1.0
+
+Alignment	14	0.25882352941176473	0.16923076923076924	0.6	0.07139959432048683
+hold your hand under the nozzle .
+push down the handle until it clicks to open the lid .
+Line2Start:Length	Line1Start:Length	Module		Score
+2:1			4:1			0		1.0
+3:1			0:1			2		1.0
+11:1			6:1			0		1.0
+
+Alignment	15	0.25882352941176473	0.16923076923076924	0.6	0.07139959432048683
+hold your hand under the nozzle .
+push down the handle until it clicks to open the lid .
+Line2Start:Length	Line1Start:Length	Module		Score
+2:1			4:1			0		1.0
+3:1			0:1			2		1.0
+11:1			6:1			0		1.0
+
+Alignment	16	0.25882352941176473	0.16923076923076924	0.6	0.07139959432048683
+hold your hand under the nozzle .
+push down the handle until it clicks to open the lid .
+Line2Start:Length	Line1Start:Length	Module		Score
+2:1			4:1			0		1.0
+3:1			0:1			2		1.0
+11:1			6:1			0		1.0
+
+Alignment	17	0.25882352941176473	0.16923076923076924	0.6	0.07139959432048683
+hold your hand under the nozzle .
+push down the handle until it clicks to open the lid .
+Line2Start:Length	Line1Start:Length	Module		Score
+2:1			4:1			0		1.0
+3:1			0:1			2		1.0
+11:1			6:1			0		1.0
+
+Alignment	18	0.25882352941176473	0.16923076923076924	0.6	0.07139959432048683
+hold your hand under the nozzle .
+push down the handle until it clicks to open the lid .
+Line2Start:Length	Line1Start:Length	Module		Score
+2:1			4:1			0		1.0
+3:1			0:1			2		1.0
+11:1			6:1			0		1.0
+
+Alignment	19	0.25882352941176473	0.16923076923076924	0.6	0.07139959432048683
+hold your hand under the nozzle .
+push down the handle until it clicks to open the lid .
+Line2Start:Length	Line1Start:Length	Module		Score
+2:1			4:1			0		1.0
+3:1			0:1			2		1.0
+11:1			6:1			0		1.0
+
+Alignment	20	0.32	0.38095238095238093	0.5664525067769411	0.16057314563816993
+hold the cup of espresso below the hot water nozzle .
+pull the knob counterclockwise to start hot water .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+6:1			7:1			0		1.0
+7:1			8:1			0		1.0
+8:1			10:1			0		1.0
+
+Alignment	21	0.32	0.38095238095238093	0.5664525067769411	0.16057314563816993
+hold the cup of espresso below the hot water nozzle .
+pull the knob counterclockwise to start hot water .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+6:1			7:1			0		1.0
+7:1			8:1			0		1.0
+8:1			10:1			0		1.0
+
+Alignment	22	0.32	0.38095238095238093	0.5664525067769411	0.16057314563816993
+hold the cup of espresso below the hot water nozzle .
+pull the knob counterclockwise to start hot water .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+6:1			7:1			0		1.0
+7:1			8:1			0		1.0
+8:1			10:1			0		1.0
+
+Alignment	23	0.32	0.38095238095238093	0.5664525067769411	0.16057314563816993
+hold the cup of espresso below the hot water nozzle .
+pull the knob counterclockwise to start hot water .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+6:1			7:1			0		1.0
+7:1			8:1			0		1.0
+8:1			10:1			0		1.0
+
+Alignment	24	0.32	0.38095238095238093	0.5664525067769411	0.16057314563816993
+hold the cup of espresso below the hot water nozzle .
+pull the knob counterclockwise to start hot water .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+6:1			7:1			0		1.0
+7:1			8:1			0		1.0
+8:1			10:1			0		1.0
+
+Alignment	25	0.6842105263157895	0.5	0.506472527906466	0.2571485826539455
+hold below the nozzle to check the temperature .
+hold below the nozzle to fill the cup with tap water .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			1:1			0		1.0
+2:1			2:1			0		1.0
+3:1			3:1			0		1.0
+4:1			4:1			0		1.0
+6:1			6:1			0		1.0
+11:1			8:1			0		1.0
+
+Alignment	26	0.6842105263157895	0.5	0.506472527906466	0.2571485826539455
+hold below the nozzle to check the temperature .
+hold below the nozzle to fill the cup with tap water .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			1:1			0		1.0
+2:1			2:1			0		1.0
+3:1			3:1			0		1.0
+4:1			4:1			0		1.0
+6:1			6:1			0		1.0
+11:1			8:1			0		1.0
+
+Alignment	27	0.6842105263157895	0.5	0.506472527906466	0.2571485826539455
+hold below the nozzle to check the temperature .
+hold below the nozzle to fill the cup with tap water .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			1:1			0		1.0
+2:1			2:1			0		1.0
+3:1			3:1			0		1.0
+4:1			4:1			0		1.0
+6:1			6:1			0		1.0
+11:1			8:1			0		1.0
+
+Alignment	28	0.6842105263157895	0.5	0.506472527906466	0.2571485826539455
+hold below the nozzle to check the temperature .
+hold below the nozzle to fill the cup with tap water .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			1:1			0		1.0
+2:1			2:1			0		1.0
+3:1			3:1			0		1.0
+4:1			4:1			0		1.0
+6:1			6:1			0		1.0
+11:1			8:1			0		1.0
+
+Alignment	29	0.6842105263157895	0.5	0.506472527906466	0.2571485826539455
+hold below the nozzle to check the temperature .
+hold below the nozzle to fill the cup with tap water .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			1:1			0		1.0
+2:1			2:1			0		1.0
+3:1			3:1			0		1.0
+4:1			4:1			0		1.0
+6:1			6:1			0		1.0
+11:1			8:1			0		1.0
+
+Alignment	30	0.15384615384615385	0.09090909090909091	0.6	0.03874092009685231
+hold the bottle by the nozzle .
+pull the other knob clockwise to mix cold water .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+9:1			6:1			0		1.0
+
+Alignment	31	0.15384615384615385	0.09090909090909091	0.6	0.03874092009685231
+hold the bottle by the nozzle .
+pull the other knob clockwise to mix cold water .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+9:1			6:1			0		1.0
+
+Alignment	32	0.15384615384615385	0.09090909090909091	0.6	0.03874092009685231
+hold the bottle by the nozzle .
+pull the other knob clockwise to mix cold water .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+9:1			6:1			0		1.0
+
+Alignment	33	0.15384615384615385	0.09090909090909091	0.6	0.03874092009685231
+hold the bottle by the nozzle .
+pull the other knob clockwise to mix cold water .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+9:1			6:1			0		1.0
+
+Alignment	34	0.15384615384615385	0.09090909090909091	0.6	0.03874092009685231
+hold the bottle by the nozzle .
+pull the other knob clockwise to mix cold water .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+9:1			6:1			0		1.0
+
+Alignment	35	0.30434782608695654	0.4375	0.5417282708684605	0.18814675096309535
+pull down on the right handle to dispense the coffee .
+push the button to dispense the soap .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			3:1			0		1.0
+3:1			6:1			0		1.0
+4:1			7:1			0		1.0
+5:1			8:1			0		1.0
+7:1			10:1			0		1.0
+
+Alignment	36	0.30434782608695654	0.4375	0.5417282708684605	0.18814675096309535
+pull down on the right handle to dispense the coffee .
+push the button to dispense the soap .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			3:1			0		1.0
+3:1			6:1			0		1.0
+4:1			7:1			0		1.0
+5:1			8:1			0		1.0
+7:1			10:1			0		1.0
+
+Alignment	37	0.30434782608695654	0.4375	0.5417282708684605	0.18814675096309535
+pull down on the right handle to dispense the coffee .
+push the button to dispense the soap .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			3:1			0		1.0
+3:1			6:1			0		1.0
+4:1			7:1			0		1.0
+5:1			8:1			0		1.0
+7:1			10:1			0		1.0
+
+Alignment	38	0.30434782608695654	0.4375	0.5417282708684605	0.18814675096309535
+pull down on the right handle to dispense the coffee .
+push the button to dispense the soap .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			3:1			0		1.0
+3:1			6:1			0		1.0
+4:1			7:1			0		1.0
+5:1			8:1			0		1.0
+7:1			10:1			0		1.0
+
+Alignment	39	0.30434782608695654	0.4375	0.5417282708684605	0.18814675096309535
+pull down on the right handle to dispense the coffee .
+push the button to dispense the soap .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			3:1			0		1.0
+3:1			6:1			0		1.0
+4:1			7:1			0		1.0
+5:1			8:1			0		1.0
+7:1			10:1			0		1.0
+
+Alignment	40	0.30434782608695654	0.4375	0.5417282708684605	0.18814675096309535
+pull down on the right handle to dispense the coffee .
+push the button to dispense the soap .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			3:1			0		1.0
+3:1			6:1			0		1.0
+4:1			7:1			0		1.0
+5:1			8:1			0		1.0
+7:1			10:1			0		1.0
+
+Alignment	41	0.29411764705882354	0.2	0.6	0.08403361344537816
+push the white grape juice button .
+push down on the left lever to dispense hot water .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+3:1			1:1			0		1.0
+10:1			6:1			0		1.0
+
+Alignment	42	0.29411764705882354	0.2	0.6	0.08403361344537816
+push the white grape juice button .
+push down on the left lever to dispense hot water .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+3:1			1:1			0		1.0
+10:1			6:1			0		1.0
+
+Alignment	43	0.29411764705882354	0.2	0.6	0.08403361344537816
+push the white grape juice button .
+push down on the left lever to dispense hot water .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+3:1			1:1			0		1.0
+10:1			6:1			0		1.0
+
+Alignment	44	0.29411764705882354	0.2	0.6	0.08403361344537816
+push the white grape juice button .
+push down on the left lever to dispense hot water .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+3:1			1:1			0		1.0
+10:1			6:1			0		1.0
+
+Alignment	45	0.29411764705882354	0.2	0.6	0.08403361344537816
+push the white grape juice button .
+push down on the left lever to dispense hot water .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+3:1			1:1			0		1.0
+10:1			6:1			0		1.0
+
+Alignment	46	0.29411764705882354	0.2	0.6	0.08403361344537816
+push the white grape juice button .
+push down on the left lever to dispense hot water .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+3:1			1:1			0		1.0
+10:1			6:1			0		1.0
+
+Alignment	47	0.29411764705882354	0.2	0.6	0.08403361344537816
+push the white grape juice button .
+push down on the left lever to dispense hot water .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+3:1			1:1			0		1.0
+10:1			6:1			0		1.0
+
+Alignment	48	0.29411764705882354	0.2	0.6	0.08403361344537816
+push the white grape juice button .
+push down on the left lever to dispense hot water .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+3:1			1:1			0		1.0
+10:1			6:1			0		1.0
+
+Alignment	49	1.0	1.0	0.0	1.0
+push down on the right lever to dispense cold water .
+push down on the right lever to dispense cold water .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			1:1			0		1.0
+2:1			2:1			0		1.0
+3:1			3:1			0		1.0
+4:1			4:1			0		1.0
+5:1			5:1			0		1.0
+6:1			6:1			0		1.0
+7:1			7:1			0		1.0
+8:1			8:1			0		1.0
+9:1			9:1			0		1.0
+10:1			10:1			0		1.0
+
+Alignment	50	1.0	1.0	0.0	1.0
+push down on the right lever to dispense cold water .
+push down on the right lever to dispense cold water .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			1:1			0		1.0
+2:1			2:1			0		1.0
+3:1			3:1			0		1.0
+4:1			4:1			0		1.0
+5:1			5:1			0		1.0
+6:1			6:1			0		1.0
+7:1			7:1			0		1.0
+8:1			8:1			0		1.0
+9:1			9:1			0		1.0
+10:1			10:1			0		1.0
+
+Alignment	51	1.0	1.0	0.0	1.0
+push down on the right lever to dispense cold water .
+push down on the right lever to dispense cold water .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			1:1			0		1.0
+2:1			2:1			0		1.0
+3:1			3:1			0		1.0
+4:1			4:1			0		1.0
+5:1			5:1			0		1.0
+6:1			6:1			0		1.0
+7:1			7:1			0		1.0
+8:1			8:1			0		1.0
+9:1			9:1			0		1.0
+10:1			10:1			0		1.0
+
+Alignment	52	1.0	1.0	0.0	1.0
+push down on the right lever to dispense cold water .
+push down on the right lever to dispense cold water .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			1:1			0		1.0
+2:1			2:1			0		1.0
+3:1			3:1			0		1.0
+4:1			4:1			0		1.0
+5:1			5:1			0		1.0
+6:1			6:1			0		1.0
+7:1			7:1			0		1.0
+8:1			8:1			0		1.0
+9:1			9:1			0		1.0
+10:1			10:1			0		1.0
+
+Alignment	53	1.0	1.0	0.0	1.0
+push down on the right lever to dispense cold water .
+push down on the right lever to dispense cold water .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			1:1			0		1.0
+2:1			2:1			0		1.0
+3:1			3:1			0		1.0
+4:1			4:1			0		1.0
+5:1			5:1			0		1.0
+6:1			6:1			0		1.0
+7:1			7:1			0		1.0
+8:1			8:1			0		1.0
+9:1			9:1			0		1.0
+10:1			10:1			0		1.0
+
+Alignment	54	1.0	1.0	0.0	1.0
+push down on the right lever to dispense cold water .
+push down on the right lever to dispense cold water .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			1:1			0		1.0
+2:1			2:1			0		1.0
+3:1			3:1			0		1.0
+4:1			4:1			0		1.0
+5:1			5:1			0		1.0
+6:1			6:1			0		1.0
+7:1			7:1			0		1.0
+8:1			8:1			0		1.0
+9:1			9:1			0		1.0
+10:1			10:1			0		1.0
+
+Alignment	55	1.0	1.0	0.0	1.0
+push down on the right lever to dispense cold water .
+push down on the right lever to dispense cold water .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			1:1			0		1.0
+2:1			2:1			0		1.0
+3:1			3:1			0		1.0
+4:1			4:1			0		1.0
+5:1			5:1			0		1.0
+6:1			6:1			0		1.0
+7:1			7:1			0		1.0
+8:1			8:1			0		1.0
+9:1			9:1			0		1.0
+10:1			10:1			0		1.0
+
+Alignment	56	1.0	1.0	0.0	1.0
+push down on the right lever to dispense cold water .
+push down on the right lever to dispense cold water .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			1:1			0		1.0
+2:1			2:1			0		1.0
+3:1			3:1			0		1.0
+4:1			4:1			0		1.0
+5:1			5:1			0		1.0
+6:1			6:1			0		1.0
+7:1			7:1			0		1.0
+8:1			8:1			0		1.0
+9:1			9:1			0		1.0
+10:1			10:1			0		1.0
+
+Alignment	57	0.375	0.24	0.5664525067769411	0.10999090737160057
+squeeze the trigger to dispense the glue .
+push down on the left lever to dispense hot water .
+Line2Start:Length	Line1Start:Length	Module		Score
+3:1			1:1			0		1.0
+6:1			3:1			0		1.0
+7:1			4:1			0		1.0
+10:1			7:1			0		1.0
+
+Alignment	58	0.375	0.24	0.5664525067769411	0.10999090737160057
+squeeze the trigger to dispense the glue .
+push down on the left lever to dispense hot water .
+Line2Start:Length	Line1Start:Length	Module		Score
+3:1			1:1			0		1.0
+6:1			3:1			0		1.0
+7:1			4:1			0		1.0
+10:1			7:1			0		1.0
+
+Alignment	59	0.375	0.24	0.5664525067769411	0.10999090737160057
+squeeze the trigger to dispense the glue .
+push down on the left lever to dispense hot water .
+Line2Start:Length	Line1Start:Length	Module		Score
+3:1			1:1			0		1.0
+6:1			3:1			0		1.0
+7:1			4:1			0		1.0
+10:1			7:1			0		1.0
+
+Alignment	60	0.375	0.24	0.5664525067769411	0.10999090737160057
+squeeze the trigger to dispense the glue .
+push down on the left lever to dispense hot water .
+Line2Start:Length	Line1Start:Length	Module		Score
+3:1			1:1			0		1.0
+6:1			3:1			0		1.0
+7:1			4:1			0		1.0
+10:1			7:1			0		1.0
+
+Alignment	61	0.375	0.24	0.5664525067769411	0.10999090737160057
+squeeze the trigger to dispense the glue .
+push down on the left lever to dispense hot water .
+Line2Start:Length	Line1Start:Length	Module		Score
+3:1			1:1			0		1.0
+6:1			3:1			0		1.0
+7:1			4:1			0		1.0
+10:1			7:1			0		1.0
+
+Alignment	62	0.375	0.24	0.5664525067769411	0.10999090737160057
+squeeze the trigger to dispense the glue .
+push down on the left lever to dispense hot water .
+Line2Start:Length	Line1Start:Length	Module		Score
+3:1			1:1			0		1.0
+6:1			3:1			0		1.0
+7:1			4:1			0		1.0
+10:1			7:1			0		1.0
+
+Alignment	63	0.375	0.24	0.5664525067769411	0.10999090737160057
+squeeze the trigger to dispense the glue .
+push down on the left lever to dispense hot water .
+Line2Start:Length	Line1Start:Length	Module		Score
+3:1			1:1			0		1.0
+6:1			3:1			0		1.0
+7:1			4:1			0		1.0
+10:1			7:1			0		1.0
+
+Alignment	64	0.152	0.2111111111111111	0.6	0.07979002624671916
+press down on the pump head to dispense desired amount .
+hold the cup below the left nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			3:1			0		1.0
+5:1			8:1			3		1.0
+7:1			10:1			0		1.0
+
+Alignment	65	0.152	0.2111111111111111	0.6	0.07979002624671916
+press down on the pump head to dispense desired amount .
+hold the cup below the left nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			3:1			0		1.0
+5:1			8:1			3		1.0
+7:1			10:1			0		1.0
+
+Alignment	66	0.152	0.2111111111111111	0.6	0.07979002624671916
+press down on the pump head to dispense desired amount .
+hold the cup below the left nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			3:1			0		1.0
+5:1			8:1			3		1.0
+7:1			10:1			0		1.0
+
+Alignment	67	0.152	0.2111111111111111	0.6	0.07979002624671916
+press down on the pump head to dispense desired amount .
+hold the cup below the left nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			3:1			0		1.0
+5:1			8:1			3		1.0
+7:1			10:1			0		1.0
+
+Alignment	68	0.152	0.2111111111111111	0.6	0.07979002624671916
+press down on the pump head to dispense desired amount .
+hold the cup below the left nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			3:1			0		1.0
+5:1			8:1			3		1.0
+7:1			10:1			0		1.0
+
+Alignment	69	0.152	0.2111111111111111	0.6	0.07979002624671916
+press down on the pump head to dispense desired amount .
+hold the cup below the left nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			3:1			0		1.0
+5:1			8:1			3		1.0
+7:1			10:1			0		1.0
+
+Alignment	70	0.152	0.2111111111111111	0.6	0.07979002624671916
+press down on the pump head to dispense desired amount .
+hold the cup below the left nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			3:1			0		1.0
+5:1			8:1			3		1.0
+7:1			10:1			0		1.0
+
+Alignment	71	0.17391304347826086	0.21052631578947367	0.6	0.08163265306122448
+push down on the lever to start the toasting cycle .
+rotate the knob counterclockwise to the desired temperature .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			3:1			0		1.0
+4:1			5:1			0		1.0
+5:1			7:1			0		1.0
+8:1			10:1			0		1.0
+
+Alignment	72	0.17391304347826086	0.21052631578947367	0.6	0.08163265306122448
+push down on the lever to start the toasting cycle .
+rotate the knob counterclockwise to the desired temperature .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			3:1			0		1.0
+4:1			5:1			0		1.0
+5:1			7:1			0		1.0
+8:1			10:1			0		1.0
+
+Alignment	73	0.17391304347826086	0.21052631578947367	0.6	0.08163265306122448
+push down on the lever to start the toasting cycle .
+rotate the knob counterclockwise to the desired temperature .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			3:1			0		1.0
+4:1			5:1			0		1.0
+5:1			7:1			0		1.0
+8:1			10:1			0		1.0
+
+Alignment	74	0.17391304347826086	0.21052631578947367	0.6	0.08163265306122448
+push down on the lever to start the toasting cycle .
+rotate the knob counterclockwise to the desired temperature .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			3:1			0		1.0
+4:1			5:1			0		1.0
+5:1			7:1			0		1.0
+8:1			10:1			0		1.0
+
+Alignment	75	0.17391304347826086	0.21052631578947367	0.6	0.08163265306122448
+push down on the lever to start the toasting cycle .
+rotate the knob counterclockwise to the desired temperature .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			3:1			0		1.0
+4:1			5:1			0		1.0
+5:1			7:1			0		1.0
+8:1			10:1			0		1.0
+
+Alignment	76	0.375	0.3333333333333333	0.5664525067769411	0.14696525194001994
+push the button to fill the cup .
+hold the cup below the left nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			5:1			0		1.0
+2:1			6:1			0		1.0
+4:1			1:1			0		1.0
+7:1			7:1			0		1.0
+
+Alignment	77	0.375	0.3333333333333333	0.5664525067769411	0.14696525194001994
+push the button to fill the cup .
+hold the cup below the left nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			5:1			0		1.0
+2:1			6:1			0		1.0
+4:1			1:1			0		1.0
+7:1			7:1			0		1.0
+
+Alignment	78	0.375	0.3333333333333333	0.5664525067769411	0.14696525194001994
+push the button to fill the cup .
+hold the cup below the left nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			5:1			0		1.0
+2:1			6:1			0		1.0
+4:1			1:1			0		1.0
+7:1			7:1			0		1.0
+
+Alignment	79	0.375	0.3333333333333333	0.5664525067769411	0.14696525194001994
+push the button to fill the cup .
+hold the cup below the left nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			5:1			0		1.0
+2:1			6:1			0		1.0
+4:1			1:1			0		1.0
+7:1			7:1			0		1.0
+
+Alignment	80	0.375	0.3333333333333333	0.5664525067769411	0.14696525194001994
+push the button to fill the cup .
+hold the cup below the left nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			5:1			0		1.0
+2:1			6:1			0		1.0
+4:1			1:1			0		1.0
+7:1			7:1			0		1.0
+
+Alignment	81	0.375	0.24	0.6	0.10147991543340383
+push the button to fill the cup .
+push down on the left lever to dispense hot water .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+3:1			1:1			0		1.0
+6:1			3:1			0		1.0
+10:1			7:1			0		1.0
+
+Alignment	82	0.375	0.24	0.6	0.10147991543340383
+push the button to fill the cup .
+push down on the left lever to dispense hot water .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+3:1			1:1			0		1.0
+6:1			3:1			0		1.0
+10:1			7:1			0		1.0
+
+Alignment	83	0.375	0.24	0.6	0.10147991543340383
+push the button to fill the cup .
+push down on the left lever to dispense hot water .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+3:1			1:1			0		1.0
+6:1			3:1			0		1.0
+10:1			7:1			0		1.0
+
+Alignment	84	0.375	0.24	0.6	0.10147991543340383
+push the button to fill the cup .
+push down on the left lever to dispense hot water .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+3:1			1:1			0		1.0
+6:1			3:1			0		1.0
+10:1			7:1			0		1.0
+
+Alignment	85	0.375	0.24	0.6	0.10147991543340383
+push the button to fill the cup .
+push down on the left lever to dispense hot water .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+3:1			1:1			0		1.0
+6:1			3:1			0		1.0
+10:1			7:1			0		1.0
+
+Alignment	86	0.23157894736842108	0.29333333333333333	0.6	0.11282051282051285
+press down on the handle to punch holes .
+hold the cup below the nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			4:1			2		1.0
+1:1			3:1			0		1.0
+6:1			8:1			0		1.0
+
+Alignment	87	0.23157894736842108	0.29333333333333333	0.6	0.11282051282051285
+press down on the handle to punch holes .
+hold the cup below the nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			4:1			2		1.0
+1:1			3:1			0		1.0
+6:1			8:1			0		1.0
+
+Alignment	88	0.23157894736842108	0.29333333333333333	0.6	0.11282051282051285
+press down on the handle to punch holes .
+hold the cup below the nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			4:1			2		1.0
+1:1			3:1			0		1.0
+6:1			8:1			0		1.0
+
+Alignment	89	0.23157894736842108	0.29333333333333333	0.6	0.11282051282051285
+press down on the handle to punch holes .
+hold the cup below the nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			4:1			2		1.0
+1:1			3:1			0		1.0
+6:1			8:1			0		1.0
+
+Alignment	90	0.3142857142857143	0.55	0.5364677763947887	0.22916199818684604
+pull down on the left dispenser 's lever to fill the cup to the desired level .
+pull down on the handle to dispense the tea .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			1:1			0		1.0
+2:1			2:1			0		1.0
+3:1			3:1			0		1.0
+5:1			8:1			0		1.0
+7:1			10:1			0		1.0
+9:1			16:1			0		1.0
+
+Alignment	91	0.3142857142857143	0.55	0.5364677763947887	0.22916199818684604
+pull down on the left dispenser 's lever to fill the cup to the desired level .
+pull down on the handle to dispense the tea .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			1:1			0		1.0
+2:1			2:1			0		1.0
+3:1			3:1			0		1.0
+5:1			8:1			0		1.0
+7:1			10:1			0		1.0
+9:1			16:1			0		1.0
+
+Alignment	92	0.3142857142857143	0.55	0.5364677763947887	0.22916199818684604
+pull down on the left dispenser 's lever to fill the cup to the desired level .
+pull down on the handle to dispense the tea .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			1:1			0		1.0
+2:1			2:1			0		1.0
+3:1			3:1			0		1.0
+5:1			8:1			0		1.0
+7:1			10:1			0		1.0
+9:1			16:1			0		1.0
+
+Alignment	93	0.3142857142857143	0.55	0.5364677763947887	0.22916199818684604
+pull down on the left dispenser 's lever to fill the cup to the desired level .
+pull down on the handle to dispense the tea .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			1:1			0		1.0
+2:1			2:1			0		1.0
+3:1			3:1			0		1.0
+5:1			8:1			0		1.0
+7:1			10:1			0		1.0
+9:1			16:1			0		1.0
+
+Alignment	94	0.7272727272727273	0.9411764705882353	0.4931255488551677	0.4569009137080179
+rotate the rightmost knob clockwise to the desired setting .
+rotate the knob clockwise to the desired time .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			1:1			0		1.0
+2:1			3:1			0		1.0
+3:1			4:1			0		1.0
+4:1			5:1			0		1.0
+5:1			6:1			0		1.0
+6:1			7:1			0		1.0
+8:1			9:1			0		1.0
+
+Alignment	95	0.7272727272727273	0.9411764705882353	0.4931255488551677	0.4569009137080179
+rotate the rightmost knob clockwise to the desired setting .
+rotate the knob clockwise to the desired time .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			1:1			0		1.0
+2:1			3:1			0		1.0
+3:1			4:1			0		1.0
+4:1			5:1			0		1.0
+5:1			6:1			0		1.0
+6:1			7:1			0		1.0
+8:1			9:1			0		1.0
+
+Alignment	96	0.7272727272727273	0.9411764705882353	0.4931255488551677	0.4569009137080179
+rotate the rightmost knob clockwise to the desired setting .
+rotate the knob clockwise to the desired time .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			1:1			0		1.0
+2:1			3:1			0		1.0
+3:1			4:1			0		1.0
+4:1			5:1			0		1.0
+5:1			6:1			0		1.0
+6:1			7:1			0		1.0
+8:1			9:1			0		1.0
+
+Alignment	97	0.7272727272727273	0.9411764705882353	0.4931255488551677	0.4569009137080179
+rotate the rightmost knob clockwise to the desired setting .
+rotate the knob clockwise to the desired time .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			1:1			0		1.0
+2:1			3:1			0		1.0
+3:1			4:1			0		1.0
+4:1			5:1			0		1.0
+5:1			6:1			0		1.0
+6:1			7:1			0		1.0
+8:1			9:1			0		1.0
+
+Alignment	98	0.24	0.3	0.5664525067769411	0.12536313057052303
+push down on the right lever to dispense cold water .
+push on the bar until the cup is full .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			2:1			0		1.0
+2:1			3:1			0		1.0
+9:1			10:1			0		1.0
+
+Alignment	99	0.24	0.3	0.5664525067769411	0.12536313057052303
+push down on the right lever to dispense cold water .
+push on the bar until the cup is full .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			2:1			0		1.0
+2:1			3:1			0		1.0
+9:1			10:1			0		1.0
+
+Alignment	100	0.24	0.3	0.5664525067769411	0.12536313057052303
+push down on the right lever to dispense cold water .
+push on the bar until the cup is full .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			2:1			0		1.0
+2:1			3:1			0		1.0
+9:1			10:1			0		1.0
+
+Alignment	101	0.24	0.3	0.5664525067769411	0.12536313057052303
+push down on the right lever to dispense cold water .
+push on the bar until the cup is full .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			2:1			0		1.0
+2:1			3:1			0		1.0
+9:1			10:1			0		1.0
+
+Alignment	102	0.24	0.3	0.5664525067769411	0.12536313057052303
+push down on the right lever to dispense cold water .
+push on the bar until the cup is full .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			2:1			0		1.0
+2:1			3:1			0		1.0
+9:1			10:1			0		1.0
+
+Alignment	103	0.24	0.3	0.5664525067769411	0.12536313057052303
+push down on the right lever to dispense cold water .
+push on the bar until the cup is full .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			2:1			0		1.0
+2:1			3:1			0		1.0
+9:1			10:1			0		1.0
+
+Alignment	104	0.24	0.3	0.5664525067769411	0.12536313057052303
+push down on the right lever to dispense cold water .
+push on the bar until the cup is full .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			2:1			0		1.0
+2:1			3:1			0		1.0
+9:1			10:1			0		1.0
+
+Alignment	105	0.24	0.3	0.5664525067769411	0.12536313057052303
+push down on the right lever to dispense cold water .
+push on the bar until the cup is full .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			2:1			0		1.0
+2:1			3:1			0		1.0
+9:1			10:1			0		1.0
+
+Alignment	106	0.24	0.3	0.5664525067769411	0.12536313057052303
+push down on the right lever to dispense cold water .
+push on the bar until the cup is full .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			2:1			0		1.0
+2:1			3:1			0		1.0
+9:1			10:1			0		1.0
+
+Alignment	107	0.24	0.3	0.5664525067769411	0.12536313057052303
+push down on the right lever to dispense cold water .
+push on the bar until the cup is full .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			2:1			0		1.0
+2:1			3:1			0		1.0
+9:1			10:1			0		1.0
+
+Alignment	108	0.24	0.3	0.5664525067769411	0.12536313057052303
+push down on the right lever to dispense cold water .
+push on the bar until the cup is full .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			2:1			0		1.0
+2:1			3:1			0		1.0
+9:1			10:1			0		1.0
+
+Alignment	109	0.24	0.3	0.5664525067769411	0.12536313057052303
+push down on the right lever to dispense cold water .
+push on the bar until the cup is full .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			2:1			0		1.0
+2:1			3:1			0		1.0
+9:1			10:1			0		1.0
+
+Alignment	110	0.24	0.3	0.5664525067769411	0.12536313057052303
+push down on the right lever to dispense cold water .
+push on the bar until the cup is full .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			2:1			0		1.0
+2:1			3:1			0		1.0
+9:1			10:1			0		1.0
+
+Alignment	111	0.24	0.3	0.5664525067769411	0.12536313057052303
+push down on the right lever to dispense cold water .
+push on the bar until the cup is full .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			2:1			0		1.0
+2:1			3:1			0		1.0
+9:1			10:1			0		1.0
+
+Alignment	112	0.24	0.3	0.5664525067769411	0.12536313057052303
+push down on the right lever to dispense cold water .
+push on the bar until the cup is full .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			2:1			0		1.0
+2:1			3:1			0		1.0
+9:1			10:1			0		1.0
+
+Alignment	113	0.24	0.3	0.5664525067769411	0.12536313057052303
+push down on the right lever to dispense cold water .
+push on the bar until the cup is full .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			2:1			0		1.0
+2:1			3:1			0		1.0
+9:1			10:1			0		1.0
+
+Alignment	114	0.28	0.28	0.5738114998740221	0.11933278003527384
+push down on the right lever to dispense cold water .
+push on the bar below to fill the cup with a soda .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			2:1			0		1.0
+2:1			3:1			0		1.0
+5:1			6:1			0		1.0
+12:1			10:1			0		1.0
+
+Alignment	115	0.28	0.28	0.5738114998740221	0.11933278003527384
+push down on the right lever to dispense cold water .
+push on the bar below to fill the cup with a soda .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			2:1			0		1.0
+2:1			3:1			0		1.0
+5:1			6:1			0		1.0
+12:1			10:1			0		1.0
+
+Alignment	116	0.28	0.28	0.5738114998740221	0.11933278003527384
+push down on the right lever to dispense cold water .
+push on the bar below to fill the cup with a soda .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			2:1			0		1.0
+2:1			3:1			0		1.0
+5:1			6:1			0		1.0
+12:1			10:1			0		1.0
+
+Alignment	117	0.28	0.28	0.5738114998740221	0.11933278003527384
+push down on the right lever to dispense cold water .
+push on the bar below to fill the cup with a soda .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			2:1			0		1.0
+2:1			3:1			0		1.0
+5:1			6:1			0		1.0
+12:1			10:1			0		1.0
+
+Alignment	118	0.28	0.28	0.5738114998740221	0.11933278003527384
+push down on the right lever to dispense cold water .
+push on the bar below to fill the cup with a soda .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			2:1			0		1.0
+2:1			3:1			0		1.0
+5:1			6:1			0		1.0
+12:1			10:1			0		1.0
+
+Alignment	119	0.28	0.28	0.5738114998740221	0.11933278003527384
+push down on the right lever to dispense cold water .
+push on the bar below to fill the cup with a soda .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			2:1			0		1.0
+2:1			3:1			0		1.0
+5:1			6:1			0		1.0
+12:1			10:1			0		1.0
+
+Alignment	120	0.28	0.28	0.5738114998740221	0.11933278003527384
+push down on the right lever to dispense cold water .
+push on the bar below to fill the cup with a soda .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			2:1			0		1.0
+2:1			3:1			0		1.0
+5:1			6:1			0		1.0
+12:1			10:1			0		1.0
+
+Alignment	121	0.28	0.28	0.5738114998740221	0.11933278003527384
+push down on the right lever to dispense cold water .
+push on the bar below to fill the cup with a soda .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			2:1			0		1.0
+2:1			3:1			0		1.0
+5:1			6:1			0		1.0
+12:1			10:1			0		1.0
+
+Alignment	122	0.28	0.28	0.5738114998740221	0.11933278003527384
+push down on the right lever to dispense cold water .
+push on the bar below to fill the cup with a soda .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			2:1			0		1.0
+2:1			3:1			0		1.0
+5:1			6:1			0		1.0
+12:1			10:1			0		1.0
+
+Alignment	123	0.28	0.28	0.5738114998740221	0.11933278003527384
+push down on the right lever to dispense cold water .
+push on the bar below to fill the cup with a soda .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			2:1			0		1.0
+2:1			3:1			0		1.0
+5:1			6:1			0		1.0
+12:1			10:1			0		1.0
+
+Alignment	124	0.28	0.28	0.5738114998740221	0.11933278003527384
+push down on the right lever to dispense cold water .
+push on the bar below to fill the cup with a soda .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			2:1			0		1.0
+2:1			3:1			0		1.0
+5:1			6:1			0		1.0
+12:1			10:1			0		1.0
+
+Alignment	125	0.28	0.28	0.5738114998740221	0.11933278003527384
+push down on the right lever to dispense cold water .
+push on the bar below to fill the cup with a soda .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			2:1			0		1.0
+2:1			3:1			0		1.0
+5:1			6:1			0		1.0
+12:1			10:1			0		1.0
+
+Alignment	126	0.28	0.28	0.5738114998740221	0.11933278003527384
+push down on the right lever to dispense cold water .
+push on the bar below to fill the cup with a soda .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			2:1			0		1.0
+2:1			3:1			0		1.0
+5:1			6:1			0		1.0
+12:1			10:1			0		1.0
+
+Alignment	127	0.28	0.28	0.5738114998740221	0.11933278003527384
+push down on the right lever to dispense cold water .
+push on the bar below to fill the cup with a soda .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			2:1			0		1.0
+2:1			3:1			0		1.0
+5:1			6:1			0		1.0
+12:1			10:1			0		1.0
+
+Alignment	128	0.28	0.28	0.5738114998740221	0.11933278003527384
+push down on the right lever to dispense cold water .
+push on the bar below to fill the cup with a soda .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			2:1			0		1.0
+2:1			3:1			0		1.0
+5:1			6:1			0		1.0
+12:1			10:1			0		1.0
+
+Alignment	129	0.28	0.28	0.5738114998740221	0.11933278003527384
+push down on the right lever to dispense cold water .
+push on the bar below to fill the cup with a soda .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			2:1			0		1.0
+2:1			3:1			0		1.0
+5:1			6:1			0		1.0
+12:1			10:1			0		1.0
+
+Alignment	130	0.15789473684210525	0.13636363636363635	0.6	0.05568445475638051
+turn the knob clockwise to the desired heat .
+hold the cup below the half and half nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+4:1			5:1			0		1.0
+9:1			8:1			0		1.0
+
+Alignment	131	0.15789473684210525	0.13636363636363635	0.6	0.05568445475638051
+turn the knob clockwise to the desired heat .
+hold the cup below the half and half nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+4:1			5:1			0		1.0
+9:1			8:1			0		1.0
+
+Alignment	132	0.15789473684210525	0.13636363636363635	0.6	0.05568445475638051
+turn the knob clockwise to the desired heat .
+hold the cup below the half and half nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+4:1			5:1			0		1.0
+9:1			8:1			0		1.0
+
+Alignment	133	0.15789473684210525	0.13636363636363635	0.6	0.05568445475638051
+turn the knob clockwise to the desired heat .
+hold the cup below the half and half nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+4:1			5:1			0		1.0
+9:1			8:1			0		1.0
+
+Alignment	134	0.15789473684210525	0.13636363636363635	0.6	0.05568445475638051
+turn the knob clockwise to the desired heat .
+hold the cup below the half and half nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+4:1			5:1			0		1.0
+9:1			8:1			0		1.0
+
+Alignment	135	0.15789473684210525	0.13636363636363635	0.6	0.05568445475638051
+turn the knob clockwise to the desired heat .
+hold the cup below the half and half nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+4:1			5:1			0		1.0
+9:1			8:1			0		1.0
+
+Alignment	136	0.15789473684210525	0.13636363636363635	0.6	0.05568445475638051
+turn the knob clockwise to the desired heat .
+hold the cup below the half and half nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+4:1			5:1			0		1.0
+9:1			8:1			0		1.0
+
+Alignment	137	0.15789473684210525	0.13636363636363635	0.6	0.05568445475638051
+turn the knob clockwise to the desired heat .
+hold the cup below the half and half nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+4:1			5:1			0		1.0
+9:1			8:1			0		1.0
+
+Alignment	138	0.15789473684210525	0.13636363636363635	0.6	0.05568445475638051
+turn the knob clockwise to the desired heat .
+hold the cup below the half and half nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+4:1			5:1			0		1.0
+9:1			8:1			0		1.0
+
+Alignment	139	0.15789473684210525	0.13636363636363635	0.6	0.05568445475638051
+turn the knob clockwise to the desired heat .
+hold the cup below the half and half nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+4:1			5:1			0		1.0
+9:1			8:1			0		1.0
+
+Alignment	140	0.15789473684210525	0.13636363636363635	0.6	0.05568445475638051
+turn the knob clockwise to the desired heat .
+hold the cup below the half and half nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+4:1			5:1			0		1.0
+9:1			8:1			0		1.0
+
+Alignment	141	0.15789473684210525	0.13636363636363635	0.6	0.05568445475638051
+turn the knob clockwise to the desired heat .
+hold the cup below the half and half nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+4:1			5:1			0		1.0
+9:1			8:1			0		1.0
+
+Alignment	142	0.15789473684210525	0.13636363636363635	0.6	0.05568445475638051
+turn the knob clockwise to the desired heat .
+hold the cup below the half and half nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+4:1			5:1			0		1.0
+9:1			8:1			0		1.0
+
+Alignment	143	0.13333333333333333	0.10526315789473684	0.6	0.043478260869565216
+hold the cup below the spout .
+push the half and half button to dispense .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+8:1			6:1			0		1.0
+
+Alignment	144	0.13333333333333333	0.10526315789473684	0.6	0.043478260869565216
+hold the cup below the spout .
+push the half and half button to dispense .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+8:1			6:1			0		1.0
+
+Alignment	145	0.13333333333333333	0.10526315789473684	0.6	0.043478260869565216
+hold the cup below the spout .
+push the half and half button to dispense .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+8:1			6:1			0		1.0
+
+Alignment	146	0.13333333333333333	0.10526315789473684	0.6	0.043478260869565216
+hold the cup below the spout .
+push the half and half button to dispense .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+8:1			6:1			0		1.0
+
+Alignment	147	0.13333333333333333	0.10526315789473684	0.6	0.043478260869565216
+hold the cup below the spout .
+push the half and half button to dispense .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+8:1			6:1			0		1.0
+
+Alignment	148	0.13333333333333333	0.10526315789473684	0.6	0.043478260869565216
+hold the cup below the spout .
+push the half and half button to dispense .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+8:1			6:1			0		1.0
+
+Alignment	149	0.13333333333333333	0.10526315789473684	0.6	0.043478260869565216
+hold the cup below the spout .
+push the half and half button to dispense .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+8:1			6:1			0		1.0
+
+Alignment	150	0.13333333333333333	0.10526315789473684	0.6	0.043478260869565216
+hold the cup below the spout .
+push the half and half button to dispense .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+8:1			6:1			0		1.0
+
+Alignment	151	0.13333333333333333	0.10526315789473684	0.6	0.043478260869565216
+hold the cup below the spout .
+push the half and half button to dispense .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+8:1			6:1			0		1.0
+
+Alignment	152	0.13333333333333333	0.10526315789473684	0.6	0.043478260869565216
+hold the cup below the spout .
+push the half and half button to dispense .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+8:1			6:1			0		1.0
+
+Alignment	153	0.13333333333333333	0.10526315789473684	0.6	0.043478260869565216
+hold the cup below the spout .
+push the half and half button to dispense .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+8:1			6:1			0		1.0
+
+Alignment	154	0.13333333333333333	0.10526315789473684	0.6	0.043478260869565216
+hold the cup below the spout .
+push the half and half button to dispense .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+8:1			6:1			0		1.0
+
+Alignment	155	0.13333333333333333	0.10526315789473684	0.6	0.043478260869565216
+hold the cup below the spout .
+push the half and half button to dispense .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+8:1			6:1			0		1.0
+
+Alignment	156	0.3090909090909091	0.3238095238095238	0.5223303379776745	0.15357700717502665
+mix hot water by pulling the handle towards you .
+pull the handle to squeeze the juice from the fruit .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			4:1			1		1.0
+1:1			5:1			0		1.0
+2:1			6:1			0		1.0
+10:1			9:1			0		1.0
+
+Alignment	157	0.3090909090909091	0.3238095238095238	0.5223303379776745	0.15357700717502665
+mix hot water by pulling the handle towards you .
+pull the handle to squeeze the juice from the fruit .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			4:1			1		1.0
+1:1			5:1			0		1.0
+2:1			6:1			0		1.0
+10:1			9:1			0		1.0
+
+Alignment	158	0.3090909090909091	0.3238095238095238	0.5223303379776745	0.15357700717502665
+mix hot water by pulling the handle towards you .
+pull the handle to squeeze the juice from the fruit .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			4:1			1		1.0
+1:1			5:1			0		1.0
+2:1			6:1			0		1.0
+10:1			9:1			0		1.0
+
+Alignment	159	0.3090909090909091	0.3238095238095238	0.5223303379776745	0.15357700717502665
+mix hot water by pulling the handle towards you .
+pull the handle to squeeze the juice from the fruit .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			4:1			1		1.0
+1:1			5:1			0		1.0
+2:1			6:1			0		1.0
+10:1			9:1			0		1.0
+
+Alignment	160	0.3090909090909091	0.3238095238095238	0.5223303379776745	0.15357700717502665
+mix hot water by pulling the handle towards you .
+pull the handle to squeeze the juice from the fruit .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			4:1			1		1.0
+1:1			5:1			0		1.0
+2:1			6:1			0		1.0
+10:1			9:1			0		1.0
+
+Alignment	161	0.375	0.2857142857142857	0.5664525067769411	0.12845851651053594
+push the button to fill the cup .
+hold the cup below the whole milk nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			5:1			0		1.0
+2:1			6:1			0		1.0
+4:1			1:1			0		1.0
+8:1			7:1			0		1.0
+
+Alignment	162	0.375	0.2857142857142857	0.5664525067769411	0.12845851651053594
+push the button to fill the cup .
+hold the cup below the whole milk nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			5:1			0		1.0
+2:1			6:1			0		1.0
+4:1			1:1			0		1.0
+8:1			7:1			0		1.0
+
+Alignment	163	0.375	0.2857142857142857	0.5664525067769411	0.12845851651053594
+push the button to fill the cup .
+hold the cup below the whole milk nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			5:1			0		1.0
+2:1			6:1			0		1.0
+4:1			1:1			0		1.0
+8:1			7:1			0		1.0
+
+Alignment	164	0.375	0.2857142857142857	0.5664525067769411	0.12845851651053594
+push the button to fill the cup .
+hold the cup below the whole milk nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			5:1			0		1.0
+2:1			6:1			0		1.0
+4:1			1:1			0		1.0
+8:1			7:1			0		1.0
+
+Alignment	165	0.375	0.2857142857142857	0.5664525067769411	0.12845851651053594
+push the button to fill the cup .
+hold the cup below the whole milk nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			5:1			0		1.0
+2:1			6:1			0		1.0
+4:1			1:1			0		1.0
+8:1			7:1			0		1.0
+
+Alignment	166	0.375	0.2857142857142857	0.5664525067769411	0.12845851651053594
+push the button to fill the cup .
+hold the cup below the whole milk nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			5:1			0		1.0
+2:1			6:1			0		1.0
+4:1			1:1			0		1.0
+8:1			7:1			0		1.0
+
+Alignment	167	0.375	0.2857142857142857	0.5664525067769411	0.12845851651053594
+push the button to fill the cup .
+hold the cup below the whole milk nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			5:1			0		1.0
+2:1			6:1			0		1.0
+4:1			1:1			0		1.0
+8:1			7:1			0		1.0
+
+Alignment	168	0.375	0.2857142857142857	0.5664525067769411	0.12845851651053594
+push the button to fill the cup .
+hold the cup below the whole milk nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			5:1			0		1.0
+2:1			6:1			0		1.0
+4:1			1:1			0		1.0
+8:1			7:1			0		1.0
+
+Alignment	169	0.2727272727272727	0.23076923076923078	0.6	0.09448818897637795
+pull down the flush handle to flush the urinal .
+lift up the whole milk handle until the cup is full .
+Line2Start:Length	Line1Start:Length	Module		Score
+2:1			2:1			0		1.0
+5:1			4:1			0		1.0
+7:1			7:1			0		1.0
+11:1			9:1			0		1.0
+
+Alignment	170	0.2727272727272727	0.23076923076923078	0.6	0.09448818897637795
+pull down the flush handle to flush the urinal .
+lift up the whole milk handle until the cup is full .
+Line2Start:Length	Line1Start:Length	Module		Score
+2:1			2:1			0		1.0
+5:1			4:1			0		1.0
+7:1			7:1			0		1.0
+11:1			9:1			0		1.0
+
+Alignment	171	0.2727272727272727	0.23076923076923078	0.6	0.09448818897637795
+pull down the flush handle to flush the urinal .
+lift up the whole milk handle until the cup is full .
+Line2Start:Length	Line1Start:Length	Module		Score
+2:1			2:1			0		1.0
+5:1			4:1			0		1.0
+7:1			7:1			0		1.0
+11:1			9:1			0		1.0
+
+Alignment	172	0.2727272727272727	0.23076923076923078	0.6	0.09448818897637795
+pull down the flush handle to flush the urinal .
+lift up the whole milk handle until the cup is full .
+Line2Start:Length	Line1Start:Length	Module		Score
+2:1			2:1			0		1.0
+5:1			4:1			0		1.0
+7:1			7:1			0		1.0
+11:1			9:1			0		1.0
+
+Alignment	173	0.2727272727272727	0.23076923076923078	0.6	0.09448818897637795
+pull down the flush handle to flush the urinal .
+lift up the whole milk handle until the cup is full .
+Line2Start:Length	Line1Start:Length	Module		Score
+2:1			2:1			0		1.0
+5:1			4:1			0		1.0
+7:1			7:1			0		1.0
+11:1			9:1			0		1.0
+
+Alignment	174	0.2727272727272727	0.23076923076923078	0.6	0.09448818897637795
+pull down the flush handle to flush the urinal .
+lift up the whole milk handle until the cup is full .
+Line2Start:Length	Line1Start:Length	Module		Score
+2:1			2:1			0		1.0
+5:1			4:1			0		1.0
+7:1			7:1			0		1.0
+11:1			9:1			0		1.0
+
+Alignment	175	0.2727272727272727	0.23076923076923078	0.6	0.09448818897637795
+pull down the flush handle to flush the urinal .
+lift up the whole milk handle until the cup is full .
+Line2Start:Length	Line1Start:Length	Module		Score
+2:1			2:1			0		1.0
+5:1			4:1			0		1.0
+7:1			7:1			0		1.0
+11:1			9:1			0		1.0
+
+Alignment	176	0.2727272727272727	0.23076923076923078	0.6	0.09448818897637795
+pull down the flush handle to flush the urinal .
+lift up the whole milk handle until the cup is full .
+Line2Start:Length	Line1Start:Length	Module		Score
+2:1			2:1			0		1.0
+5:1			4:1			0		1.0
+7:1			7:1			0		1.0
+11:1			9:1			0		1.0
+
+Alignment	177	0.26153846153846155	0.1619047619047619	0.6	0.06868686868686869
+hold the bottle by the nozzle .
+turn handle counterclockwise to turn on cold water .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			0:1			2		1.0
+8:1			6:1			0		1.0
+
+Alignment	178	0.26153846153846155	0.1619047619047619	0.6	0.06868686868686869
+hold the bottle by the nozzle .
+turn handle counterclockwise to turn on cold water .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			0:1			2		1.0
+8:1			6:1			0		1.0
+
+Alignment	179	0.26153846153846155	0.1619047619047619	0.6	0.06868686868686869
+hold the bottle by the nozzle .
+turn handle counterclockwise to turn on cold water .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			0:1			2		1.0
+8:1			6:1			0		1.0
+
+Alignment	180	0.26153846153846155	0.1619047619047619	0.6	0.06868686868686869
+hold the bottle by the nozzle .
+turn handle counterclockwise to turn on cold water .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			0:1			2		1.0
+8:1			6:1			0		1.0
+
+Alignment	181	0.26153846153846155	0.1619047619047619	0.6	0.06868686868686869
+hold the bottle by the nozzle .
+turn handle counterclockwise to turn on cold water .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			0:1			2		1.0
+8:1			6:1			0		1.0
+
+Alignment	182	0.26153846153846155	0.1619047619047619	0.6	0.06868686868686869
+hold the bottle by the nozzle .
+turn handle counterclockwise to turn on cold water .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			0:1			2		1.0
+8:1			6:1			0		1.0
+
+Alignment	183	0.26153846153846155	0.1619047619047619	0.6	0.06868686868686869
+hold the bottle by the nozzle .
+turn handle counterclockwise to turn on cold water .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			0:1			2		1.0
+8:1			6:1			0		1.0
+
+Alignment	184	0.09090909090909091	0.09523809523809523	0.6	0.037825059101654845
+push down on the right lever to start toasting .
+turn handle counterclockwise to mix in hot water .
+Line2Start:Length	Line1Start:Length	Module		Score
+3:1			6:1			0		1.0
+8:1			9:1			0		1.0
+
+Alignment	185	0.09090909090909091	0.09523809523809523	0.6	0.037825059101654845
+push down on the right lever to start toasting .
+turn handle counterclockwise to mix in hot water .
+Line2Start:Length	Line1Start:Length	Module		Score
+3:1			6:1			0		1.0
+8:1			9:1			0		1.0
+
+Alignment	186	0.09090909090909091	0.09523809523809523	0.6	0.037825059101654845
+push down on the right lever to start toasting .
+turn handle counterclockwise to mix in hot water .
+Line2Start:Length	Line1Start:Length	Module		Score
+3:1			6:1			0		1.0
+8:1			9:1			0		1.0
+
+Alignment	187	0.09090909090909091	0.09523809523809523	0.6	0.037825059101654845
+push down on the right lever to start toasting .
+turn handle counterclockwise to mix in hot water .
+Line2Start:Length	Line1Start:Length	Module		Score
+3:1			6:1			0		1.0
+8:1			9:1			0		1.0
+
+Alignment	188	0.09090909090909091	0.09523809523809523	0.6	0.037825059101654845
+push down on the right lever to start toasting .
+turn handle counterclockwise to mix in hot water .
+Line2Start:Length	Line1Start:Length	Module		Score
+3:1			6:1			0		1.0
+8:1			9:1			0		1.0
+
+Alignment	189	0.09090909090909091	0.09523809523809523	0.6	0.037825059101654845
+push down on the right lever to start toasting .
+turn handle counterclockwise to mix in hot water .
+Line2Start:Length	Line1Start:Length	Module		Score
+3:1			6:1			0		1.0
+8:1			9:1			0		1.0
+
+Alignment	190	0.09090909090909091	0.09523809523809523	0.6	0.037825059101654845
+push down on the right lever to start toasting .
+turn handle counterclockwise to mix in hot water .
+Line2Start:Length	Line1Start:Length	Module		Score
+3:1			6:1			0		1.0
+8:1			9:1			0		1.0
+
+Alignment	191	0.6666666666666666	0.8	0.5223303379776745	0.37100556273578683
+hold the cup right below the nozzle .
+hold the cup below the spout .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			1:1			0		1.0
+2:1			2:1			0		1.0
+3:1			4:1			0		1.0
+4:1			5:1			0		1.0
+6:1			7:1			0		1.0
+
+Alignment	192	0.6666666666666666	0.8	0.5223303379776745	0.37100556273578683
+hold the cup right below the nozzle .
+hold the cup below the spout .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			1:1			0		1.0
+2:1			2:1			0		1.0
+3:1			4:1			0		1.0
+4:1			5:1			0		1.0
+6:1			7:1			0		1.0
+
+Alignment	193	0.6666666666666666	0.8	0.5223303379776745	0.37100556273578683
+hold the cup right below the nozzle .
+hold the cup below the spout .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			1:1			0		1.0
+2:1			2:1			0		1.0
+3:1			4:1			0		1.0
+4:1			5:1			0		1.0
+6:1			7:1			0		1.0
+
+Alignment	194	0.6666666666666666	0.8	0.5223303379776745	0.37100556273578683
+hold the cup right below the nozzle .
+hold the cup below the spout .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			1:1			0		1.0
+2:1			2:1			0		1.0
+3:1			4:1			0		1.0
+4:1			5:1			0		1.0
+6:1			7:1			0		1.0
+
+Alignment	195	0.6666666666666666	0.8	0.5223303379776745	0.37100556273578683
+hold the cup right below the nozzle .
+hold the cup below the spout .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			1:1			0		1.0
+2:1			2:1			0		1.0
+3:1			4:1			0		1.0
+4:1			5:1			0		1.0
+6:1			7:1			0		1.0
+
+Alignment	196	0.6666666666666666	0.8	0.5223303379776745	0.37100556273578683
+hold the cup right below the nozzle .
+hold the cup below the spout .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			1:1			0		1.0
+2:1			2:1			0		1.0
+3:1			4:1			0		1.0
+4:1			5:1			0		1.0
+6:1			7:1			0		1.0
+
+Alignment	197	0.6666666666666666	0.8	0.5223303379776745	0.37100556273578683
+hold the cup right below the nozzle .
+hold the cup below the spout .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			1:1			0		1.0
+2:1			2:1			0		1.0
+3:1			4:1			0		1.0
+4:1			5:1			0		1.0
+6:1			7:1			0		1.0
+
+Alignment	198	0.21052631578947367	0.18181818181818182	0.6	0.07424593967517401
+turn the knob clockwise to the desired heat .
+push the diet pepsi button to fill the cup .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+5:1			4:1			0		1.0
+7:1			5:1			0		1.0
+9:1			8:1			0		1.0
+
+Alignment	199	0.21052631578947367	0.18181818181818182	0.6	0.07424593967517401
+turn the knob clockwise to the desired heat .
+push the diet pepsi button to fill the cup .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+5:1			4:1			0		1.0
+7:1			5:1			0		1.0
+9:1			8:1			0		1.0
+
+Alignment	200	0.21052631578947367	0.18181818181818182	0.6	0.07424593967517401
+turn the knob clockwise to the desired heat .
+push the diet pepsi button to fill the cup .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+5:1			4:1			0		1.0
+7:1			5:1			0		1.0
+9:1			8:1			0		1.0
+
+Alignment	201	0.21052631578947367	0.18181818181818182	0.6	0.07424593967517401
+turn the knob clockwise to the desired heat .
+push the diet pepsi button to fill the cup .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+5:1			4:1			0		1.0
+7:1			5:1			0		1.0
+9:1			8:1			0		1.0
+
+Alignment	202	0.21052631578947367	0.18181818181818182	0.6	0.07424593967517401
+turn the knob clockwise to the desired heat .
+push the diet pepsi button to fill the cup .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+5:1			4:1			0		1.0
+7:1			5:1			0		1.0
+9:1			8:1			0		1.0
+
+Alignment	203	0.21052631578947367	0.18181818181818182	0.6	0.07424593967517401
+turn the knob clockwise to the desired heat .
+push the diet pepsi button to fill the cup .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+5:1			4:1			0		1.0
+7:1			5:1			0		1.0
+9:1			8:1			0		1.0
+
+Alignment	204	0.21052631578947367	0.18181818181818182	0.6	0.07424593967517401
+turn the knob clockwise to the desired heat .
+push the diet pepsi button to fill the cup .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+5:1			4:1			0		1.0
+7:1			5:1			0		1.0
+9:1			8:1			0		1.0
+
+Alignment	205	0.21052631578947367	0.18181818181818182	0.6	0.07424593967517401
+turn the knob clockwise to the desired heat .
+push the diet pepsi button to fill the cup .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+5:1			4:1			0		1.0
+7:1			5:1			0		1.0
+9:1			8:1			0		1.0
+
+Alignment	206	0.21052631578947367	0.18181818181818182	0.6	0.07424593967517401
+turn the knob clockwise to the desired heat .
+push the diet pepsi button to fill the cup .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+5:1			4:1			0		1.0
+7:1			5:1			0		1.0
+9:1			8:1			0		1.0
+
+Alignment	207	0.21052631578947367	0.18181818181818182	0.6	0.07424593967517401
+turn the knob clockwise to the desired heat .
+push the diet pepsi button to fill the cup .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+5:1			4:1			0		1.0
+7:1			5:1			0		1.0
+9:1			8:1			0		1.0
+
+Alignment	208	0.21052631578947367	0.18181818181818182	0.6	0.07424593967517401
+turn the knob clockwise to the desired heat .
+push the diet pepsi button to fill the cup .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+5:1			4:1			0		1.0
+7:1			5:1			0		1.0
+9:1			8:1			0		1.0
+
+Alignment	209	0.21052631578947367	0.18181818181818182	0.6	0.07424593967517401
+turn the knob clockwise to the desired heat .
+push the diet pepsi button to fill the cup .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+5:1			4:1			0		1.0
+7:1			5:1			0		1.0
+9:1			8:1			0		1.0
+
+Alignment	210	1.0	0.7142857142857143	0.46702232493070245	0.3977445336338042
+hold the cup below the nozzle .
+hold the cup below the diet pepsi nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			1:1			0		1.0
+2:1			2:1			0		1.0
+3:1			3:1			0		1.0
+4:1			4:1			0		1.0
+7:1			5:1			0		1.0
+8:1			6:1			0		1.0
+
+Alignment	211	1.0	0.7142857142857143	0.46702232493070245	0.3977445336338042
+hold the cup below the nozzle .
+hold the cup below the diet pepsi nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			1:1			0		1.0
+2:1			2:1			0		1.0
+3:1			3:1			0		1.0
+4:1			4:1			0		1.0
+7:1			5:1			0		1.0
+8:1			6:1			0		1.0
+
+Alignment	212	1.0	0.7142857142857143	0.46702232493070245	0.3977445336338042
+hold the cup below the nozzle .
+hold the cup below the diet pepsi nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			1:1			0		1.0
+2:1			2:1			0		1.0
+3:1			3:1			0		1.0
+4:1			4:1			0		1.0
+7:1			5:1			0		1.0
+8:1			6:1			0		1.0
+
+Alignment	213	1.0	0.7142857142857143	0.46702232493070245	0.3977445336338042
+hold the cup below the nozzle .
+hold the cup below the diet pepsi nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			1:1			0		1.0
+2:1			2:1			0		1.0
+3:1			3:1			0		1.0
+4:1			4:1			0		1.0
+7:1			5:1			0		1.0
+8:1			6:1			0		1.0
+
+Alignment	214	1.0	0.7142857142857143	0.46702232493070245	0.3977445336338042
+hold the cup below the nozzle .
+hold the cup below the diet pepsi nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			1:1			0		1.0
+2:1			2:1			0		1.0
+3:1			3:1			0		1.0
+4:1			4:1			0		1.0
+7:1			5:1			0		1.0
+8:1			6:1			0		1.0
+
+Alignment	215	1.0	0.7142857142857143	0.46702232493070245	0.3977445336338042
+hold the cup below the nozzle .
+hold the cup below the diet pepsi nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			1:1			0		1.0
+2:1			2:1			0		1.0
+3:1			3:1			0		1.0
+4:1			4:1			0		1.0
+7:1			5:1			0		1.0
+8:1			6:1			0		1.0
+
+Alignment	216	1.0	0.7142857142857143	0.46702232493070245	0.3977445336338042
+hold the cup below the nozzle .
+hold the cup below the diet pepsi nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			1:1			0		1.0
+2:1			2:1			0		1.0
+3:1			3:1			0		1.0
+4:1			4:1			0		1.0
+7:1			5:1			0		1.0
+8:1			6:1			0		1.0
+
+Alignment	217	1.0	0.7142857142857143	0.46702232493070245	0.3977445336338042
+hold the cup below the nozzle .
+hold the cup below the diet pepsi nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			1:1			0		1.0
+2:1			2:1			0		1.0
+3:1			3:1			0		1.0
+4:1			4:1			0		1.0
+7:1			5:1			0		1.0
+8:1			6:1			0		1.0
+
+Alignment	218	1.0	0.7142857142857143	0.46702232493070245	0.3977445336338042
+hold the cup below the nozzle .
+hold the cup below the diet pepsi nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			1:1			0		1.0
+2:1			2:1			0		1.0
+3:1			3:1			0		1.0
+4:1			4:1			0		1.0
+7:1			5:1			0		1.0
+8:1			6:1			0		1.0
+
+Alignment	219	1.0	0.7142857142857143	0.46702232493070245	0.3977445336338042
+hold the cup below the nozzle .
+hold the cup below the diet pepsi nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			1:1			0		1.0
+2:1			2:1			0		1.0
+3:1			3:1			0		1.0
+4:1			4:1			0		1.0
+7:1			5:1			0		1.0
+8:1			6:1			0		1.0
+
+Alignment	220	1.0	0.7142857142857143	0.46702232493070245	0.3977445336338042
+hold the cup below the nozzle .
+hold the cup below the diet pepsi nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			1:1			0		1.0
+2:1			2:1			0		1.0
+3:1			3:1			0		1.0
+4:1			4:1			0		1.0
+7:1			5:1			0		1.0
+8:1			6:1			0		1.0
+
+Alignment	221	1.0	0.7142857142857143	0.46702232493070245	0.3977445336338042
+hold the cup below the nozzle .
+hold the cup below the diet pepsi nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			1:1			0		1.0
+2:1			2:1			0		1.0
+3:1			3:1			0		1.0
+4:1			4:1			0		1.0
+7:1			5:1			0		1.0
+8:1			6:1			0		1.0
+
+Alignment	222	0.3652173913043478	0.56	0.5738114998740221	0.22098662969495153
+turn the handle towards you to start filling the cup .
+hold the cup below the nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			2:1			2		1.0
+1:1			8:1			0		1.0
+2:1			9:1			0		1.0
+4:1			1:1			0		1.0
+6:1			10:1			0		1.0
+
+Alignment	223	0.3652173913043478	0.56	0.5738114998740221	0.22098662969495153
+turn the handle towards you to start filling the cup .
+hold the cup below the nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			2:1			2		1.0
+1:1			8:1			0		1.0
+2:1			9:1			0		1.0
+4:1			1:1			0		1.0
+6:1			10:1			0		1.0
+
+Alignment	224	0.3652173913043478	0.56	0.5738114998740221	0.22098662969495153
+turn the handle towards you to start filling the cup .
+hold the cup below the nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			2:1			2		1.0
+1:1			8:1			0		1.0
+2:1			9:1			0		1.0
+4:1			1:1			0		1.0
+6:1			10:1			0		1.0
+
+Alignment	225	0.3652173913043478	0.56	0.5738114998740221	0.22098662969495153
+turn the handle towards you to start filling the cup .
+hold the cup below the nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			2:1			2		1.0
+1:1			8:1			0		1.0
+2:1			9:1			0		1.0
+4:1			1:1			0		1.0
+6:1			10:1			0		1.0
+
+Alignment	226	0.3652173913043478	0.56	0.5738114998740221	0.22098662969495153
+turn the handle towards you to start filling the cup .
+hold the cup below the nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			2:1			2		1.0
+1:1			8:1			0		1.0
+2:1			9:1			0		1.0
+4:1			1:1			0		1.0
+6:1			10:1			0		1.0
+
+Alignment	227	0.3652173913043478	0.56	0.5738114998740221	0.22098662969495153
+turn the handle towards you to start filling the cup .
+hold the cup below the nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			2:1			2		1.0
+1:1			8:1			0		1.0
+2:1			9:1			0		1.0
+4:1			1:1			0		1.0
+6:1			10:1			0		1.0
+
+Alignment	228	0.3652173913043478	0.56	0.5738114998740221	0.22098662969495153
+turn the handle towards you to start filling the cup .
+hold the cup below the nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			2:1			2		1.0
+1:1			8:1			0		1.0
+2:1			9:1			0		1.0
+4:1			1:1			0		1.0
+6:1			10:1			0		1.0
+
+Alignment	229	0.3652173913043478	0.56	0.5738114998740221	0.22098662969495153
+turn the handle towards you to start filling the cup .
+hold the cup below the nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			2:1			2		1.0
+1:1			8:1			0		1.0
+2:1			9:1			0		1.0
+4:1			1:1			0		1.0
+6:1			10:1			0		1.0
+
+Alignment	230	0.3652173913043478	0.56	0.5738114998740221	0.22098662969495153
+turn the handle towards you to start filling the cup .
+hold the cup below the nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			2:1			2		1.0
+1:1			8:1			0		1.0
+2:1			9:1			0		1.0
+4:1			1:1			0		1.0
+6:1			10:1			0		1.0
+
+Alignment	231	0.3652173913043478	0.56	0.5738114998740221	0.22098662969495153
+turn the handle towards you to start filling the cup .
+hold the cup below the nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			2:1			2		1.0
+1:1			8:1			0		1.0
+2:1			9:1			0		1.0
+4:1			1:1			0		1.0
+6:1			10:1			0		1.0
+
+Alignment	232	0.3652173913043478	0.56	0.5738114998740221	0.22098662969495153
+turn the handle towards you to start filling the cup .
+hold the cup below the nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			2:1			2		1.0
+1:1			8:1			0		1.0
+2:1			9:1			0		1.0
+4:1			1:1			0		1.0
+6:1			10:1			0		1.0
+
+Alignment	233	0.3652173913043478	0.56	0.5738114998740221	0.22098662969495153
+turn the handle towards you to start filling the cup .
+hold the cup below the nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			2:1			2		1.0
+1:1			8:1			0		1.0
+2:1			9:1			0		1.0
+4:1			1:1			0		1.0
+6:1			10:1			0		1.0
+
+Alignment	234	0.3652173913043478	0.56	0.5738114998740221	0.22098662969495153
+turn the handle towards you to start filling the cup .
+hold the cup below the nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			2:1			2		1.0
+1:1			8:1			0		1.0
+2:1			9:1			0		1.0
+4:1			1:1			0		1.0
+6:1			10:1			0		1.0
+
+Alignment	235	0.3652173913043478	0.56	0.5738114998740221	0.22098662969495153
+turn the handle towards you to start filling the cup .
+hold the cup below the nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			2:1			2		1.0
+1:1			8:1			0		1.0
+2:1			9:1			0		1.0
+4:1			1:1			0		1.0
+6:1			10:1			0		1.0
+
+Alignment	236	0.3652173913043478	0.56	0.5738114998740221	0.22098662969495153
+turn the handle towards you to start filling the cup .
+hold the cup below the nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			2:1			2		1.0
+1:1			8:1			0		1.0
+2:1			9:1			0		1.0
+4:1			1:1			0		1.0
+6:1			10:1			0		1.0
+
+Alignment	237	0.3652173913043478	0.56	0.5738114998740221	0.22098662969495153
+turn the handle towards you to start filling the cup .
+hold the cup below the nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			2:1			2		1.0
+1:1			8:1			0		1.0
+2:1			9:1			0		1.0
+4:1			1:1			0		1.0
+6:1			10:1			0		1.0
+
+Alignment	238	0.3652173913043478	0.56	0.5738114998740221	0.22098662969495153
+turn the handle towards you to start filling the cup .
+hold the cup below the nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			2:1			2		1.0
+1:1			8:1			0		1.0
+2:1			9:1			0		1.0
+4:1			1:1			0		1.0
+6:1			10:1			0		1.0
+
+Alignment	239	0.3652173913043478	0.56	0.5738114998740221	0.22098662969495153
+turn the handle towards you to start filling the cup .
+hold the cup below the nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			2:1			2		1.0
+1:1			8:1			0		1.0
+2:1			9:1			0		1.0
+4:1			1:1			0		1.0
+6:1			10:1			0		1.0
+
+Alignment	240	0.11764705882352941	0.1	0.6	0.04092071611253197
+hold your hand under the nozzle .
+pull the lever up to dispense the hot water .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			4:1			0		1.0
+9:1			6:1			0		1.0
+
+Alignment	241	0.11764705882352941	0.1	0.6	0.04092071611253197
+hold your hand under the nozzle .
+pull the lever up to dispense the hot water .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			4:1			0		1.0
+9:1			6:1			0		1.0
+
+Alignment	242	0.11764705882352941	0.1	0.6	0.04092071611253197
+hold your hand under the nozzle .
+pull the lever up to dispense the hot water .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			4:1			0		1.0
+9:1			6:1			0		1.0
+
+Alignment	243	0.11764705882352941	0.1	0.6	0.04092071611253197
+hold your hand under the nozzle .
+pull the lever up to dispense the hot water .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			4:1			0		1.0
+9:1			6:1			0		1.0
+
+Alignment	244	0.11764705882352941	0.1	0.6	0.04092071611253197
+hold your hand under the nozzle .
+pull the lever up to dispense the hot water .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			4:1			0		1.0
+9:1			6:1			0		1.0
+
+Alignment	245	0.11764705882352941	0.1	0.6	0.04092071611253197
+hold your hand under the nozzle .
+pull the lever up to dispense the hot water .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			4:1			0		1.0
+9:1			6:1			0		1.0
+
+Alignment	246	0.2	0.25	0.6	0.09638554216867469
+rotate the knob clockwise to turn on the power .
+push the button to fill the bottle .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+3:1			4:1			0		1.0
+5:1			7:1			0		1.0
+7:1			9:1			0		1.0
+
+Alignment	247	0.2	0.25	0.6	0.09638554216867469
+rotate the knob clockwise to turn on the power .
+push the button to fill the bottle .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+3:1			4:1			0		1.0
+5:1			7:1			0		1.0
+7:1			9:1			0		1.0
+
+Alignment	248	0.2	0.25	0.6	0.09638554216867469
+rotate the knob clockwise to turn on the power .
+push the button to fill the bottle .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+3:1			4:1			0		1.0
+5:1			7:1			0		1.0
+7:1			9:1			0		1.0
+
+Alignment	249	0.2	0.25	0.6	0.09638554216867469
+rotate the knob clockwise to turn on the power .
+push the button to fill the bottle .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+3:1			4:1			0		1.0
+5:1			7:1			0		1.0
+7:1			9:1			0		1.0
+
+Alignment	250	0.30000000000000004	0.4153846153846154	0.6	0.1570909090909091
+pull up on the handle to fill the cup .
+hold the bottle by the nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			4:1			2		1.0
+1:1			3:1			0		1.0
+4:1			7:1			0		1.0
+6:1			9:1			0		1.0
+
+Alignment	251	0.30000000000000004	0.4153846153846154	0.6	0.1570909090909091
+pull up on the handle to fill the cup .
+hold the bottle by the nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			4:1			2		1.0
+1:1			3:1			0		1.0
+4:1			7:1			0		1.0
+6:1			9:1			0		1.0
+
+Alignment	252	0.30000000000000004	0.4153846153846154	0.6	0.1570909090909091
+pull up on the handle to fill the cup .
+hold the bottle by the nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			4:1			2		1.0
+1:1			3:1			0		1.0
+4:1			7:1			0		1.0
+6:1			9:1			0		1.0
+
+Alignment	253	0.30000000000000004	0.4153846153846154	0.6	0.1570909090909091
+pull up on the handle to fill the cup .
+hold the bottle by the nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			4:1			2		1.0
+1:1			3:1			0		1.0
+4:1			7:1			0		1.0
+6:1			9:1			0		1.0
+
+Alignment	254	0.23157894736842108	0.24444444444444446	0.6	0.09696969696969698
+press down on the handle to dispense coffee .
+hold the cup below the right nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			4:1			2		1.0
+1:1			3:1			0		1.0
+7:1			8:1			0		1.0
+
+Alignment	255	0.23157894736842108	0.24444444444444446	0.6	0.09696969696969698
+press down on the handle to dispense coffee .
+hold the cup below the right nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			4:1			2		1.0
+1:1			3:1			0		1.0
+7:1			8:1			0		1.0
+
+Alignment	256	0.23157894736842108	0.24444444444444446	0.6	0.09696969696969698
+press down on the handle to dispense coffee .
+hold the cup below the right nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			4:1			2		1.0
+1:1			3:1			0		1.0
+7:1			8:1			0		1.0
+
+Alignment	257	0.23157894736842108	0.24444444444444446	0.6	0.09696969696969698
+press down on the handle to dispense coffee .
+hold the cup below the right nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			4:1			2		1.0
+1:1			3:1			0		1.0
+7:1			8:1			0		1.0
+
+Alignment	258	0.23157894736842108	0.24444444444444446	0.6	0.09696969696969698
+press down on the handle to dispense coffee .
+hold the cup below the right nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			4:1			2		1.0
+1:1			3:1			0		1.0
+7:1			8:1			0		1.0
+
+Alignment	259	0.23157894736842108	0.24444444444444446	0.6	0.09696969696969698
+press down on the handle to dispense coffee .
+hold the cup below the right nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			4:1			2		1.0
+1:1			3:1			0		1.0
+7:1			8:1			0		1.0
+
+Alignment	260	0.23157894736842108	0.24444444444444446	0.6	0.09696969696969698
+press down on the handle to dispense coffee .
+hold the cup below the right nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			4:1			2		1.0
+1:1			3:1			0		1.0
+7:1			8:1			0		1.0
+
+Alignment	261	0.23157894736842108	0.24444444444444446	0.6	0.09696969696969698
+press down on the handle to dispense coffee .
+hold the cup below the right nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			4:1			2		1.0
+1:1			3:1			0		1.0
+7:1			8:1			0		1.0
+
+Alignment	262	0.13636363636363635	0.12	0.6	0.048879837067209775
+rotate the rightmost knob clockwise to the desired setting .
+push down on the right lever to dispense cold water .
+Line2Start:Length	Line1Start:Length	Module		Score
+3:1			1:1			0		1.0
+6:1			5:1			0		1.0
+10:1			9:1			0		1.0
+
+Alignment	263	0.13636363636363635	0.12	0.6	0.048879837067209775
+rotate the rightmost knob clockwise to the desired setting .
+push down on the right lever to dispense cold water .
+Line2Start:Length	Line1Start:Length	Module		Score
+3:1			1:1			0		1.0
+6:1			5:1			0		1.0
+10:1			9:1			0		1.0
+
+Alignment	264	0.13636363636363635	0.12	0.6	0.048879837067209775
+rotate the rightmost knob clockwise to the desired setting .
+push down on the right lever to dispense cold water .
+Line2Start:Length	Line1Start:Length	Module		Score
+3:1			1:1			0		1.0
+6:1			5:1			0		1.0
+10:1			9:1			0		1.0
+
+Alignment	265	0.13636363636363635	0.12	0.6	0.048879837067209775
+rotate the rightmost knob clockwise to the desired setting .
+push down on the right lever to dispense cold water .
+Line2Start:Length	Line1Start:Length	Module		Score
+3:1			1:1			0		1.0
+6:1			5:1			0		1.0
+10:1			9:1			0		1.0
+
+Alignment	266	0.13636363636363635	0.12	0.6	0.048879837067209775
+rotate the rightmost knob clockwise to the desired setting .
+push down on the right lever to dispense cold water .
+Line2Start:Length	Line1Start:Length	Module		Score
+3:1			1:1			0		1.0
+6:1			5:1			0		1.0
+10:1			9:1			0		1.0
+
+Alignment	267	0.13636363636363635	0.12	0.6	0.048879837067209775
+rotate the rightmost knob clockwise to the desired setting .
+push down on the right lever to dispense cold water .
+Line2Start:Length	Line1Start:Length	Module		Score
+3:1			1:1			0		1.0
+6:1			5:1			0		1.0
+10:1			9:1			0		1.0
+
+Alignment	268	0.13636363636363635	0.12	0.6	0.048879837067209775
+rotate the rightmost knob clockwise to the desired setting .
+push down on the right lever to dispense cold water .
+Line2Start:Length	Line1Start:Length	Module		Score
+3:1			1:1			0		1.0
+6:1			5:1			0		1.0
+10:1			9:1			0		1.0
+
+Alignment	269	0.13636363636363635	0.12	0.6	0.048879837067209775
+rotate the rightmost knob clockwise to the desired setting .
+push down on the right lever to dispense cold water .
+Line2Start:Length	Line1Start:Length	Module		Score
+3:1			1:1			0		1.0
+6:1			5:1			0		1.0
+10:1			9:1			0		1.0
+
+Alignment	270	1.0	1.0	0.0	1.0
+pull on the handle to dispense .
+pull on the handle to dispense .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			1:1			0		1.0
+2:1			2:1			0		1.0
+3:1			3:1			0		1.0
+4:1			4:1			0		1.0
+5:1			5:1			0		1.0
+6:1			6:1			0		1.0
+
+Alignment	271	1.0	1.0	0.0	1.0
+pull on the handle to dispense .
+pull on the handle to dispense .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			1:1			0		1.0
+2:1			2:1			0		1.0
+3:1			3:1			0		1.0
+4:1			4:1			0		1.0
+5:1			5:1			0		1.0
+6:1			6:1			0		1.0
+
+Alignment	272	1.0	1.0	0.0	1.0
+pull on the handle to dispense .
+pull on the handle to dispense .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			1:1			0		1.0
+2:1			2:1			0		1.0
+3:1			3:1			0		1.0
+4:1			4:1			0		1.0
+5:1			5:1			0		1.0
+6:1			6:1			0		1.0
+
+Alignment	273	1.0	1.0	0.0	1.0
+pull on the handle to dispense .
+pull on the handle to dispense .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			1:1			0		1.0
+2:1			2:1			0		1.0
+3:1			3:1			0		1.0
+4:1			4:1			0		1.0
+5:1			5:1			0		1.0
+6:1			6:1			0		1.0
+
+Alignment	274	1.0	1.0	0.0	1.0
+pull on the handle to dispense .
+pull on the handle to dispense .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			1:1			0		1.0
+2:1			2:1			0		1.0
+3:1			3:1			0		1.0
+4:1			4:1			0		1.0
+5:1			5:1			0		1.0
+6:1			6:1			0		1.0
+
+Alignment	275	1.0	1.0	0.0	1.0
+hold the cup below the nozzle .
+hold the cup below the nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			1:1			0		1.0
+2:1			2:1			0		1.0
+3:1			3:1			0		1.0
+4:1			4:1			0		1.0
+5:1			5:1			0		1.0
+6:1			6:1			0		1.0
+
+Alignment	276	1.0	1.0	0.0	1.0
+hold the cup below the nozzle .
+hold the cup below the nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			1:1			0		1.0
+2:1			2:1			0		1.0
+3:1			3:1			0		1.0
+4:1			4:1			0		1.0
+5:1			5:1			0		1.0
+6:1			6:1			0		1.0
+
+Alignment	277	1.0	1.0	0.0	1.0
+hold the cup below the nozzle .
+hold the cup below the nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			1:1			0		1.0
+2:1			2:1			0		1.0
+3:1			3:1			0		1.0
+4:1			4:1			0		1.0
+5:1			5:1			0		1.0
+6:1			6:1			0		1.0
+
+Alignment	278	1.0	1.0	0.0	1.0
+hold the cup below the nozzle .
+hold the cup below the nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			1:1			0		1.0
+2:1			2:1			0		1.0
+3:1			3:1			0		1.0
+4:1			4:1			0		1.0
+5:1			5:1			0		1.0
+6:1			6:1			0		1.0
+
+Alignment	279	1.0	1.0	0.0	1.0
+hold the cup below the nozzle .
+hold the cup below the nozzle .
+Line2Start:Length	Line1Start:Length	Module		Score
+0:1			0:1			0		1.0
+1:1			1:1			0		1.0
+2:1			2:1			0		1.0
+3:1			3:1			0		1.0
+4:1			4:1			0		1.0
+5:1			5:1			0		1.0
+6:1			6:1			0		1.0
+
+Alignment	280	0.20869565217391303	0.21818181818181817	0.6	0.08668171557562077
+pull the handle left to release grind into the holder .
+rotate the knob clockwise to select desired cooking time .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+4:1			4:1			0		1.0
+6:1			3:1			3		1.0
+9:1			10:1			0		1.0
+
+Alignment	281	0.20869565217391303	0.21818181818181817	0.6	0.08668171557562077
+pull the handle left to release grind into the holder .
+rotate the knob clockwise to select desired cooking time .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+4:1			4:1			0		1.0
+6:1			3:1			3		1.0
+9:1			10:1			0		1.0
+
+Alignment	282	0.20869565217391303	0.21818181818181817	0.6	0.08668171557562077
+pull the handle left to release grind into the holder .
+rotate the knob clockwise to select desired cooking time .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+4:1			4:1			0		1.0
+6:1			3:1			3		1.0
+9:1			10:1			0		1.0
+
+Alignment	283	0.20869565217391303	0.21818181818181817	0.6	0.08668171557562077
+pull the handle left to release grind into the holder .
+rotate the knob clockwise to select desired cooking time .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+4:1			4:1			0		1.0
+6:1			3:1			3		1.0
+9:1			10:1			0		1.0
+
+Alignment	284	0.20869565217391303	0.21818181818181817	0.6	0.08668171557562077
+pull the handle left to release grind into the holder .
+rotate the knob clockwise to select desired cooking time .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+4:1			4:1			0		1.0
+6:1			3:1			3		1.0
+9:1			10:1			0		1.0
+
+Alignment	285	0.25	0.21052631578947367	0.6	0.08625336927223719
+pull the lever to dispense the water .
+press the soda button to get the soda .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+4:1			3:1			0		1.0
+6:1			5:1			0		1.0
+8:1			7:1			0		1.0
+
+Alignment	286	0.25	0.21052631578947367	0.6	0.08625336927223719
+pull the lever to dispense the water .
+press the soda button to get the soda .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+4:1			3:1			0		1.0
+6:1			5:1			0		1.0
+8:1			7:1			0		1.0
+
+Alignment	287	0.25	0.21052631578947367	0.6	0.08625336927223719
+pull the lever to dispense the water .
+press the soda button to get the soda .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+4:1			3:1			0		1.0
+6:1			5:1			0		1.0
+8:1			7:1			0		1.0
+
+Alignment	288	0.25	0.21052631578947367	0.6	0.08625336927223719
+pull the lever to dispense the water .
+press the soda button to get the soda .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+4:1			3:1			0		1.0
+6:1			5:1			0		1.0
+8:1			7:1			0		1.0
+
+Alignment	289	0.25	0.21052631578947367	0.6	0.08625336927223719
+pull the lever to dispense the water .
+press the soda button to get the soda .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+4:1			3:1			0		1.0
+6:1			5:1			0		1.0
+8:1			7:1			0		1.0
+
+Alignment	290	0.25	0.21052631578947367	0.6	0.08625336927223719
+pull the lever to dispense the water .
+press the soda button to get the soda .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+4:1			3:1			0		1.0
+6:1			5:1			0		1.0
+8:1			7:1			0		1.0
+
+Alignment	291	0.25	0.21052631578947367	0.6	0.08625336927223719
+pull the lever to dispense the water .
+press the soda button to get the soda .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+4:1			3:1			0		1.0
+6:1			5:1			0		1.0
+8:1			7:1			0		1.0
+
+Alignment	292	0.25	0.21052631578947367	0.6	0.08625336927223719
+pull the lever to dispense the water .
+press the soda button to get the soda .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+4:1			3:1			0		1.0
+6:1			5:1			0		1.0
+8:1			7:1			0		1.0
+
+Alignment	293	0.25	0.21052631578947367	0.6	0.08625336927223719
+pull the lever to dispense the water .
+press the soda button to get the soda .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+4:1			3:1			0		1.0
+6:1			5:1			0		1.0
+8:1			7:1			0		1.0
+
+Alignment	294	0.25	0.21052631578947367	0.6	0.08625336927223719
+pull the lever to dispense the water .
+press the soda button to get the soda .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+4:1			3:1			0		1.0
+6:1			5:1			0		1.0
+8:1			7:1			0		1.0
+
+Alignment	295	0.25	0.21052631578947367	0.6	0.08625336927223719
+pull the lever to dispense the water .
+press the soda button to get the soda .
+Line2Start:Length	Line1Start:Length	Module		Score
+1:1			1:1			0		1.0
+4:1			3:1			0		1.0
+6:1			5:1			0		1.0
+8:1			7:1			0		1.0
+

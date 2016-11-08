@@ -66,11 +66,10 @@ def createKMeansModel( dataset, pickle_directory, n_clusters, fold_number ):
     #              Create KMeans Model for Dataset KeyPoints              #
     #######################################################################
 
-    pca = np.array( point_clouds_key_points )
+    kmeans = KMeans( n_clusters = n_clusters, precompute_distances = False ).fit( np.array( point_clouds_key_points ) )
 
-    print( pca.shape )
-
-    kmeans = KMeans( n_clusters = n_clusters, precompute_distances = False ).fit( pca )
+    if os.path.exists( pickle_directory + "kmeans_fold_{}.p".format( fold_number ) ):
+        os.remove( pickle_directory + "kmeans_fold_{}.p".format( fold_number ) )
 
     pickle.dump( kmeans, open( pickle_directory + "kmeans_fold_{}.p".format( fold_number ), "wb" ) )
 
@@ -116,6 +115,9 @@ def createKNNModel( kmeans_model, point_clouds, pickle_directory, fold_number ):
     knneigh = KNeighborsClassifier( n_neighbors = 1, weights = 'distance' )
     knneigh.fit( point_clouds_feature_vectors, targets )
 
+    if os.path.exists( pickle_directory + "knn_fold_{}.p".format( fold_number ) ):
+        os.remove( pickle_directory + "knn_fold_{}.p".format( fold_number ) )
+
     pickle.dump( knneigh, open( pickle_directory + "knn_fold_{}.p".format( fold_number ), "wb" ) )
 
 if __name__ == '__main__':
@@ -125,15 +127,22 @@ if __name__ == '__main__':
     n_clusters = 50
 
     dataset_directory = "/home/ghostman/Git/Robot-Learning-Project/robobarista_dataset/dataset/"
-    pickle_directory = "/home/ghostman/Git/Robot-Learning-Project/Models/Baseline"
+    pickle_directory = "/home/ghostman/Git/Robot-Learning-Project/Models/Baseline/"
     folds_file = dataset_directory + "folds.json"
 
-    print( "Creating Folds Dictionary" )
-    folds_dictionary = preprocess.get_folds_dictionary( folds_file )
-    pickle.dump( folds_dictionary, open( pickle_directory + "folds_dictionary.p", "wb" ) )
+    if not os.path.exists( pickle_directory + "folds_dictionary.p" ):
+        print( "Creating Folds Dictionary" )
+        folds_dictionary = preprocess.get_folds_dictionary( folds_file )
+        pickle.dump( folds_dictionary, open( pickle_directory + "folds_dictionary.p", "wb" ) )
+    else:
+        folds_dictionary = pickle.load( open( pickle_directory + "folds_dictionary.p", "rb" ) )
 
     print( "Loading Training Point Cloud Filenames for Fold {}".format( fold_number ) )
     training_data = preprocess.load_data_set( dataset_directory, folds_dictionary[fold_number]['train'] )
+
+    if os.path.exists( pickle_directory + "training_data_fold_{}.p".format( fold_number ) ):
+        os.remove( pickle_directory + "training_data_fold_{}.p".format( fold_number ) )
+
     pickle.dump( training_data, open( pickle_directory + "training_data_fold_{}.p".format( fold_number ), "wb" ) )
     point_cloud_files = training_data[1]
 
@@ -142,3 +151,5 @@ if __name__ == '__main__':
 
     print( "Creating KNN Model for Fold {}".format( fold_number ) )
     createKNNModel( kmeans_model, point_clouds, pickle_directory, fold_number )
+
+    print( "Done training models for Fold {}".format( fold_number ) )
