@@ -1,0 +1,9 @@
+Alignment	1	0.3	0.2727272727272727	0.5664525067769411	0.11987488291881812
+pull the lever up to dispense the hot water .
+press down on the coffee syrup pump to dispense .
+Line2Start:Length	Line1Start:Length	Module		Score
+3:1			1:1			0		1.0
+7:1			4:1			0		1.0
+8:1			5:1			0		1.0
+9:1			9:1			0		1.0
+
