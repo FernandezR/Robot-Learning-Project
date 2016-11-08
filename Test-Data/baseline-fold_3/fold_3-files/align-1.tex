@@ -1,0 +1,115 @@
+\documentclass[landscape]{article}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%          Include these packages and declarations in your tex file            %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{rotating}
+\usepackage{colortbl}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage[T1]{fontenc}
+
+\renewcommand{\rmdefault}{phv} % Arial
+\renewcommand{\sfdefault}{phv} % Arial
+
+
+
+\definecolor{z}{rgb}{0.7,0.7,0.7}
+\definecolor{g}{rgb}{0.5,1.0,0.5}
+\definecolor{y}{rgb}{1.0,1.0,0.5}
+\definecolor{r}{rgb}{1.0,0.5,0.5}
+\definecolor{gb}{rgb}{0.0,0.5,0.0}
+\definecolor{rb}{rgb}{0.5,0.0,0.0}
+
+
+\newcommand{\ssp}{\hspace{2pt}}
+\newcommand{\lex}{\cellcolor{z}}
+\newcommand{\lap}{\cellcolor{y}}
+\newcommand{\rex}{$\bullet$}
+\newcommand{\rap}{$\boldsymbol\circ$}
+\newcommand{\mex}{\cellcolor{g}$\bullet$}
+\newcommand{\map}{\cellcolor{y}$\boldsymbol\circ$}
+\newcommand{\mrm}{\cellcolor{r}X}
+
+% Search for '%Table start' and '%Table end' to find alignment boundaries
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[margin=0.5in]{geometry}
+\pagenumbering{0}
+%\renewcommand{\rmdefault}{phv} % Arial
+%\renewcommand{\sfdefault}{phv} % Arial
+\renewcommand{\tabcolsep}{1pt}
+
+\begin{document}
+
+
+
+\noindent\large Meteor Alignments for System-1\\
+
+\noindent\normalsize Reference top row\\
+Hypothesis left column\\
+Matches identified by color and symbol\\\\
+Color spectrum follows reference word order\\\\
+
+\small
+\noindent\begin{tabular}{|l|p{10pt}|}
+\hline
+Match Type&\\
+\hline
+Exact&\ssp\mex\\
+\hline
+Stem / Synonym / Paraphrase&\ssp\map\\
+\hline
+\end{tabular}
+
+\vspace{6pt}
+\noindent Key: match markers for sentences
+\newpage
+
+
+%Table start
+\definecolor{ref0}{rgb}{0.628571428571,0.657142857143,0.971428571429}
+\definecolor{ref1}{rgb}{0.657142857143,0.714285714286,0.942857142857}
+\definecolor{ref2}{rgb}{0.685714285714,0.771428571429,0.914285714286}
+\definecolor{ref3}{rgb}{0.771428571429,0.785714285714,0.828571428571}
+\definecolor{ref4}{rgb}{0.857142857143,0.8,0.742857142857}
+\definecolor{ref5}{rgb}{0.942857142857,0.814285714286,0.657142857143}
+\definecolor{ref6}{rgb}{1.0,0.828571428571,0.571428571429}
+\noindent\begin{tabular}{|l|p{10pt}|p{10pt}|p{10pt}|p{10pt}|p{10pt}|p{10pt}|p{10pt}|}
+\hline
+&\begin{sideways}\cellcolor{ref0}pull\hspace{12pt}\end{sideways}&\begin{sideways}\cellcolor{ref1}on\hspace{12pt}\end{sideways}&\begin{sideways}\cellcolor{ref2}the\hspace{12pt}\end{sideways}&\begin{sideways}\cellcolor{ref3}handle\hspace{12pt}\end{sideways}&\begin{sideways}\cellcolor{ref4}to\hspace{12pt}\end{sideways}&\begin{sideways}\cellcolor{ref5}dispense\hspace{12pt}\end{sideways}&\begin{sideways}\cellcolor{ref6}.\hspace{12pt}\end{sideways}\\
+\hline
+\ssp \cellcolor{ref3}hold \ssp&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}\map&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}\\
+\hline
+\ssp \cellcolor{ref2}the \ssp&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}\mex&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}\\
+\hline
+\ssp cup \ssp&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}\\
+\hline
+\ssp below \ssp&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}\\
+\hline
+\ssp the \ssp&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}\\
+\hline
+\ssp right \ssp&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}\\
+\hline
+\ssp nozzle \ssp&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}\\
+\hline
+\ssp \cellcolor{ref6}. \ssp&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}\mex\\
+\hline
+\end{tabular}
+
+\vspace{6pt}
+\noindent Segment 1\\\\
+\noindent\begin{tabular}{lm{12pt}r}
+\hline
+P:&&0.244\\
+R:&&0.338\\
+Frag:&&0.600\\
+Score:&&0.128\\
+\end{tabular}
+%Table end
+
+\newpage
+
+\end{document}

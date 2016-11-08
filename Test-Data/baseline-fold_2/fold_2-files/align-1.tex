@@ -1,0 +1,116 @@
+\documentclass[landscape]{article}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%          Include these packages and declarations in your tex file            %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{rotating}
+\usepackage{colortbl}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage[T1]{fontenc}
+
+\renewcommand{\rmdefault}{phv} % Arial
+\renewcommand{\sfdefault}{phv} % Arial
+
+
+
+\definecolor{z}{rgb}{0.7,0.7,0.7}
+\definecolor{g}{rgb}{0.5,1.0,0.5}
+\definecolor{y}{rgb}{1.0,1.0,0.5}
+\definecolor{r}{rgb}{1.0,0.5,0.5}
+\definecolor{gb}{rgb}{0.0,0.5,0.0}
+\definecolor{rb}{rgb}{0.5,0.0,0.0}
+
+
+\newcommand{\ssp}{\hspace{2pt}}
+\newcommand{\lex}{\cellcolor{z}}
+\newcommand{\lap}{\cellcolor{y}}
+\newcommand{\rex}{$\bullet$}
+\newcommand{\rap}{$\boldsymbol\circ$}
+\newcommand{\mex}{\cellcolor{g}$\bullet$}
+\newcommand{\map}{\cellcolor{y}$\boldsymbol\circ$}
+\newcommand{\mrm}{\cellcolor{r}X}
+
+% Search for '%Table start' and '%Table end' to find alignment boundaries
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[margin=0.5in]{geometry}
+\pagenumbering{0}
+%\renewcommand{\rmdefault}{phv} % Arial
+%\renewcommand{\sfdefault}{phv} % Arial
+\renewcommand{\tabcolsep}{1pt}
+
+\begin{document}
+
+
+
+\noindent\large Meteor Alignments for System-1\\
+
+\noindent\normalsize Reference top row\\
+Hypothesis left column\\
+Matches identified by color and symbol\\\\
+Color spectrum follows reference word order\\\\
+
+\small
+\noindent\begin{tabular}{|l|p{10pt}|}
+\hline
+Match Type&\\
+\hline
+Exact&\ssp\mex\\
+\hline
+Stem / Synonym / Paraphrase&\ssp\map\\
+\hline
+\end{tabular}
+
+\vspace{6pt}
+\noindent Key: match markers for sentences
+\newpage
+
+
+%Table start
+\definecolor{ref0}{rgb}{0.62,0.64,0.98}
+\definecolor{ref1}{rgb}{0.64,0.68,0.96}
+\definecolor{ref2}{rgb}{0.66,0.72,0.94}
+\definecolor{ref3}{rgb}{0.68,0.76,0.92}
+\definecolor{ref4}{rgb}{0.7,0.8,0.9}
+\definecolor{ref5}{rgb}{0.76,0.81,0.84}
+\definecolor{ref6}{rgb}{0.82,0.82,0.78}
+\definecolor{ref7}{rgb}{0.88,0.83,0.72}
+\definecolor{ref8}{rgb}{0.94,0.84,0.66}
+\definecolor{ref9}{rgb}{1.0,0.85,0.6}
+\noindent\begin{tabular}{|l|p{10pt}|p{10pt}|p{10pt}|p{10pt}|p{10pt}|p{10pt}|p{10pt}|p{10pt}|p{10pt}|p{10pt}|}
+\hline
+&\begin{sideways}\cellcolor{ref0}press\hspace{12pt}\end{sideways}&\begin{sideways}\cellcolor{ref1}down\hspace{12pt}\end{sideways}&\begin{sideways}\cellcolor{ref2}on\hspace{12pt}\end{sideways}&\begin{sideways}\cellcolor{ref3}the\hspace{12pt}\end{sideways}&\begin{sideways}\cellcolor{ref4}pump\hspace{12pt}\end{sideways}&\begin{sideways}\cellcolor{ref5}to\hspace{12pt}\end{sideways}&\begin{sideways}\cellcolor{ref6}get\hspace{12pt}\end{sideways}&\begin{sideways}\cellcolor{ref7}some\hspace{12pt}\end{sideways}&\begin{sideways}\cellcolor{ref8}soap\hspace{12pt}\end{sideways}&\begin{sideways}\cellcolor{ref9}.\hspace{12pt}\end{sideways}\\
+\hline
+\ssp hold \ssp&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}\\
+\hline
+\ssp \cellcolor{ref3}the \ssp&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}\mex&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}\\
+\hline
+\ssp bottle \ssp&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}\\
+\hline
+\ssp by \ssp&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}\\
+\hline
+\ssp the \ssp&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}\\
+\hline
+\ssp nozzle \ssp&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}\\
+\hline
+\ssp \cellcolor{ref9}. \ssp&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}&\hspace{2pt}\mex\\
+\hline
+\end{tabular}
+
+\vspace{6pt}
+\noindent Segment 1\\\\
+\noindent\begin{tabular}{lm{12pt}r}
+\hline
+P:&&0.154\\
+R:&&0.100\\
+Frag:&&0.600\\
+Score:&&0.042\\
+\end{tabular}
+%Table end
+
+\newpage
+
+\end{document}
