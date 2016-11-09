@@ -75,26 +75,26 @@ h_t&= o_t \cdot tanh(C_t)
 
 \subsection{Robobarista Dataset}
 
-Sung et al. developed the Robobarista framework in order perform Deep Multimodal embedding of Point Clouds and NL Descriptions to Trajectories, as shown in Equation (2). Sung et al. aimed to create a system for manipulation planning which could generalize to different objects with similar parts to be manipulated \cite{sung2016robobarista}. 
+Sung et al. developed the Robobarista framework in order perform Deep Multimodal embedding of point clouds and NL Descriptions to Trajectories, as shown in Equation (2). Sung et al. aimed to create a system for manipulation planning which could generalize to different objects with similar parts to be manipulated \cite{sung2016robobarista}. 
 
 \begin{equation}
 f: P\times L \mapsto T
 \end{equation}
 
-Using the Robobarista framework Sung et al. collected an extensive dataset of consisting of triplets of the form (Point Cloud, NL Descriptions, and Trajectory). The dataset consists of 116 objects with 249 parts along with 250 NL instructions, for which there was collected 1225 manipulation trajectories. 
+Using the Robobarista framework Sung et al. collected an extensive dataset of consisting of triplets of the form (point cloud, NL Descriptions, and Trajectory). The dataset consists of 116 objects with 249 parts along with 250 NL instructions, for which there was collected 1225 manipulation trajectories. 
 
 Each of the 116 objects is split into parts depending on the number of NL instructions that pertain to it and the original point cloud scene is segmented with respect to the part frames, being stored as a Comma Separated Value (CSV) file consisting of [x,y,z,r,g,b] values. 
 
 Furthermore, each of the objects have multiple manipulation trajectories for each part stored as a list of waypoints \cite{sung2016robobarista}. For our experiments we split the dataset into 5 folds of train and test data in order to perform 5 fold cross validation at the end of our experiments.
 
 \subsection{Baseline with Point Clouds}
-For our initial baseline we created a pipeline that utilizes the Point Clouds and NL descriptions in the Robobarista dataset to perform inference using K-Means clustering and K-Nearest Neighbors (Figure \ref{fig:Baseline_Point_Cloud}). We first train a K-Means model and a KNN model using the training data for each of the 5 folds.
+For our initial baseline we created a pipeline that utilizes the point clouds and NL descriptions in the Robobarista dataset to perform inference using K-Means clustering and K-Nearest Neighbors (Figure \ref{fig:Baseline_Point_Cloud}). We first train a K-Means model and a KNN model using the training data for each of the 5 folds.
 
-The Point Cloud key points are taken from the segmented object part point cloud CSV files. We create two vectors from the CSV files, one is a vector of all the Point Clouds in the training set where the Point Clouds themselves are vectors of key points and the other is a vector of all the key points in the training set. 
+The point cloud key points are taken from the segmented object part point cloud CSV files. We create two vectors from the CSV files, one is a vector of all the point Clouds in the training set where the point clouds themselves are vectors of key points and the other is a vector of all the key points in the training set. 
 
-Utilizing the K-Means algorithm in the Python SKLearn package, we input the vector of all the key points in the training set into the K-Means algorithm with a cluster count of 50 and get back trained K-Means model. With the K-Means model we extract a closest cluster prediction for the key points in each individual Point Cloud in the vector of all the Point Clouds in the training set. Then using the cluster predictions we compute a bag of features (BOF) vector for each Point Cloud based on the number of occurrences of each cluster.
+Utilizing the K-Means algorithm in the Python SKLearn package, we input the vector of all the key points in the training set into the K-Means algorithm with a cluster count of 50 and get back trained K-Means model. With the K-Means model we extract a closest cluster prediction for the key points in each individual point cloud in the vector of all the point clouds in the training set. Then using the cluster predictions we compute a Bag of Features (BOF) vector for each point cloud based on the number of occurrences of each cluster.
 
-The BOF vectors are then used as input with a neighbor count of 1 to the K-Nearest Neighbors classifier in the Python SKLearn package and in return we get a trained KNN model. We are then able to use this KNN model to determine the nearest neighbors of a given Point Cloud. 
+The BOF vectors are then used as input with a neighbor count of 1 to the K-Nearest Neighbors classifier in the Python SKLearn package and in return we get a trained KNN model. We are then able to use this KNN model to determine the nearest neighbors of a given point cloud. 
 
 
 \begin{figure}[htb!]
@@ -134,7 +134,7 @@ During testing, we feed a trajectory tensor to our network which then generates 
 
 For the baseline we conducted experiments using the data from each of the 5 folds, running a total of 5 trials. For each trial we created a gold reference consisting of the already known NL descriptions for each of the point clouds and a test reference consisting of the NL description returned by using the trained K-Means and KNN models.
 
-Each point cloud in the fold test data is first inputed in the K-Means model to extract the BOF vector representation, then the BOF vector is inputed into the KNN model to retrieve the nearest neighbor of the point cloud, and lastly we look up the NL description for the given neighbor. With the completed the test and gold reference files we are then able to use the sentence comparison package METEOR to evaluate the accuracy of the Baseline with Point Clouds .
+Each point cloud in the fold test data is first inputed in the K-Means model to extract the BOF vector representation, then the BOF vector is inputed into the KNN model to retrieve the nearest neighbor of the point cloud, and lastly we look up the NL description for the given neighbor. With the completed the test and gold reference files we are then able to use the sentence comparison package METEOR to evaluate the accuracy of the Baseline with point clouds \cite{Denkowski14meteoruniversal}.
 
 On average the baseline performed poorly as only reaching its highest performance in the first fold achieving a final Meteor score of 0.172. Figure \ref{fig:fold_1_score}, shows the performance statistics for each sentence compared in Fold 1. Figures \ref{fig:fold_1_sentence_148} and \ref{fig:fold_1_sentence_164}, show the individual sentence comparisons results for two sentences from the Fold 1 test set. These results were expected as the Baseline only performs a simple lookup based on nearest neighbor inference and is not able to adapt properly.
 
@@ -170,9 +170,15 @@ On average the baseline performed poorly as only reaching its highest performanc
 
 \section{Difficulties}
 
+The major difficulty we have encountered up to this point is that we have not been able yet to receive a complete trained model for the work performed by Sung et al. \cite{sung2016robobarista}. To overcome the lack of the trained model for our Baseline experiments we decided to attempt to use Dynamic Time Warping to compare trajectories that are associated with the point clouds. 
+
+Additionally, we discovered why developing our Baseline experiments that the segmented points clouds for each object part are not stored in the typical Point Cloud Data (PCD) format, but instead are stored in a CSV format where each point cloud point is represented as a list of values [x,y,z,r,g,b]. To deal with this unexpected format we decided to forgo the use of NARF \cite{steder2010narf} descriptors and instead consider each point in the segmented point clouds as a key point for use in the BOF comparison method using the K-Nearest Neighbors method. 
+
 \section{Outlook}
 
 \section{Future Work}
+
+In addition, to the current Baseline with point clouds we propose conducting two more Baseline experiments, one using only trajectories and the other using trajectories and point clouds. For the Baseline using only trajectories it will only be possible to perform this Baseline if we are able to receive a trained model for the work by Sung et al. \cite{sung2016robobarista}. The Baseline using point clouds and trajectories we be performed by retrieving some $k$ number of neighbor point clouds and re-ranking based on the similarity of the trajectories using Dynamic Time Warping.
 
 For the conclusion of the project, we propose to implement a two layer LSTM architecture as in \cite{Venugopalan_2015_ICCV}. Additionally, this architecture will incorporate point cloud data by concatenating the bag of feature vectors produced from a point cloud to the trajectory embedding produced by the LSTM encoding layers. Finally, we will continue to experiment with different parameters for our LSTM architecture such as through different numbers of hidden units and training epochs. 
 
