@@ -141,7 +141,8 @@ On average the baseline performed poorly as only reaching its highest performanc
 \begin{figure}[htb!]
   \centering
   \includegraphics[width=0.45\textwidth]{fold_1_score}
-  \caption{Meteor Score for Fold 1 Test Data}
+  \includegraphics[width=0.45\textwidth]{lstm_fold_1_score_bar_graph}
+  \caption{Segment distributions per score ranges for the baseline (top) and LSTM (bottom) models on the first fold of data.}
   \label{fig:fold_1_score}
 \end{figure}
 
@@ -168,11 +169,48 @@ On average the baseline performed poorly as only reaching its highest performanc
 
 \subsection{LSTM Implementation}
 
+Similarly to the baseline, the current LSTM architecture was evaluated using 5-fold cross validation. The results for each fold as well as the averages over all folds were computed for both the baseline and LSTM, which may be seen in figure \ref{fig:score_table}. It was found that the LSTM currently performs marginally better than the baseline, however, a Student's unpaired t-test was performed which showed that the results are not statistically significant with a p-value of 0.45. 
+
+\begin{figure}[h]
+\centering
+\begin{tabular}{|c | c | c |}
+\hline
+\textbf{Model} & \textbf{Baseline} & \textbf{LSTM} \\
+\hline
+Fold 1 & 0.172 & 0.170\\
+\hline
+Fold 2 & 0.141 & 0.169 \\
+\hline
+Fold 3 & 0.102 & 0.142 \\
+\hline
+Fold 4 & 0.161 & 0.139 \\
+\hline
+Fold 5 & 0.144 & 0.154 \\
+\hline
+Avg. & \textbf{0.144} & \textbf{0.155} \\
+\hline
+\end{tabular}
+\caption{Final meteor scores for each model on each fold for 5-fold cross validation. Our current LSTM model marginally outperforms the baseline. The results are statistically insignificant with a p-value of 0.45.}
+\label{fig:score_table}
+\end{figure}
+
+An illustrative example of current  LSTM performance may be seen in figure \ref{fig:lstm_alignment}. In the example, the LSTM manages to correctly infer that the trajectory pertains to pushing a button, but is unable to recognize that it is a "white graph juice" button, something that may possibly be alleviated by the incorporation of point cloud information. Additionally, it was found that the LSTM tends to mistakenly repeat words when predicting sequences. 
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.5]{lstm_alignment}
+\caption{METEOR alignment for LSTM performance on Fold 1 segment 147.} 
+\label{fig:lstm_alignment}
+\end{figure}
+
+
 \section{Difficulties}
 
-The major difficulty we have encountered up to this point is that we have not been able yet to receive a complete trained model for the work performed by Sung et al. \cite{sung2016robobarista}. To overcome the lack of the trained model for our Baseline experiments we decided to attempt to use Dynamic Time Warping to compare trajectories that are associated with the point clouds. 
+The major difficulty we have encountered up to this point is that we have not been able yet to receive a complete trained model for the work performed by Sung et al. \cite{sung2016robobarista}. To overcome the lack of the trained model for our baseline experiments we decided to attempt to use Dynamic Time Warping to compare trajectories that are associated with the point clouds. 
 
 Additionally, we discovered why developing our Baseline experiments that the segmented points clouds for each object part are not stored in the typical Point Cloud Data (PCD) format, but instead are stored in a CSV format where each point cloud point is represented as a list of values [x,y,z,r,g,b]. To deal with this unexpected format we decided to forgo the use of NARF \cite{steder2010narf} descriptors and instead consider each point in the segmented point clouds as a key point for use in the BOF comparison method using the K-Nearest Neighbors method. 
+
+
 
 \section{Outlook}
 
