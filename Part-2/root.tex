@@ -136,7 +136,7 @@ For the baseline we conducted experiments using the data from each of the 5 fold
 
 Each point cloud in the fold test data is first inputed in the K-Means model to extract the BOF vector representation, then the BOF vector is inputed into the KNN model to retrieve the nearest neighbor of the point cloud, and lastly we look up the NL description for the given neighbor. With the completed the test and gold reference files we are then able to use the sentence comparison package METEOR to evaluate the accuracy of the Baseline with Point Clouds .
 
-On average the baseline performed poorly as only reaching its highest performance in the first fold achieving a final Meteor score of 0.172. These results were expected as the Baseline only performs a simple lookup based on nearest neighbor inference and is not able to adapt properly.
+On average the baseline performed poorly as only reaching its highest performance in the first fold achieving a final Meteor score of 0.172. Figure \ref{fig:fold_1_score}, shows the performance statistics for each sentence compared in Fold 1. Figures \ref{fig:fold_1_sentence_148} and \ref{fig:fold_1_sentence_164}, show the individual sentence comparisons results for two sentences from the Fold 1 test set. These results were expected as the Baseline only performs a simple lookup based on nearest neighbor inference and is not able to adapt properly.
 
 \begin{figure}[htb!]
   \centering
@@ -167,6 +167,8 @@ On average the baseline performed poorly as only reaching its highest performanc
 \end{figure}
 
 \subsection{LSTM Implementation}
+
+\section{Difficulties}
 
 \section{Outlook}
 
