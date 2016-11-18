@@ -1,12 +1,21 @@
 #!/usr/bin/python
 
+"""
+Calculates a rounded percentage
+"""
+
 import glob
 import json
+import nltk
 import os
 import sys
 import yaml
-import nltk
+
 import numpy as np
+
+
+def percentage( percent, whole ):
+    return round( ( percent * whole ) / 100.0 )
 
 """
 Gets dictionary of folds containing
@@ -17,7 +26,7 @@ def get_folds_dictionary( folds_file ):
     with open( folds_file ) as json_data:
         dictionary = json.load( json_data )
 
-    folds_dictionary = {1:{'test':[], 'train':[]}, 2:{'test':[], 'train':[]}, 3:{'test':[], 'train':[]}, 4:{'test':[], 'train':[]}, 5:{'test':[], 'train':[]}}
+    folds_dictionary = {1:{'test':[], 'train':[], 'validation':[]}, 2:{'test':[], 'train':[], 'validation':[]}, 3:{'test':[], 'train':[], 'validation':[]}, 4:{'test':[], 'train':[], 'validation':[]}, 5:{'test':[], 'train':[], 'validation':[]}}
 
     for key in dictionary:
         folds_dictionary[dictionary[key]]['test'].append( key )
@@ -26,6 +35,12 @@ def get_folds_dictionary( folds_file ):
         for key in ( key for key in folds_dictionary if key != fold_number ):
             folds_dictionary[fold_number]['test'].sort()
             folds_dictionary[fold_number]['train'].extend( folds_dictionary[key]['test'] )
+        folds_dictionary[fold_number]['train'].sort()
+
+        ten_percent = percentage( 10, len( folds_dictionary[fold_number]['train'] ) )
+        folds_dictionary[fold_number]['validation'].extend( folds_dictionary[fold_number]['train'][0:( ten_percent + 1 )] )
+        folds_dictionary[fold_number]['train'] = folds_dictionary[fold_number]['train'][( ten_percent + 1 ):]
+        folds_dictionary[fold_number]['validation'].sort()
         folds_dictionary[fold_number]['train'].sort()
 
     return folds_dictionary
