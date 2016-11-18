@@ -47,7 +47,6 @@ def createKMeansModel( dataset, pickle_directory, n_clusters, fold_number ):
         point_clouds: A list of Segmented Point Clouds
         kmeans:       A KMeans Model
     '''
-
     #######################################################################
     #                  Extract Key Points from Dataset                    #
     #######################################################################
@@ -68,27 +67,27 @@ def createKMeansModel( dataset, pickle_directory, n_clusters, fold_number ):
 
     kmeans = KMeans( n_clusters = n_clusters, precompute_distances = False ).fit( np.array( point_clouds_key_points ) )
 
-    if os.path.exists( pickle_directory + "kmeans_fold_{}.p".format( fold_number ) ):
-        os.remove( pickle_directory + "kmeans_fold_{}.p".format( fold_number ) )
+    if os.path.exists( pickle_directory + "kmeans_fold_{}_for_{}_clusters.p".format( fold_number, n_clusters ) ):
+        os.remove( pickle_directory + "kmeans_fold_{}_for_{}_clusters.p".format( fold_number, n_clusters ) )
 
-    pickle.dump( kmeans, open( pickle_directory + "kmeans_fold_{}.p".format( fold_number ), "wb" ) )
+    pickle.dump( kmeans, open( pickle_directory + "kmeans_fold_{}_for_{}_clusters.p".format( fold_number, n_clusters ), "wb" ) )
 
     return point_clouds, kmeans
 
-def createKNNModel( kmeans_model, point_clouds, pickle_directory, fold_number ):
+def createPCFeatureVectors( kmeans_model, point_clouds, pickle_directory, fold_number, n_clusters ):
     '''
-    Creates a K-Nearest Neighbor Model using the provided KMeans Model and saves it as a pickle file
+    Creates a Feature Vector list for a Point Cloud Key Point List using the provided KMeans Model and saves it as a pickle file
 
     args:
         kmeans_model:     A KMeans Model
         point_clouds:     A list of Segmented Point Clouds
         pickle_directory: Path to save pickled KNN Model
         fold_number:      Fold number to use when saving pickled KNN Model
+        n_cluster:        Number of clusters to used for KMeans Model
 
     returns:
-        Nothing
+        Feature Vector lists of Point Cloud Feature Vectors
     '''
-
     #######################################################################
     #                Predict Feature Vectors for Dataset                  #
     #######################################################################
@@ -104,6 +103,34 @@ def createKNNModel( kmeans_model, point_clouds, pickle_directory, fold_number ):
 
         point_clouds_feature_vectors.append( feature_vector )
 
+    if os.path.exists( pickle_directory + "pc_feature_vectors_fold_{}_for_{}_clusters.p".format( fold_number, n_clusters ) ):
+        os.remove( pickle_directory + "pc_feature_vectors_fold_{}_for_{}_clusters.p".format( fold_number, n_clusters ) )
+
+    pickle.dump( point_clouds_feature_vectors, open( pickle_directory + "pc_feature_vectors_fold_{}_for_{}_clusters.p".format( fold_number, n_clusters ), "wb" ) )
+
+    return point_clouds_feature_vectors
+
+def createKNNModel( kmeans_model, point_clouds, pickle_directory, fold_number, n_clusters, n_neighbors ):
+    '''
+    Creates a K-Nearest Neighbor Model using the provided KMeans Model and saves it as a pickle file
+
+    args:
+        kmeans_model:     A KMeans Model
+        point_clouds:     A list of Segmented Point Clouds
+        pickle_directory: Path to save pickled KNN Model
+        fold_number:      Fold number to use when saving pickled KNN Model
+        n_cluster:        Number of clusters to used for KMeans Model
+        n_neighbors:        Number of neighbors to used for KNN Model
+
+    returns:
+        Nothing
+    '''
+    #######################################################################
+    #                Predict Feature Vectors for Dataset                  #
+    #######################################################################
+
+    point_clouds_feature_vectors = createPCFeatureVectors( kmeans_model, point_clouds, pickle_directory, fold_number, n_clusters )
+
     #######################################################################
     #    Create K-Nearest Neighbors Model for Dataset Feature Vectors     #
     #######################################################################
@@ -112,24 +139,18 @@ def createKNNModel( kmeans_model, point_clouds, pickle_directory, fold_number ):
 
     targets = list( range( n_samples ) )
 
-    knneigh = KNeighborsClassifier( n_neighbors = 1, weights = 'distance' )
+    knneigh = KNeighborsClassifier( n_neighbors = n_neighbors, weights = 'distance' )
     knneigh.fit( point_clouds_feature_vectors, targets )
 
-    if os.path.exists( pickle_directory + "knn_fold_{}.p".format( fold_number ) ):
-        os.remove( pickle_directory + "knn_fold_{}.p".format( fold_number ) )
+    if os.path.exists( pickle_directory + "knn_fold_{}_for_{}_clusters_and_{}_neighbors.p".format( fold_number, n_clusters, n_neighbors ) ):
+        os.remove( pickle_directory + "knn_fold_{}_for_{}_clusters_and_{}_neighbors.p".format( fold_number, n_clusters, n_neighbors ) )
 
-    pickle.dump( knneigh, open( pickle_directory + "knn_fold_{}.p".format( fold_number ), "wb" ) )
+    pickle.dump( knneigh, open( pickle_directory + "knn_fold_{}_for_{}_clusters_and_{}_neighbors.p".format( fold_number, n_clusters, n_neighbors ), "wb" ) )
 
-if __name__ == '__main__':
 
-    fold_number = int( sys.argv[1] )
-
-    n_clusters = 50
-
-    dataset_directory = "/home/ghostman/Git/Robot-Learning-Project/robobarista_dataset/dataset/"
-    pickle_directory = "/home/ghostman/Git/Robot-Learning-Project/Models/Baseline/"
-    folds_file = dataset_directory + "folds.json"
-
+def trainBaseline( pickle_directory, folds_file, fold_number, dataset_directory, n_clusters, n_neighbors ):
+    '''
+    '''
     if not os.path.exists( pickle_directory + "folds_dictionary.p" ):
         print( "Creating Folds Dictionary" )
         folds_dictionary = preprocess.get_folds_dictionary( folds_file )
@@ -150,6 +171,114 @@ if __name__ == '__main__':
     point_clouds, kmeans_model = createKMeansModel( point_cloud_files, pickle_directory, n_clusters, fold_number )
 
     print( "Creating KNN Model for Fold {}".format( fold_number ) )
-    createKNNModel( kmeans_model, point_clouds, pickle_directory, fold_number )
+    createKNNModel( kmeans_model, point_clouds, pickle_directory, fold_number, n_clusters, n_neighbors )
 
     print( "Done training models for Fold {}".format( fold_number ) )
+
+def testBaseline( fold_number, n_clusters, n_neighbors, dataset_directory, pickle_directory, test_data_directory, folds_file ):
+    '''
+    '''
+    test_data_directory = test_data_directory + "baseline-fold_{}_for_{}_clusters_and_{}_neighbors/".format( fold_number, n_clusters, n_neighbors )
+
+    if not  os.path.exists( test_data_directory ):
+        os.mkdir( test_data_directory )
+
+    folds_dictionary = pickle.load( open( pickle_directory + "folds_dictionary.p", "rb" ) )
+    training_data = pickle.load( open( pickle_directory + "training_data_fold_{}.p".format( fold_number ), "rb" ) )
+    kmeans = pickle.load( open( pickle_directory + "kmeans_fold_{}_for_{}_clusters.p".format( fold_number, n_clusters ), "rb" ) )
+    knneigh = pickle.load( open( pickle_directory + "knn_fold_{}_for_{}_clusters_and_{}_neighbors.p".format( fold_number, n_clusters, n_neighbors ), "rb" ) )
+
+    print( "Loading Test Point Cloud Filenames for Fold {}".format( fold_number ) )
+
+    test_data = preprocess.load_data_set( dataset_directory, folds_dictionary[fold_number]['test'] )
+    point_cloud_files = test_data[1]
+
+    #######################################################################
+    #               Create Gold Standard Reference File                   #
+    #######################################################################
+
+    print( "Creating Gold Reference for Fold {} with {} clusters and {} neighbors".format( fold_number, n_clusters, n_neighbors ) )
+
+    if os.path.exists( test_data_directory + 'gold_reference' ):
+        os.remove( test_data_directory + 'gold_reference' )
+
+    for sentence in test_data[2]:
+
+        with open( test_data_directory + 'gold_reference', 'a' ) as file:
+            file.write( sentence + '\n' )
+
+    print( "Creating Test Reference for Fold {} with {} clusters and {} neighbors".format( fold_number, n_clusters, n_neighbors ) )
+
+    if os.path.exists( test_data_directory + 'test_reference' ):
+        os.remove( test_data_directory + 'test_reference' )
+
+    for point_cloud in point_cloud_files:
+
+        #######################################################################
+        #                  Extract Key Points from File                       #
+        #######################################################################
+
+        point_cloud_key_points = extractPointCloudKeyPointsFromCSV( point_cloud )
+
+        #######################################################################
+        #               Predict Features Vector for Point Cloud               #
+        #######################################################################
+
+        cluster_index_prediction = kmeans.predict( point_cloud_key_points )
+        cluster_index_prediction = cluster_index_prediction.tolist()
+
+        point_cloud_features_vector = []
+        for cluster in range( n_clusters ):
+            point_cloud_features_vector.append( cluster_index_prediction.count( cluster ) )
+
+        #######################################################################
+        #              Predict Nearest Neighbor for Point Cloud               #
+        #######################################################################
+
+        nearest_neighbor_index = knneigh.predict( [point_cloud_features_vector] )
+
+        with open( test_data_directory + 'test_reference', 'a' ) as file:
+            file.write( training_data[2][nearest_neighbor_index[0]] + '\n' )
+
+    print( "Done running test for Fold {} with {} clusters and {} neighbors".format( fold_number, n_clusters, n_neighbors ) )
+
+
+def printUsage():
+    '''
+    Helper method for displaying required usage parameters
+    '''
+    print ( 'Run baseline training: python3.4 baseline.py train [fold_number] [number_of_clusters] [number_of_neighbors] [dataset_directory] [pickle_directory]' )
+    print ( 'Run baseline testing: python3.4 baseline.py test [fold_number] [number_of_clusters] [number_of_neighbors] [dataset_directory] [pickle_directory] [test_data_directory]' )
+    print ( 'Use absolute path names' )
+
+if __name__ == '__main__':
+    if not len( sys.argv ) >= 2:
+        printUsage()
+
+    # dataset_directory = "/home/ghostman/Git/Robot-Learning-Project/robobarista_dataset/dataset/"
+    # pickle_directory = "/home/ghostman/Git/Robot-Learning-Project/Models/Baseline/"
+
+    elif sys.argv[1] == 'train':
+        if not len( sys.argv ) == 7:
+            printUsage()
+        else:
+            fold_number = int( sys.argv[2] )
+            n_clusters = int( sys.argv[3] )
+            n_neighbors = int( sys.argv[4] )
+            dataset_directory = sys.argv[5]
+            pickle_directory = sys.argv[6]
+            folds_file = dataset_directory + "folds.json"
+            trainBaseline( pickle_directory, folds_file, fold_number, dataset_directory, n_clusters, n_neighbors )
+
+    elif sys.argv[1] == 'test':
+        if not len( sys.argv ) == 8:
+            printUsage()
+        else:
+            fold_number = int( sys.argv[2] )
+            n_clusters = int( sys.argv[3] )
+            n_neighbors = int( sys.argv[4] )
+            dataset_directory = sys.argv[5]
+            pickle_directory = sys.argv[6]
+            test_data_directory = sys.argv[7]
+            folds_file = dataset_directory + "folds.json"
+            testBaseline( fold_number, n_clusters, n_neighbors, dataset_directory, pickle_directory, test_data_directory, folds_file )
