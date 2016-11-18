@@ -282,3 +282,6 @@ if __name__ == '__main__':
             test_data_directory = sys.argv[7]
             folds_file = dataset_directory + "folds.json"
             testBaseline( fold_number, n_clusters, n_neighbors, dataset_directory, pickle_directory, test_data_directory, folds_file )
+
+    else:
+        printUsage()
