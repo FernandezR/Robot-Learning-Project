@@ -5,15 +5,16 @@ Baseline
 @author: Rolando Fernandez <rfernandez@utexas.edu>
 '''
 import csv
+from functools import reduce
+from operator import add
 import os
 import pickle
-# from scipy.sparse import lil_matrix
 from sklearn.cluster import KMeans
 from sklearn.neighbors import KNeighborsClassifier
 import sys
 
 import numpy as np
-import scripts.preprocess as preprocess
+import preprocess
 
 
 def extractPointCloudKeyPointsFromCSV( filename ):
@@ -65,7 +66,7 @@ def createKMeansModel( dataset, pickle_directory, n_clusters, fold_number ):
     #              Create KMeans Model for Dataset KeyPoints              #
     #######################################################################
 
-    kmeans = KMeans( n_clusters = n_clusters, precompute_distances = False ).fit( np.array( point_clouds_key_points ) )
+    kmeans = KMeans( n_clusters = n_clusters, precompute_distances = False, n_jobs = -1 ).fit( np.array( point_clouds_key_points ) )
 
     if os.path.exists( pickle_directory + "kmeans_fold_{}_for_{}_clusters.p".format( fold_number, n_clusters ) ):
         os.remove( pickle_directory + "kmeans_fold_{}_for_{}_clusters.p".format( fold_number, n_clusters ) )
@@ -81,7 +82,7 @@ def createPCFeatureVectors( kmeans_model, point_clouds, pickle_directory, fold_n
     args:
         kmeans_model:     A KMeans Model
         point_clouds:     A list of Segmented Point Clouds
-        pickle_directory: Path to save pickled KNN Model
+        pickle_directory: Path to save pickled Feature Vector
         fold_number:      Fold number to use when saving pickled KNN Model
         n_cluster:        Number of clusters to used for KMeans Model
 
@@ -175,7 +176,7 @@ def trainBaseline( pickle_directory, folds_file, fold_number, dataset_directory,
 
     print( "Done training models for Fold {}".format( fold_number ) )
 
-def testBaseline( fold_number, n_clusters, n_neighbors, dataset_directory, pickle_directory, test_data_directory, folds_file ):
+def testBaseline( fold_number, n_clusters, n_neighbors, dataset_directory, pickle_directory, test_data_directory, folds_file, validation = False ):
     '''
     '''
     test_data_directory = test_data_directory + "baseline-fold_{}_for_{}_clusters_and_{}_neighbors/".format( fold_number, n_clusters, n_neighbors )
@@ -190,7 +191,14 @@ def testBaseline( fold_number, n_clusters, n_neighbors, dataset_directory, pickl
 
     print( "Loading Test Point Cloud Filenames for Fold {}".format( fold_number ) )
 
-    test_data = preprocess.load_data_set( dataset_directory, folds_dictionary[fold_number]['test'] )
+
+    if( validation ):
+        test_data = preprocess.load_data_set( dataset_directory, folds_dictionary[fold_number]['validate'] )
+        test_file_name = "validation_reference"
+    else:
+        test_data = preprocess.load_data_set( dataset_directory, folds_dictionary[fold_number]['test'] )
+        test_file_name = "test_reference"
+
     point_cloud_files = test_data[1]
 
     #######################################################################
@@ -209,8 +217,8 @@ def testBaseline( fold_number, n_clusters, n_neighbors, dataset_directory, pickl
 
     print( "Creating Test Reference for Fold {} with {} clusters and {} neighbors".format( fold_number, n_clusters, n_neighbors ) )
 
-    if os.path.exists( test_data_directory + 'test_reference' ):
-        os.remove( test_data_directory + 'test_reference' )
+    if os.path.exists( test_data_directory + test_file_name ):
+        os.remove( test_data_directory + test_file_name )
 
     for point_cloud in point_cloud_files:
 
@@ -237,10 +245,28 @@ def testBaseline( fold_number, n_clusters, n_neighbors, dataset_directory, pickl
 
         nearest_neighbor_index = knneigh.predict( [point_cloud_features_vector] )
 
-        with open( test_data_directory + 'test_reference', 'a' ) as file:
+        with open( test_data_directory + test_file_name, 'a' ) as file:
             file.write( training_data[2][nearest_neighbor_index[0]] + '\n' )
 
     print( "Done running test for Fold {} with {} clusters and {} neighbors".format( fold_number, n_clusters, n_neighbors ) )
+
+
+def calculateBestNumClusters( n_folds, validation_data_directory, cluster_range, n_neighbors ):
+    '''
+    '''
+    average_scores = []
+    for k_clusters in cluster_range:
+        scores = []
+        for fold in range( 1, n_folds + 1 ):
+            with open( validation_data_directory + "/baseline-fold_{}_for_{}_clusters_and_{}_neighbors/fold_{}_score".format( fold, k_clusters, n_neighbors, fold ), 'r' ) as f:
+                last = f.readlines()[-1]
+            score = float( last.split( ':' )[1].strip() )
+            scores.append( score )
+        average_scores.append( ( k_clusters, ( reduce( add, scores ) / len( scores ) ) ) )
+
+    ranked_scores = sorted( average_scores, reverse = True, key = lambda x: x[1] )
+
+    return ranked_scores[0][0]
 
 
 def printUsage():
@@ -248,7 +274,13 @@ def printUsage():
     Helper method for displaying required usage parameters
     '''
     print ( 'Run baseline training: python3.4 baseline.py train [fold_number] [number_of_clusters] [number_of_neighbors] [dataset_directory] [pickle_directory]' )
+    print ( '' )
     print ( 'Run baseline testing: python3.4 baseline.py test [fold_number] [number_of_clusters] [number_of_neighbors] [dataset_directory] [pickle_directory] [test_data_directory]' )
+    print ( '' )
+    print ( 'Run baseline testing: python3.4 baseline.py validation [fold_number] [number_of_clusters] [number_of_neighbors] [dataset_directory] [pickle_directory] [test_data_directory]' )
+    print ( '' )
+    print ( 'Run baseline testing: python3.4 baseline.py calcCluster [number_of_folds] [validation_data_directory] [starting_cluster_size] [ending_cluster_size_[plus_1]] [increment_value] [number_of_neighbors]' )
+    print ( '' )
     print ( 'Use absolute path names' )
 
 if __name__ == '__main__':
@@ -282,6 +314,31 @@ if __name__ == '__main__':
             test_data_directory = sys.argv[7]
             folds_file = dataset_directory + "folds.json"
             testBaseline( fold_number, n_clusters, n_neighbors, dataset_directory, pickle_directory, test_data_directory, folds_file )
+
+    elif sys.argv[1] == 'validation':
+        if not len( sys.argv ) == 8:
+            printUsage()
+        else:
+            fold_number = int( sys.argv[2] )
+            n_clusters = int( sys.argv[3] )
+            n_neighbors = int( sys.argv[4] )
+            dataset_directory = sys.argv[5]
+            pickle_directory = sys.argv[6]
+            test_data_directory = sys.argv[7]
+            folds_file = dataset_directory + "folds.json"
+            testBaseline( fold_number, n_clusters, n_neighbors, dataset_directory, pickle_directory, test_data_directory, folds_file, True )
+
+    elif sys.argv[1] == 'calcCluster':
+        if not len( sys.argv ) == 8:
+            printUsage()
+        else:
+            n_folds = int( sys.argv[2] )
+            validation_data_directory = int( sys.argv[3] )
+            start_k = int( sys.argv[4] )
+            stop_k = sys.argv[5]
+            incr_k = sys.argv[6]
+            n_neighbors = sys.argv[7]
+            print( calculateBestNumClusters( n_folds, validation_data_directory, range( start_k, stop_k, incr_k ), n_neighbors ) )
 
     else:
         printUsage()
