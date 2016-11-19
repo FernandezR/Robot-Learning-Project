@@ -1,4 +1,4 @@
-#!/usr/bin/env python3.4
+#!/usr/bin/env python
 '''
 Baseline
 
@@ -66,7 +66,8 @@ def createKMeansModel( dataset, pickle_directory, n_clusters, fold_number ):
     #              Create KMeans Model for Dataset KeyPoints              #
     #######################################################################
 
-    kmeans = KMeans( n_clusters = n_clusters, precompute_distances = False, n_jobs = -1 ).fit( np.array( point_clouds_key_points ) )
+#     kmeans = KMeans( n_clusters = n_clusters, precompute_distances = False, n_jobs = -1 ).fit( np.array( point_clouds_key_points ) )
+    kmeans = KMeans( n_clusters = n_clusters, precompute_distances = False ).fit( np.array( point_clouds_key_points ) )
 
     if os.path.exists( pickle_directory + "kmeans_fold_{}_for_{}_clusters.p".format( fold_number, n_clusters ) ):
         os.remove( pickle_directory + "kmeans_fold_{}_for_{}_clusters.p".format( fold_number, n_clusters ) )
@@ -152,20 +153,23 @@ def createKNNModel( kmeans_model, point_clouds, pickle_directory, fold_number, n
 def trainBaseline( pickle_directory, folds_file, fold_number, dataset_directory, n_clusters, n_neighbors ):
     '''
     '''
-    if not os.path.exists( pickle_directory + "folds_dictionary.p" ):
+    if not os.path.exists( pickle_directory ):
+        os.makekdirs( pickle_directory )
+
+    if not os.path.exists( pickle_directory + "folds_dictionary_ttv.p" ):
         print( "Creating Folds Dictionary" )
         folds_dictionary = preprocess.get_folds_dictionary( folds_file )
-        pickle.dump( folds_dictionary, open( pickle_directory + "folds_dictionary.p", "wb" ) )
+        pickle.dump( folds_dictionary, open( pickle_directory + "folds_dictionary_ttv.p", "wb" ) )
     else:
-        folds_dictionary = pickle.load( open( pickle_directory + "folds_dictionary.p", "rb" ) )
+        folds_dictionary = pickle.load( open( pickle_directory + "folds_dictionary_ttv.p", "rb" ) )
 
     print( "Loading Training Point Cloud Filenames for Fold {}".format( fold_number ) )
     training_data = preprocess.load_data_set( dataset_directory, folds_dictionary[fold_number]['train'] )
 
-    if os.path.exists( pickle_directory + "training_data_fold_{}.p".format( fold_number ) ):
-        os.remove( pickle_directory + "training_data_fold_{}.p".format( fold_number ) )
+    if os.path.exists( pickle_directory + "training_data_fold_{}_ttv.p".format( fold_number ) ):
+        os.remove( pickle_directory + "training_data_fold_{}_ttv.p".format( fold_number ) )
 
-    pickle.dump( training_data, open( pickle_directory + "training_data_fold_{}.p".format( fold_number ), "wb" ) )
+    pickle.dump( training_data, open( pickle_directory + "training_data_fold_{}_ttv.p".format( fold_number ), "wb" ) )
     point_cloud_files = training_data[1]
 
     print( "Creating KMeans Model for Fold {}".format( fold_number ) )
@@ -179,12 +183,15 @@ def trainBaseline( pickle_directory, folds_file, fold_number, dataset_directory,
 def testBaseline( fold_number, n_clusters, n_neighbors, dataset_directory, pickle_directory, test_data_directory, folds_file, validation = False ):
     '''
     '''
+    if not os.path.exists( test_data_directory ):
+        os.makekdirs( test_data_directory )
+
     test_data_directory = test_data_directory + "baseline-fold_{}_for_{}_clusters_and_{}_neighbors/".format( fold_number, n_clusters, n_neighbors )
 
     if not  os.path.exists( test_data_directory ):
         os.mkdir( test_data_directory )
 
-    folds_dictionary = pickle.load( open( pickle_directory + "folds_dictionary.p", "rb" ) )
+    folds_dictionary = pickle.load( open( pickle_directory + "folds_dictionary_ttv.p", "rb" ) )
     training_data = pickle.load( open( pickle_directory + "training_data_fold_{}.p".format( fold_number ), "rb" ) )
     kmeans = pickle.load( open( pickle_directory + "kmeans_fold_{}_for_{}_clusters.p".format( fold_number, n_clusters ), "rb" ) )
     knneigh = pickle.load( open( pickle_directory + "knn_fold_{}_for_{}_clusters_and_{}_neighbors.p".format( fold_number, n_clusters, n_neighbors ), "rb" ) )
@@ -193,7 +200,7 @@ def testBaseline( fold_number, n_clusters, n_neighbors, dataset_directory, pickl
 
 
     if( validation ):
-        test_data = preprocess.load_data_set( dataset_directory, folds_dictionary[fold_number]['validate'] )
+        test_data = preprocess.load_data_set( dataset_directory, folds_dictionary[fold_number]['validation'] )
         test_file_name = "validation_reference"
     else:
         test_data = preprocess.load_data_set( dataset_directory, folds_dictionary[fold_number]['test'] )
