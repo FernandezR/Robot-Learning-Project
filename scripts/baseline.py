@@ -1,9 +1,11 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3.4
 '''
 Baseline
 
 @author: Rolando Fernandez <rfernandez@utexas.edu>
 '''
+assert sys.version_info >= ( 3, 4 )
+
 import csv
 from functools import reduce
 from operator import add
