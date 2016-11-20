@@ -4,8 +4,6 @@ Baseline
 
 @author: Rolando Fernandez <rfernandez@utexas.edu>
 '''
-assert sys.version_info >= ( 3, 4 )
-
 import csv
 from functools import reduce
 from operator import add
@@ -18,6 +16,7 @@ import sys
 import numpy as np
 import preprocess
 
+assert sys.version_info >= ( 3, 4 )
 
 def extractPointCloudKeyPointsFromCSV( filename ):
     '''
@@ -156,7 +155,7 @@ def trainBaseline( pickle_directory, folds_file, fold_number, dataset_directory,
     '''
     '''
     if not os.path.exists( pickle_directory ):
-        os.makekdirs( pickle_directory )
+        os.makedirs( pickle_directory )
 
     if not os.path.exists( pickle_directory + "folds_dictionary_ttv.p" ):
         print( "Creating Folds Dictionary" )
@@ -186,7 +185,7 @@ def testBaseline( fold_number, n_clusters, n_neighbors, dataset_directory, pickl
     '''
     '''
     if not os.path.exists( test_data_directory ):
-        os.makekdirs( test_data_directory )
+        os.makedirs( test_data_directory )
 
     test_data_directory = test_data_directory + "baseline-fold_{}_for_{}_clusters_and_{}_neighbors/".format( fold_number, n_clusters, n_neighbors )
 
@@ -221,8 +220,8 @@ def testBaseline( fold_number, n_clusters, n_neighbors, dataset_directory, pickl
 
     for sentence in test_data[2]:
 
-        with open( test_data_directory + 'gold_reference', 'a' ) as file:
-            file.write( sentence + '\n' )
+        with open( test_data_directory + 'gold_reference', 'a' ) as f:
+            f.write( sentence + '\n' )
 
     print( "Creating Test Reference for Fold {} with {} clusters and {} neighbors".format( fold_number, n_clusters, n_neighbors ) )
 
@@ -254,8 +253,8 @@ def testBaseline( fold_number, n_clusters, n_neighbors, dataset_directory, pickl
 
         nearest_neighbor_index = knneigh.predict( [point_cloud_features_vector] )
 
-        with open( test_data_directory + test_file_name, 'a' ) as file:
-            file.write( training_data[2][nearest_neighbor_index[0]] + '\n' )
+        with open( test_data_directory + test_file_name, 'a' ) as f:
+            f.write( training_data[2][nearest_neighbor_index[0]] + '\n' )
 
     print( "Done running test for Fold {} with {} clusters and {} neighbors".format( fold_number, n_clusters, n_neighbors ) )
 
