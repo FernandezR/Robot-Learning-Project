@@ -1,14 +1,13 @@
 #!/bin/bash
 
 NCLUSTERS=$1
-NNEIGHBORS=10
-
 BASELINE=$2
 
 dataset_directory=$3
 pickle_directory=$4
 meteor_directory=$5
 test_data_directory=$6
+
 PYPATH=$7
 
 FOLDS=$8

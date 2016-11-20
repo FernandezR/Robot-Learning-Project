@@ -9,6 +9,7 @@ END=350
 INCREMENT=50
 
 BASELINE="/home/ghostman/Git/Robot-Learning-Project/scripts/baseline.py"
+BASHSCRIPTS="/home/ghostman/Git/Robot-Learning-Project/bash_scripts"
 
 dataset_directory="/home/ghostman/Git/Robot-Learning-Project/robobarista_dataset/dataset/"
 pickle_directory="/home/ghostman/Git/Robot-Learning-Project/Models/Baseline/"
@@ -20,4 +21,5 @@ PYPATH=/home/ghostman/Git/Robot-Learning-Project:/home/ghostman/Git/Robot-Learni
 
 OUTPUT="$(PYTHONPATH=$PYPATH python3.4 $BASELINE calcCluster $FOLDS $validation_data_directory $START $END $INCREMENT $NNEIGHBORS)"
 
+cd $BASHSCRIPTS
 bash baseline-meteor.sh $OUTPUT $BASELINE $dataset_directory $pickle_directory $meteor_directory $test_data_directory $PYPATH $FOLDS 10

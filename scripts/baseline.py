@@ -340,12 +340,12 @@ if __name__ == '__main__':
             printUsage()
         else:
             n_folds = int( sys.argv[2] )
-            validation_data_directory = int( sys.argv[3] )
+            validation_data_directory = sys.argv[3]
             start_k = int( sys.argv[4] )
-            stop_k = sys.argv[5]
-            incr_k = sys.argv[6]
-            n_neighbors = sys.argv[7]
-            print( calculateBestNumClusters( n_folds, validation_data_directory, range( start_k, stop_k, incr_k ), n_neighbors ) )
+            stop_k = int( sys.argv[5] )
+            incr_k = int( sys.argv[6] )
+            n_neighbors = int( sys.argv[7] )
+            print( calculateBestNumClusters( n_folds, validation_data_directory, range( start_k, ( stop_k + 1 ), incr_k ), n_neighbors ) )
 
     else:
         printUsage()
