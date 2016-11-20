@@ -22,18 +22,18 @@ PYPATH=/home/ghostman/Git/Robot-Learning-Project:/home/ghostman/Git/Robot-Learni
 echo $PYPATH
 
 for counter in {1..7}; do
-   for i in $(seq 1 $FOLDS); do
-       echo "Training Fold ${i} Models with ${NCLUSTERS} clusters and ${NNEIGHBORS} neighbors"
-       PYTHONPATH=$PYPATH python3.4 $BASELINE train $i $NCLUSTERS $NNEIGHBORS $dataset_directory $pickle_directory
-   done
-
-   for i in $(seq 1 $FOLDS); do
-       echo "Validating Fold ${i} Data with ${NCLUSTERS} clusters and ${NNEIGHBORS} neighbors"
-       PYTHONPATH=$PYPATH python3.4 $BASELINE validation $i $NCLUSTERS $NNEIGHBORS $dataset_directory $pickle_directory $validation_data_directory/
-   done
+    for i in $(seq 1 $FOLDS); do
+        echo "Training Fold ${i} Models with ${NCLUSTERS} clusters and ${NNEIGHBORS} neighbors"
+        PYTHONPATH=$PYPATH python3.4 $BASELINE train $i $NCLUSTERS $NNEIGHBORS $dataset_directory $pickle_directory
+    done
 
     for i in $(seq 1 $FOLDS); do
-    	dir=$validation_data_directory/baseline-fold_${i}_for_${NCLUSTERS}_clusters_and_${NNEIGHBORS}_neighbors
+        echo "Validating Fold ${i} Data with ${NCLUSTERS} clusters and ${NNEIGHBORS} neighbors"
+        PYTHONPATH=$PYPATH python3.4 $BASELINE validation $i $NCLUSTERS $NNEIGHBORS $dataset_directory $pickle_directory $validation_data_directory/
+    done
+
+    for i in $(seq 1 $FOLDS); do
+        dir=$validation_data_directory/baseline-fold_${i}_for_${NCLUSTERS}_clusters_and_${NNEIGHBORS}_neighbors
         cd $dir
         echo "Evalualating Fold ${i} with Meteor for ${NCLUSTERS} clusters and ${NNEIGHBORS} neighbors"
         java -Xmx2G -jar $meteor_directory/meteor-*.jar $dir/validation_reference $dir/gold_reference -norm -writeAlignments -f fold_$i > "fold_${i}_score"

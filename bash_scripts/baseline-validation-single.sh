@@ -19,13 +19,13 @@ echo $PYPATH
 
 
 for i in $(seq 1 $FOLDS); do
-   echo "Training Fold ${i} Models with ${NCLUSTERS} clusters and ${NNEIGHBORS} neighbors"
-   PYTHONPATH=$PYPATH python3.4 $BASELINE train $i $NCLUSTERS $NNEIGHBORS $dataset_directory $pickle_directory
+    echo "Training Fold ${i} Models with ${NCLUSTERS} clusters and ${NNEIGHBORS} neighbors"
+    PYTHONPATH=$PYPATH python3.4 $BASELINE train $i $NCLUSTERS $NNEIGHBORS $dataset_directory $pickle_directory
 done
 
 for i in $(seq 1 $FOLDS); do
-   echo "Validating Fold ${i} Data with ${NCLUSTERS} clusters and ${NNEIGHBORS} neighbors"
-   PYTHONPATH=$PYPATH python3.4 $BASELINE validation $i $NCLUSTERS $NNEIGHBORS $dataset_directory $pickle_directory $validation_data_directory/
+    echo "Validating Fold ${i} Data with ${NCLUSTERS} clusters and ${NNEIGHBORS} neighbors"
+    PYTHONPATH=$PYPATH python3.4 $BASELINE validation $i $NCLUSTERS $NNEIGHBORS $dataset_directory $pickle_directory $validation_data_directory/
 done
 
 for i in $(seq 1 $FOLDS); do
