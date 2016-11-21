@@ -9,12 +9,14 @@ from functools import reduce
 from operator import add
 import os
 import pickle
+import shutil
 from sklearn.cluster import KMeans
 from sklearn.neighbors import KNeighborsClassifier
 import sys
 
 import numpy as np
 import preprocess
+
 
 assert sys.version_info >= ( 3, 4 )
 
@@ -187,10 +189,20 @@ def testBaseline( fold_number, n_clusters, n_neighbors, dataset_directory, pickl
     if not os.path.exists( test_data_directory ):
         os.makedirs( test_data_directory )
 
-    test_data_directory = test_data_directory + "baseline-fold_{}_for_{}_clusters_and_{}_neighbors/".format( fold_number, n_clusters, n_neighbors )
+    if not os.path.exists( test_data_directory + 'predict/' ):
+        os.mkdir( test_data_directory + 'predict/' )
 
-    if not  os.path.exists( test_data_directory ):
-        os.mkdir( test_data_directory )
+    if not os.path.exists( test_data_directory + 'kneighbors/' ):
+        os.mkdir( test_data_directory + 'kneighbors/' )
+
+    predict_test_data_directory = test_data_directory + "predict/baseline-fold_{}_for_{}_clusters_and_{}_neighbors/".format( fold_number, n_clusters, n_neighbors )
+    kneighbors_test_data_directory = test_data_directory + "kneighbors/baseline-fold_{}_for_{}_clusters_and_{}_neighbors/".format( fold_number, n_clusters, n_neighbors )
+
+    if not  os.path.exists( predict_test_data_directory ):
+        os.mkdir( predict_test_data_directory )
+
+    if not  os.path.exists( kneighbors_test_data_directory ):
+        os.mkdir( kneighbors_test_data_directory )
 
     folds_dictionary = pickle.load( open( pickle_directory + "folds_dictionary_ttv.p", "rb" ) )
     training_data = pickle.load( open( pickle_directory + "training_data_fold_{}.p".format( fold_number ), "rb" ) )
@@ -215,18 +227,26 @@ def testBaseline( fold_number, n_clusters, n_neighbors, dataset_directory, pickl
 
     print( "Creating Gold Reference for Fold {} with {} clusters and {} neighbors".format( fold_number, n_clusters, n_neighbors ) )
 
-    if os.path.exists( test_data_directory + 'gold_reference' ):
-        os.remove( test_data_directory + 'gold_reference' )
+    if os.path.exists( predict_test_data_directory + 'gold_reference' ):
+        os.remove( predict_test_data_directory + 'gold_reference' )
+
+    if os.path.exists( kneighbors_test_data_directory + 'gold_reference' ):
+        os.remove( kneighbors_test_data_directory + 'gold_reference' )
 
     for sentence in test_data[2]:
 
-        with open( test_data_directory + 'gold_reference', 'a' ) as f:
+        with open( predict_test_data_directory + 'gold_reference', 'a' ) as f:
             f.write( sentence + '\n' )
+
+    shutil.copy( predict_test_data_directory + 'gold_reference', kneighbors_test_data_directory )
 
     print( "Creating Test Reference for Fold {} with {} clusters and {} neighbors".format( fold_number, n_clusters, n_neighbors ) )
 
-    if os.path.exists( test_data_directory + test_file_name ):
-        os.remove( test_data_directory + test_file_name )
+    if os.path.exists( predict_test_data_directory + test_file_name ):
+        os.remove( predict_test_data_directory + test_file_name )
+
+    if os.path.exists( kneighbors_test_data_directory + test_file_name ):
+        os.remove( kneighbors_test_data_directory + test_file_name )
 
     for point_cloud in point_cloud_files:
 
@@ -251,9 +271,13 @@ def testBaseline( fold_number, n_clusters, n_neighbors, dataset_directory, pickl
         #              Predict Nearest Neighbor for Point Cloud               #
         #######################################################################
 
-        nearest_neighbor_index = knneigh.predict( [point_cloud_features_vector] )
+        nearest_neighbor_predict_index = knneigh.predict( [point_cloud_features_vector] )
+        nearest_neighbor_index = knneigh.kneighbors( np.array( point_cloud_features_vector ).reshape( 1, -1 ), n_neighbors )[1][0]
 
-        with open( test_data_directory + test_file_name, 'a' ) as f:
+        with open( predict_test_data_directory + test_file_name, 'a' ) as f:
+            f.write( training_data[2][nearest_neighbor_predict_index[0]] + '\n' )
+
+        with open( kneighbors_test_data_directory + test_file_name, 'a' ) as f:
             f.write( training_data[2][nearest_neighbor_index[0]] + '\n' )
 
     print( "Done running test for Fold {} with {} clusters and {} neighbors".format( fold_number, n_clusters, n_neighbors ) )
@@ -337,11 +361,17 @@ if __name__ == '__main__':
             testBaseline( fold_number, n_clusters, n_neighbors, dataset_directory, pickle_directory, test_data_directory, folds_file, True )
 
     elif sys.argv[1] == 'calcCluster':
-        if not len( sys.argv ) == 8:
+        if not len( sys.argv ) >= 8:
             printUsage()
         else:
             n_folds = int( sys.argv[2] )
-            validation_data_directory = sys.argv[3]
+
+            if len( sys.argv ) == 9:
+                if sys.argv[8] == 'predict':
+                    validation_data_directory = sys.argv[3] + '/predict'
+            else:
+                validation_data_directory = sys.argv[3] + '/kneighbors'
+
             start_k = int( sys.argv[4] )
             stop_k = int( sys.argv[5] )
             incr_k = int( sys.argv[6] )
