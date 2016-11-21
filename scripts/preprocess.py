@@ -95,6 +95,7 @@ def load_data_set( root_dir, obj_dir_list ):
     trajectories = []
     point_clouds = []
     nl_descriptions = []
+    trajectory_files = []
 
     # Compiles all triplets (t, p, l) into arrays from a given object list.
     for obj_dir in obj_dir_list:
@@ -143,11 +144,12 @@ def load_data_set( root_dir, obj_dir_list ):
                 trajectories.append( traj )
                 point_clouds.append( point_cloud_path )
                 nl_descriptions.append( description )
+                trajectory_files.append( traj_file )
 
     # Make sure that everything is of the same dimensionality.
     assert ( len( trajectories ) == len( point_clouds ) ) and ( len( trajectories ) == len( nl_descriptions ) )
 
-    return [trajectories, point_clouds, nl_descriptions]
+    return [trajectories, point_clouds, nl_descriptions, trajectory_files]
 
 """
 Takes a list of phrases and creates a
