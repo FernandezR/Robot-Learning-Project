@@ -1,11 +1,14 @@
-#!/usr/bin/python
+#!/scratch/cluster/rcorona/deep_learning_env/bin/python3.4
 
+import sys
 import numpy
-from keras.models import Sequential
-from keras.layers import LSTM, RepeatVector
+from keras.models import Model, Sequential
+from keras.layers import LSTM, RepeatVector, Dropout, Input, merge
 import os
 import preprocess
-import sys
+import pickle
+
+kmeans_path = '/scratch/cluster/rcorona/Robot_Learning_Project/Robot-Learning-Project/Models/Baseline/kmeans_fold_' 
 
 def evaluate_with_meteor(results_file_name, ref_file_name, test_file_name):
     results_file = open(results_file_name, 'r')
@@ -27,24 +30,23 @@ def evaluate_with_meteor(results_file_name, ref_file_name, test_file_name):
     ref_file.close()
     test_file.close()
 
-def run_lstm(fold_num):
+def run_lstm(fold_num, parameter):
     #Fixed random seed for reproducability. 
     numpy.random.seed(10)
 
     #Sequence batch length. 
     traj_seq_len = 18
     word_seq_len = 18
-    num_h = 50
     traj_dim = 8
 
     #Get training data. 
     dirs = []
-    path = '../dataset/robobarista_dataset/dataset/' 
+    path = '/scratch/cluster/rcorona/Robot_Learning_Project/robobarista_dataset/dataset/' 
 
     folds = preprocess.get_folds_dictionary(path + 'folds.json')
 
-    train = [name.encode('ascii') for name in folds[fold_num]['train']]
-    test = [name.encode('ascii') for name in folds[fold_num]['test']]
+    train = [name for name in folds[fold_num]['train']]
+    test = [name for name in folds[fold_num]['validation']]
 
     train = preprocess.load_data_set(path, train)
     test = preprocess.load_data_set(path, test)
@@ -61,31 +63,61 @@ def run_lstm(fold_num):
     train_t = preprocess.pad_trajectory_sequences(train_t, traj_seq_len)
     test_t = preprocess.pad_trajectory_sequences(test_t, traj_seq_len)
 
-    #Instantiate model. 
-    model = Sequential()
+    #Load point clouds using their file names.
+    print('Loading pcs')
+    kmeans_model = pickle.load(open(kmeans_path + str(fold_num) + '.p', 'rb'), encoding='latin1')
+
+    train_p = preprocess.load_point_clouds(train_p, kmeans_model)
+    test_p = preprocess.load_point_clouds(test_p, kmeans_model)
+
+    #Instantiate encoder and decoder. 
+    encoder = Sequential()
+    decoder = Sequential()
+
+    #Specifies inputs. 
+    trajectory_input = Input(shape=(traj_seq_len, traj_dim))
 
     #LSTM for encoding trajectories into fixed dimensionality vector. 
-    model.add(LSTM(num_h, input_dim=traj_dim, input_length=traj_seq_len, return_sequences=False))
+    encoder.add(LSTM(len(vocab.keys()), input_shape=(traj_seq_len, traj_dim), return_sequences=True))
+#encoder.add(Dropout(0.2))
+    encoder.add(LSTM(50))
+    
+    #Encodes trajectory. 
+    encoded_trajectory = encoder(trajectory_input)
 
-    #Hands encoder output to decoder. 
-    model.add(RepeatVector(traj_seq_len))
+    #Point cloud input vector. 
+    pc_input = Input(shape=(50,))
+
+    #Concatenates trajectory embedding with point cloud BOF vector.
+    embedding = merge([encoded_trajectory, pc_input], mode='concat')
+
+    #Repeats it for input into decoder. 
+    embedding = RepeatVector(word_seq_len)(embedding)
 
     #Decoder for taking trajectory vectors and generating natural language descriptions. 
-    model.add(LSTM(len(vocab.keys()), input_dim=num_h, input_length=word_seq_len, return_sequences=True))
+    decoder.add(LSTM(len(vocab.keys()), input_dim=100, input_length=word_seq_len, return_sequences=True))
+#decoder.add(Dropout(0.2))
+    decoder.add(LSTM(len(vocab.keys()), input_dim=len(vocab.keys()), input_length=word_seq_len, return_sequences=True))
+
+    decoded_word_sequence = decoder(embedding)
 
     #Compiles model for use. 
+    model = Model(input=[trajectory_input, pc_input], output=decoded_word_sequence)
     model.compile(loss='mse', optimizer='rmsprop')
 
     #Trains model. 
-    model.fit(train_t, train_l, nb_epoch = 1000, batch_size = 80)
+    model.fit([train_t, train_p], train_l, nb_epoch = int(parameter), batch_size = 1)
 
     #Predicts from training. 
-    predictions =  model.predict_classes(test_t, batch_size = 1)
+    predictions =  model.predict([test_t, test_p], batch_size = 1)
+    
+    #Turns to one-hot vectors.
+    predictions = preprocess.prob_vectors_to_classes(predictions) 
 
     #Converts predictions to phrases in natural language. 
     predictions = preprocess.class_vectors_to_phrases(predictions, vocab)
 
-    results_file = open('lstm_fold_' + str(fold_num) + '_test.txt', 'w')
+    results_file = open('lstm_fold_' + str(fold_num) + '_' + str(parameter) + '.txt', 'w')
 
     for i in range(len(predictions)):
         results_file.write(predictions[i] + ' :::: ' + test_l[i] + '\n')
@@ -93,18 +125,18 @@ def run_lstm(fold_num):
     results_file.close()
 
 def print_usage():
-    print 'Run lstm training: ./lstm.py run_lstm [fold_num]'
-    print 'Evaluate LSTM results file using METEOR: ./lstm.py evaluate [results_file] [ref_file] [test_file]'
+    print('Run lstm training: ./lstm.py run_lstm [fold_num]')
+    print('Evaluate LSTM results file using METEOR: ./lstm.py evaluate [results_file] [ref_file] [test_file]')
 
 if __name__ == '__main__':
     if not len(sys.argv) >= 2:
         print_usage()
 
     elif sys.argv[1] == 'run_lstm':
-        if not len(sys.argv) == 3:
+        if not len(sys.argv) == 4:
             print_usage()
         else:
-            run_lstm(int(sys.argv[2]))
+            run_lstm(int(sys.argv[2]), float(sys.argv[3]))
 
     elif sys.argv[1] == 'evaluate':
         if len(sys.argv) == 5:

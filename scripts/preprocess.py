@@ -10,7 +10,7 @@ import nltk
 import os
 import sys
 import yaml
-
+import baseline
 import numpy as np
 
 
@@ -176,6 +176,49 @@ def create_vocabulary( phrase_list ):
     return vocab
 
 """
+Given a list of point cloud file names, returns  
+a list of point cloud bag of feature vectors. 
+"""
+def load_point_clouds(point_clouds, kmeans_model):
+    #Loads point cloud keypoints.
+    pc_keypoints = [baseline.extractPointCloudKeyPointsFromCSV(pc_path) for pc_path in point_clouds]
+
+    #Compute bag of feature vectors. 
+    return  np.array(createPCFeatureVectors( kmeans_model, pc_keypoints))
+
+
+def createPCFeatureVectors( kmeans_model, point_clouds, n_clusters=50):
+    '''
+    Creates a Feature Vector list for a Point Cloud Key Point List using the provided KMeans Model and saves it as a pickle file
+
+    args:
+        kmeans_model:     A KMeans Model
+        point_clouds:     A list of Segmented Point Clouds
+        pickle_directory: Path to save pickled KNN Model
+        fold_number:      Fold number to use when saving pickled KNN Model
+        n_cluster:        Number of clusters to used for KMeans Model
+
+    returns:
+        Feature Vector lists of Point Cloud Feature Vectors
+    '''
+    #######################################################################
+    #                Predict Feature Vectors for Dataset                  #
+    #######################################################################
+
+    point_clouds_feature_vectors = []
+    for point_cloud in point_clouds:
+        cluster_index_prediction = kmeans_model.predict( point_cloud )
+        cluster_index_prediction = cluster_index_prediction.tolist()
+
+        feature_vector = []
+        for cluster in range( n_clusters ):
+            feature_vector.append( cluster_index_prediction.count( cluster ) )
+
+        point_clouds_feature_vectors.append( feature_vector )
+
+    return point_clouds_feature_vectors
+
+"""
 Given a vocabulary dictionary and
 a list of phrases, this will return
 a list of one hot vector matrices
@@ -202,7 +245,7 @@ def class_vectors_to_phrases( predictions, vocab ):
     phrases = []
 
     # Vocab maps words to indeces, we need the inverse.
-    inverse_vocab = {value: key for key, value in vocab.iteritems()}
+    inverse_vocab = {value: key for key, value in vocab.items()}
 
     for pred_vector in predictions:
         words = []
@@ -222,6 +265,24 @@ def class_vectors_to_phrases( predictions, vocab ):
         phrases.append( ' '.join( words ) )
 
     return phrases
+
+"""
+Converts vectors of
+prediction probabilities
+to vectors of classes. 
+"""
+def prob_vectors_to_classes(predictions):
+    vectors = []
+
+    for prediction_sequence in predictions:
+        class_vector = []    
+
+        for prediction in prediction_sequence:
+            class_vector.append(prediction.argmax())
+
+        vectors.append(class_vector)
+
+    return vectors
 
 """
 Takes all trajectories and pads
