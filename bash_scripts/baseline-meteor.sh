@@ -24,7 +24,16 @@ for i in $(seq 1 $FOLDS); do
 done
 
 for i in $(seq 1 $FOLDS); do
-    dir=$test_data_directory/baseline-fold_${i}_for_${NCLUSTERS}_clusters_and_${NNEIGHBORS}_neighbors
+    dir=$test_data_directory/kneighbors/baseline-fold_${i}_for_${NCLUSTERS}_clusters_and_${NNEIGHBORS}_neighbors
+    cd $dir
+    echo "Evalualating Fold ${i} with Meteor for ${NCLUSTERS} clusters and ${NNEIGHBORS} neighbors"
+    java -Xmx2G -jar $meteor_directory/meteor-*.jar $dir/test_reference $dir/gold_reference -norm -writeAlignments -f fold_$i > "fold_${i}_score"
+    python $meteor_directory/xray/xray.py -p fold_$i fold_$i-align.out
+    echo "Completed Evalualation of Fold ${i} with Meteor for ${NCLUSTERS} clusters and ${NNEIGHBORS} neighbors"
+done
+
+for i in $(seq 1 $FOLDS); do
+    dir=$test_data_directory/predict/baseline-fold_${i}_for_${NCLUSTERS}_clusters_and_${NNEIGHBORS}_neighbors
     cd $dir
     echo "Evalualating Fold ${i} with Meteor for ${NCLUSTERS} clusters and ${NNEIGHBORS} neighbors"
     java -Xmx2G -jar $meteor_directory/meteor-*.jar $dir/test_reference $dir/gold_reference -norm -writeAlignments -f fold_$i > "fold_${i}_score"

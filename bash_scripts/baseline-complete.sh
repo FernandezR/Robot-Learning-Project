@@ -33,7 +33,16 @@ for counter in {1..7}; do
     done
 
     for i in $(seq 1 $FOLDS); do
-        dir=$validation_data_directory/baseline-fold_${i}_for_${NCLUSTERS}_clusters_and_${NNEIGHBORS}_neighbors
+        dir=$validation_data_directory/kneighbors/baseline-fold_${i}_for_${NCLUSTERS}_clusters_and_${NNEIGHBORS}_neighbors
+        cd $dir
+        echo "Evalualating Fold ${i} with Meteor for ${NCLUSTERS} clusters and ${NNEIGHBORS} neighbors"
+        java -Xmx2G -jar $meteor_directory/meteor-*.jar $dir/validation_reference $dir/gold_reference -norm -writeAlignments -f fold_$i > "fold_${i}_score"
+        python $meteor_directory/xray/xray.py -p fold_$i fold_$i-align.out
+        echo "Completed Evalualation of Fold ${i} with Meteor for ${NCLUSTERS} clusters and ${NNEIGHBORS} neighbors"
+    done
+
+    for i in $(seq 1 $FOLDS); do
+        dir=$validation_data_directory/predict/baseline-fold_${i}_for_${NCLUSTERS}_clusters_and_${NNEIGHBORS}_neighbors
         cd $dir
         echo "Evalualating Fold ${i} with Meteor for ${NCLUSTERS} clusters and ${NNEIGHBORS} neighbors"
         java -Xmx2G -jar $meteor_directory/meteor-*.jar $dir/validation_reference $dir/gold_reference -norm -writeAlignments -f fold_$i > "fold_${i}_score"
@@ -43,7 +52,19 @@ for counter in {1..7}; do
     NCLUSTERS=$(($NCLUSTERS+$INCREMENT))
 done
 
+OUTPUT="$(PYTHONPATH=$PYPATH python3.4 $BASELINE calcCluster $FOLDS $validation_data_directory $START $NCLUSTERS $INCREMENT $NNEIGHBORS predict)"
+echo "------------------------------"
+echo "Best Cluster Size with Neighbors predict"
+echo $OUTPUT
+
 OUTPUT="$(PYTHONPATH=$PYPATH python3.4 $BASELINE calcCluster $FOLDS $validation_data_directory $START $NCLUSTERS $INCREMENT $NNEIGHBORS)"
+echo "------------------------------"
+echo "Best Cluster Size with Neighbors kneighbors"
+echo $OUTPUT
+
+echo "------------------------------"
+echo "Echo using Kneighbors best cluster size to Train Final Model"
+echo "------------------------------"
 
 cd $BASHSCRIPTS
 bash baseline-meteor.sh $OUTPUT $BASELINE $dataset_directory $pickle_directory $meteor_directory $test_data_directory $PYPATH $FOLDS 10
