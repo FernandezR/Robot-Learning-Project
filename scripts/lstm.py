@@ -233,7 +233,7 @@ def read_in_lstm_specs(specs_file_name):
 
         #Specifies the learning rate. 
         elif line.startswith('LR'): 
-            specs['lr'] = float(line.strip().split(':')[1])
+            specs['learning_rate'] = float(line.strip().split(':')[1])
 
     #Some files had a default unwritten learning rate. 
     if not 'learning_rate' in specs:
@@ -247,7 +247,113 @@ def read_in_lstm_specs(specs_file_name):
     return specs
 
 def test_lstm(architecture_file, results_folder):
-    print(read_in_lstm_specs(architecture_file))
+    specs = read_in_lstm_specs(architecture_file)
+
+    for fold_num in [1, 2, 3, 4, 5]:
+        pid = os.fork()
+
+        if pid == 0: 
+            #Dimensions for input. 
+            seq_len = 18
+            traj_dim = 8
+
+            #Get training data. 
+            dirs = []
+            path = '/scratch/cluster/rcorona/Robot_Learning_Project/robobarista_dataset/dataset/' 
+
+            folds = preprocess.get_folds_dictionary(path + 'folds.json')
+
+            train = [name for name in folds[fold_num]['train']]
+            test = [name for name in folds[fold_num]['test']]
+
+            train = preprocess.load_data_set(path, train)[:-1]
+            test = preprocess.load_data_set(path, test)[:-1]
+
+            #Splits train and test into their parts. 
+            train_t, train_p, train_l = train
+            test_t, test_p, test_l = test
+
+            #Prepare vocabulary and create one-hot vectors for training set. 
+            vocab = preprocess.create_vocabulary(train_l)
+            train_l = preprocess.to_one_hot(vocab, train_l, seq_len)
+
+            #Pad trajectories. 
+            train_t = preprocess.pad_trajectory_sequences(train_t, seq_len)
+            test_t = preprocess.pad_trajectory_sequences(test_t, seq_len)
+
+            #Load point clouds using their file names.
+            print('Loading pcs')
+            kmeans_model = pickle.load(open(kmeans_path + str(fold_num) + '.p', 'rb'), encoding='latin1')
+
+            train_p = preprocess.load_point_clouds(train_p, kmeans_model)
+            test_p = preprocess.load_point_clouds(test_p, kmeans_model)
+
+            #Last layer outputs a vector of vocabulary dimensionality. 
+            specs['decoder_h'].append(len(vocab.keys()))
+
+            #Instantiate encoder and decoder. 
+            encoder = Sequential()
+            decoder = Sequential()
+
+            #Specifies inputs. 
+            trajectory_input = Input(shape=(seq_len, traj_dim))
+
+            #Now build encoder. 
+            for i in range(specs['num_encoder_layers']): 
+                #Last layer does not return a sequence and has no dropout. 
+                if i < specs['num_encoder_layers'] - 1:
+                    encoder.add(LSTM(specs['encoder_h'][i], input_shape=specs['encoder_inputs'][i], return_sequences=True))
+                    encoder.add(Dropout(specs['encoder_dropouts'][i]))
+                else:
+                    encoder.add(LSTM(specs['encoder_h'][i], input_shape=specs['encoder_inputs'][i], return_sequences=False))
+                
+            #Encodes trajectory. 
+            encoded_trajectory = encoder(trajectory_input)
+
+            #Point cloud input vector. 
+            pc_input = Input(shape=(50,))
+
+            #Concatenates trajectory embedding with point cloud BOF vector.
+            embedding = merge([encoded_trajectory, pc_input], mode='concat')
+
+            #Repeats it for input into decoder. 
+            embedding = RepeatVector(seq_len)(embedding)
+
+            #Now build decoder. 
+            for i in range(specs['num_decoder_layers']):
+                decoder.add(LSTM(specs['decoder_h'][i], input_shape=specs['decoder_inputs'][i], return_sequences=True))
+
+                #Don't add dropout if last layer. 
+                if i < specs['num_decoder_layers'] - 1:
+                    decoder.add(Dropout(specs['decoder_dropouts'][i]))
+
+            decoded_word_sequence = decoder(embedding)
+
+            #Compiles model for use. 
+            model = Model(input=[trajectory_input, pc_input], output=decoded_word_sequence)
+            rms = RMSprop(lr=specs['learning_rate'])
+            model.compile(loss='mse', optimizer=rms)
+
+            #Trains model. 
+            model.fit([train_t, train_p], train_l, nb_epoch = specs['nb_epochs'], batch_size = specs['batch_sz'])
+
+            #Predicts from training. 
+            predictions =  model.predict([test_t, test_p], batch_size = specs['batch_sz'])
+            
+            #Turns to one-hot vectors.
+            predictions = preprocess.prob_vectors_to_classes(predictions) 
+
+            #Converts predictions to phrases in natural language. 
+            predictions = preprocess.class_vectors_to_phrases(predictions, vocab)
+
+            results_file = open(result_folder + str(fold_num) + '.results', 'w')
+
+            for i in range(len(predictions)):
+                results_file.write(predictions[i] + ' :::: ' + test_l[i] + '\n')
+
+            results_file.close()
+
+            sys.exit()
 
 def tune_lstm(results_folder):
     #First randomly configure LSTM architecture. 
