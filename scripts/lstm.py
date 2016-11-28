@@ -110,7 +110,7 @@ def evaluate_folder_with_meteor(folder_path):
         path += '/'
         result_name = file_name.split('.')[0]
        
-        if True: #not os.path.isfile(path + result_name + '-align.out'):
+        if not os.path.isfile(path + result_name + '-align.out'):
             pruned_results.append(result_file)
 
     #Evaluate every result file with METEOR. 
@@ -346,7 +346,7 @@ def test_lstm(architecture_file, results_folder):
             #Converts predictions to phrases in natural language. 
             predictions = preprocess.class_vectors_to_phrases(predictions, vocab)
 
-            results_file = open(result_folder + str(fold_num) + '.results', 'w')
+            results_file = open(results_folder + str(fold_num) + '.results', 'w')
 
             for i in range(len(predictions)):
                 results_file.write(predictions[i] + ' :::: ' + test_l[i] + '\n')
