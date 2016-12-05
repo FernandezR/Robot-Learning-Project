@@ -1,7 +1,11 @@
 #!/usr/bin/python
 
 """
-Calculates a rounded percentage
+Contains many preprocessing functions
+used by both the baseline and LSTM 
+models in our domain. 
+
+Authors: Rodolfo Corona and Rolando Fernandez. 
 """
 
 import glob
@@ -13,7 +17,9 @@ import yaml
 import baseline
 import numpy as np
 
-
+"""
+Calculates a rounded percentage
+"""
 def percentage( percent, whole ):
     return round( ( percent * whole ) / 100.0 )
 
